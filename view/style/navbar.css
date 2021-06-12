@@ -1,0 +1,14 @@
+#navArea{
+    background-color: aqua;
+}
+
+#navTop{
+    height: 8vh;
+    background-color: blue;
+    width: 100vw;
+}
+
+#navBot{
+    height: 5vh;
+    background-color: yellow;
+}
