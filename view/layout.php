@@ -7,6 +7,17 @@
         <div id="nama">Name</div>
         
     </div>
+
+    <?php
+    echo $content;
+    ?>
+    
+
+    <div id="footer">
+        <div id="coklat"></div>
+        <div id="nama">Name</div>
+        
+    </div>
     </body>
 </html>
   
