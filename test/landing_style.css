@@ -1,0 +1,62 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.caroussel{
+    background-color: aqua;
+
+    height: 350px;
+
+    text-align: center;
+
+    margin: 35px 75px 20px 75px;
+    padding: 5px;
+}
+
+.Grid_Container{
+    /* background-color: green; */
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap : 40px;
+
+    margin-left: 55px;
+    margin-right: 55px;
+    padding: 40px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    text-align: center;
+}
+
+.featurekiri{
+    grid-column: 1 / 8;
+    height: 320px;
+}
+
+.desckiri{
+    grid-column: 8/11;
+}
+
+.featurekanan{
+    grid-column: 4 / 11;
+    height: 320px;
+}
+
+.desckanan{
+    grid-column: 1/4;
+}
+
+.popular_track{
+    background-color: darkcyan;
+
+    height: 100px;
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
