@@ -97,11 +97,29 @@ body{
 }
 
 .region-item{
-
     box-sizing: border-box;
     margin: 15px;
-
     background-color: yellow;
     width: 320px;
     height: 200px;
+}
+
+#footer{
+    height:5vh;
+    margin:0px;
+    margin-top:20px;
+}
+
+ #footer>h4{
+    font-size:10px;
+    padding:0;
+    width:40vh;
+    float:left;
+} 
+
+#ig{
+    float:right;
+    margin:0px;
+    padding:0;
+    margin-right:10vh;
 }
