@@ -7,8 +7,8 @@
     <title>Landing Page</title>
 </head>
 <body>
-    <?php
+    <!-- <?php
         require 'navbarout.php';
-    ?>
+    ?> -->
 </body>
 </html>

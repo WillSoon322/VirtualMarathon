@@ -2,3 +2,16 @@ body{
     margin: 0px;
     padding: 0px;
 }
+#header{
+    margin:0;
+    padding:0;
+    height:30px;
+    background-color: aqua;
+}
+.coklat{
+    margin-left:50px;
+    padding:0;
+    height:30px;
+    background-color: brown;
+    color: yellow;
+}

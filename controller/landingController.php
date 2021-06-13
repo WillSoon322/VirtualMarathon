@@ -1,7 +1,7 @@
 <?php
-// require_once "controller/services/mysqlDB.php";
+ require_once "controller/services/mysqlDB.php";
 // require_once "model/book.php";
- require_once "view.view.php";
+ require_once "view/view.php";
 
     class landingController{
         
@@ -12,15 +12,15 @@
         }
 
         public function viewAll(){
-            return View::createView("index.php",[
-                "result" => $result
+            return View::createView("landing.php",[
+                
             ]);
     
         }
 
        
         }
-    }
+    
    
 
     
