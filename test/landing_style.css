@@ -18,6 +18,14 @@ body{
     box-sizing: border-box;
 }
 
+.carousel{
+    transform-style: preserve-3d;
+}
+
+.carousel_photo{
+    width: 100%;
+}
+
 .Grid_Container{
     /* background-color: green; */
 
@@ -74,12 +82,4 @@ body{
  background-color: yellow;
  width: 50px;
  height: 50px;
-}
-
-.carousel{
-    transform-style: preserve-3d;
-}
-
-.carousel_photo{
-    width: 100%;
 }
