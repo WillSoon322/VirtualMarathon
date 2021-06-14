@@ -1,0 +1,64 @@
+.login_box{
+    background-color: gray;
+
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-top: 6vh;
+
+    padding-top: 5vh;
+
+    height: 80vh;
+    width: 50vw;
+}
+
+.login_input_box{
+    /* background-color: blue; */
+    
+    margin-left: 10%;
+    margin-right:10% ;
+
+    height: 25rem;
+    width: 80%;
+
+}
+
+.text_input{
+    float: right;
+
+    margin-right: 10%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    width: 65%;
+}
+
+.text_label{
+    float: right;
+    margin-right:2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#remember_check{
+    float: right;
+}
+
+#remember_label{
+    float: right;
+    margin-right: 50%;
+}
+
+img{
+    height: 15rem;
+    width: 100%;
+}
+
+.button_box{
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    width: 12vw;
+    height: 6vh;
+}
