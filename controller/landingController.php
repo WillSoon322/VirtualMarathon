@@ -12,9 +12,7 @@
         }
 
         public function viewAll(){
-            return View::createView("landing.php",[
-                
-            ]);
+            return View::createView("landing.php",[]);
     
         }
 
