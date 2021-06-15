@@ -6,11 +6,14 @@
     <div class="login_box">
         <div class="login_input_box">
         <form method="POST" action="signup">
+            <input class="text_input" type="email" name="email">
+            <label class="text_label" for="email">Email : </label>
+
           <input class="text_input" type="text" name="username">
-            <label class="text_label" for="Username">Username : </label>
+            <label class="text_label" for="username">Username : </label>
 
             <input class="text_input" type="text" name="name">
-            <label class="text_label" for="Name">Name : </label>
+            <label class="text_label" for="name">Name : </label>
 
             <select class="text_input" name="gender" id="gender" >
                 <option value="Pria">Pria</option>
@@ -38,7 +41,7 @@
             <input id="remember_check" type="checkbox" name="agreement">
         </div>
         <div class="button_box">
-            <button>Sign Up</button>
+            <button type="submit">Sign Up</button>
         </div>
     
         </form>
