@@ -13,7 +13,7 @@
 <body>
 <header>
         <div class="nav_top">
-            <img src="assets/logo.png" alt="Logo" class="logo">
+            <img src="view/assets/logo.png" alt="Logo" class="logo">
             <button class="nav_button" id="sign_in">Sign In</button>
             <button class="nav_button" id="sign_up">Sign Up</button>
         </div>
