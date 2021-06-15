@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="view/style/landing_style.css">
+    <title>Virtual Marathon Landing Page</title>
 </head>
 
 <div class="scroll_container">

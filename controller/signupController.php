@@ -3,7 +3,7 @@
 // require_once "model/book.php";
  require_once "view/view.php";
 
-    class LoginController{
+    class SignupController{
         
         protected $db;
 
@@ -12,7 +12,7 @@
         }
 
         public function viewAll(){
-            return View::createView("login.php",[]);
+            return View::createView("signup.php",[]);
     
         }
 

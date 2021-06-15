@@ -1,8 +1,8 @@
 <head>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="view/style/signup.css">
     <title>Virtual Marathon Signup</title>
 </head>
-<body>
+
     <div class="login_box">
         <div class="login_input_box">
             <input class="text_input" type="text">
@@ -40,5 +40,5 @@
             <button>Sign Up</button>
         </div>
     </div>
-</body>
+
 </html>

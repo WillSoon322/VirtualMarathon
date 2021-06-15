@@ -9,6 +9,16 @@
 				$landCtrl = new landingController();
 				echo $landCtrl -> viewAll();//echo hasil FINAL
 			   break;
+			case $baseURL.'/login':
+				require_once "controller/login_controller.php";
+				$loginCtrl = new LoginController();
+				echo $loginCtrl -> viewAll();//echo hasil FINAL
+			   break;
+			case $baseURL.'/signup':
+				require_once "controller/signupController.php";
+				$signupCtrl = new SignupController();
+				echo $signupCtrl -> viewAll();//echo hasil FINAL
+			   break;
 			default:
 				echo "404 not found";
 				break;
