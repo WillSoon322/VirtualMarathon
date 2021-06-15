@@ -8,10 +8,13 @@ body{
     /* background-color: aqua; */
 
     height: 500px;
+    width: 80vw;
+
+
 
     text-align: center;
 
-    margin: 130px 75px 20px 75px;
+    margin: 130px 10vw 20px 10vw;
     padding: 5px;
 
     overflow: hidden;
