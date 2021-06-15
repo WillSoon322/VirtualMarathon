@@ -25,12 +25,16 @@
 		}
 	}
 	else if($_SERVER["REQUEST_METHOD"]=="POST"){
-		switch($url){
+		switch ($url){
 			case $baseURL.'/signup':
 				require_once "controller/signupController.php";
 				$signupCtrl = new SignupController();
 				echo $signupCtrl -> addUser();//echo hasil FINAL
+				header('location: landing');
 			   break;
+			 default:
+				echo "404 not found";
+				break;
 		}
 		
 	}

@@ -41,7 +41,7 @@
             <input id="remember_check" type="checkbox" name="agreement">
         </div>
         <div class="button_box">
-            <button type="submit">Sign Up</button>
+            <button >Sign Up</button>
         </div>
     
         </form>
