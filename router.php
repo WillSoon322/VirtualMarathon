@@ -24,5 +24,15 @@
 				break;
 		}
 	}
+	else if($_SERVER["REQUEST_METHOD"]=="POST"){
+		switch($url){
+			case $baseURL.'/signup':
+				require_once "controller/signupController.php";
+				$signupCtrl = new SignupController();
+				echo $signupCtrl -> addUser();//echo hasil FINAL
+			   break;
+		}
+		
+	}
 ?>
 

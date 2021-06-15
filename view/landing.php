@@ -6,8 +6,6 @@
 <div class="scroll_container">
 
         <section class="section">
-            
-
                 <div class="info_left">
                     <h1 class="info_name">RUNNING THE WORLD</h1>
                     <div class="act">

@@ -17,7 +17,7 @@
 
             <nav>
                 <a class="nav_link" href=""><b>About Us</b></a>
-                <a class="nav_link" href=""><b>Another Link</b></a>
+                <a class="nav_link" href="signup"><b>Sign Up</b></a>
             </nav>
         </header>
 
