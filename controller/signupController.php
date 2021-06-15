@@ -53,11 +53,12 @@
                 isset($re_password) && $re_password != ""&&
                 $re_passwordlength > 8 && $re_passwordlength < 24
             &&
-                isset($email) && $email != ""&&
+                isset($email) && $email != ""
+            &&
                 $agreement == "on"
            
             ){
-               
+                echo "sukses";
                 $username = $this->db->escapeString($username);
                 $name = $this->db->escapeString($name);
                 $gender = $this->db->escapeString($gender);
@@ -70,11 +71,11 @@
                 $email= $this->db->escapeString($email);
                 
                  $query = "INSERT INTO user (idU, pass,username) 
-                         VALUES (7,'$password', '$username')";
+                         VALUES (8,'$password', '$username')";
                  $this->db->executeNonSelectQuery($query);
 
                 $query = "INSERT INTO peserta (idU,no_telepon,email,nama,Gender,Alamat,usia) 
-                        VALUES (7,'$phone','$email','$name','$gender','$address','$age')";
+                        VALUES (8,'$phone','$email','$name','$gender','$address','$age')";
                 $this->db->executeNonSelectQuery($query);
                 header('location: landing');
 
@@ -107,7 +108,7 @@
                 //password is required
             }else{
                 if($passwordlength < 8 || $passwordlength > 24){
-                    //passwrod need to be between 8 - 24 long
+                    //password need to be between 8 - 24 long
                 }
             }
 
