@@ -73,9 +73,40 @@
                 $this->db->executeNonSelectQuery($query);
                 header('location: landing');
         } else {
+            if($username == null){
+                //username is required
+            }else{
+                if($usernamelength < 5 || $usernamelength > 16){
+                    //username need to be between 5 - 16 long
+                }
+            }
+
             if($name == null){
-                $message = "this field is required";
-                echo "<script type='text/javascript'>alert('$message');</script>";
+                //name is required
+            }
+
+            if($age == null){
+                //age is required
+            }
+
+            if($address == null){
+                //address is required
+            }
+
+            if($phone == null){
+                //phone is required
+            }
+
+            if($password == null){
+                //password is required
+            }else{
+                if($passwordlength < 8 || $passwordlength > 24){
+                    //passwrod need to be between 8 - 24 long
+                }
+            }
+
+            if($re_password != $password){
+                //password does not match
             }
         }
         } 
