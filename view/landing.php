@@ -1,36 +1,21 @@
-
 <div class="carousel-wrapper">
-        <div class="carousel fade">
-            <!-- <img class="carousel_photo initial" src="assets/293973.jpg" alt=""> -->
-            <img src="Asset/carousel/car1.jpg" alt="carousel1">
-        </div>
-        <div class="carousel fade">
-            <img src="Asset/carousel/car2.jpg" alt="carousel2">
-        </div>
-        <div class="carousel fade">
-            <img src="Asset/carousel/car3.jpg" alt="carousel3">
-        </div>
-       
+    <div class="carousel">
+        <img class="carousel_photo initial" src="assets/293973.jpg" alt="">
     </div>
-    <br>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
+</div>
 
-    <div>
-        SOMETHING
-    </div>
+<div>
+    SOMETHING
+</div>
 
-    <div class="Grid_Container">
-        <div class="grid-item featurekiri">1</div>
-        <div class="grid-item desckiri">2</div>
-        <div class="grid-item desckanan">3</div>
-        <div class="grid-item featurekanan">4</div>
-        <div class="grid-item featurekiri">5</div>
-        <div class="grid-item desckiri">6</div>
-    </div>
+<div class="Grid_Container">
+    <div class="grid-item featurekiri">1</div>
+    <div class="grid-item desckiri">2</div>
+    <div class="grid-item desckanan">3</div>
+    <div class="grid-item featurekanan">4</div>
+    <div class="grid-item featurekiri">5</div>
+    <div class="grid-item desckiri">6</div>
+</div>
 <div class="highlight">
     popular track<br>
     <div class="popular_track">
@@ -72,7 +57,7 @@
         </div>
     </div>
 </div>
-<script>
+<!-- <script>
     var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -101,4 +86,4 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-</script>
+</script> -->
