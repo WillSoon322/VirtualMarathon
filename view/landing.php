@@ -1,6 +1,6 @@
 <div class="carousel-wrapper">
     <div class="carousel">
-        <img class="carousel_photo initial" src="assets/carousel1.jpg" alt="">
+        <img class="carousel_photo initial" src="view/assets/carousel1.jpg" alt="">
         <img class="carousel_photo" src="assets/carousel2.jpg" alt="">
         <img class="carousel_photo" src="assets/carousel3.jpg" alt="">
         <img class="carousel_photo" src="assets/carousel4.jpg" alt="">

@@ -4,13 +4,14 @@ body{
 }
 
 .carousel-wrapper{
-    background-color: aqua;
+
+    /* background-color: aqua; */
 
     height: 500px;
 
     text-align: center;
 
-    margin: 35px 75px 20px 75px;
+    margin: 130px 75px 20px 75px;
     padding: 5px;
 
     overflow: hidden;
@@ -24,6 +25,11 @@ body{
 
 .carousel_photo{
     width: 100%;
+    display: none;
+}
+
+.initial{
+    display: block;
 }
 
 .Grid_Container{
