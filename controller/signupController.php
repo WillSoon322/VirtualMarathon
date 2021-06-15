@@ -54,11 +54,9 @@
                 $re_passwordlength > 8 && $re_passwordlength < 24
             &&
                 isset($email) && $email != ""
-            &&
-                $agreement == "on"
            
             ){
-                echo "sukses";
+                
                 $username = $this->db->escapeString($username);
                 $name = $this->db->escapeString($name);
                 $gender = $this->db->escapeString($gender);
@@ -71,13 +69,13 @@
                 $email= $this->db->escapeString($email);
                 
                  $query = "INSERT INTO user (idU, pass,username) 
-                         VALUES (8,'$password', '$username')";
+                         VALUES (7,'$password', '$username')";
                  $this->db->executeNonSelectQuery($query);
 
                 $query = "INSERT INTO peserta (idU,no_telepon,email,nama,Gender,Alamat,usia) 
-                        VALUES (8,'$phone','$email','$name','$gender','$address','$age')";
+                        VALUES (7,'$phone','$email','$name','$gender','$address','$age')";
                 $this->db->executeNonSelectQuery($query);
-                header('location: landing');
+                
 
         } else {
             if($username == null){

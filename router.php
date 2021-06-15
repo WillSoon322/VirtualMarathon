@@ -19,6 +19,16 @@
 				$signupCtrl = new SignupController();
 				echo $signupCtrl -> viewAll();//echo hasil FINAL
 			   break;
+			case $baseURL.'/pemilik':
+				require_once "controller/pemilikController.php";
+				$pemilikCtrl = new PemilikController();
+				echo $pemilikCtrl -> viewAll();//echo hasil FINAL
+			break;
+			case $baseURL.'/addAdmin':
+				require_once "controller/addAdminController.php";
+				$pemilikCtrl = new addAdminController();
+				echo $pemilikCtrl -> viewAll();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;
@@ -32,7 +42,18 @@
 				echo $signupCtrl -> addUser();//echo hasil FINAL
 				header('location: landing');
 			   break;
+			 case $baseURL.'/pemilik':
+				require_once "controller/pemilikController.php";
+				$signupCtrl = new PemilikController();
+				echo $signupCtrl -> addTrack();//echo hasil FINAL
+				header('location: pemilik');
 			 default:
+			 case $baseURL.'/addAdmin':
+				require_once "controller/addAdminController.php";
+				$pemilikCtrl = new addAdminController();
+				echo $pemilikCtrl -> addAdmin();//echo hasil FINAL
+				header('location: addAdmin');
+			break;
 				echo "404 not found";
 				break;
 		}
