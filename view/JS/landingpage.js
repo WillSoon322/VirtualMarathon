@@ -15,6 +15,7 @@ function animate() {
     }, 2000);
 
     setTimeout(() => {
+        info.style.opacity = '1';
         infoName.style.opacity = '1';
         infoName.style.animation = 'slide-perm 1s forwards';
     }, 3000);
