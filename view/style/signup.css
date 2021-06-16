@@ -78,7 +78,7 @@ button{
     top: 5%;
     left: 45%;
     z-index: -1;
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 70vw;
     height: 115vh;
 }
