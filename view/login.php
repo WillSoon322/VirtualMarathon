@@ -4,9 +4,10 @@
     <title>Virtual Marathon Login</title>
 </head>
 <body>
+    <img class="back" src="view/assets/login_big2.jpg" alt="">
     <div class="login_box">
         <div class="login_input_box">
-            <img src="assets/293976.jpg" alt="gambar">
+            <img src="view/assets/login_small.png" alt="gambar">
 
             <input class="text_input" type="text">
             <label class="text_label" for="name">Username : </label>

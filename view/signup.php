@@ -3,32 +3,36 @@
     <title>Virtual Marathon Signup</title>
 </head>
 
-    <div class="login_box">
-        <div class="login_input_box">
+
+<div class="sign_up_right">
+    <img src="view/assets/signup_big.jpg" alt="">
+</div>
+<div class="login_box">
+    <div class="login_input_box">
         <form method="POST" action="signup">
             <input class="text_input" type="email" name="email">
             <label class="text_label" for="email">Email : </label>
 
-          <input class="text_input" type="text" name="username">
+            <input class="text_input" type="text" name="username">
             <label class="text_label" for="username">Username : </label>
 
             <input class="text_input" type="text" name="name">
             <label class="text_label" for="name">Name : </label>
 
-            <select class="text_input" name="gender" id="gender" >
+            <select class="text_input" name="gender" id="gender">
                 <option value="Pria">Pria</option>
                 <option value="Wanita">Wanita</option>
                 <option value="else">Lainnya</option>
             </select>
             <label class="text_label" for="gender">Gender : </label>
-            
-            <input class="text_input" type="number" name="age" id="umur" >
+
+            <input class="text_input" type="number" name="age" id="umur">
             <label class="text_label" for="age">Age : </label>
 
             <input class="text_input" type="text" name="address">
             <label class="text_label" for="Address">Address : </label>
 
-            <input class="text_input" type="number" name="phone" id="phone" >
+            <input class="text_input" type="number" name="phone" id="phone">
             <label class="text_label" for="phone">Phone Number : </label>
 
             <input class="text_input" type="password" name="password">
@@ -39,13 +43,15 @@
 
             <label id="remember_label" for="Agreement" name="agreement">I agree to <a href="#">Agreement</a></label>
             <input id="remember_check" type="checkbox" name="agreement">
-        </div>
-        <div class="button_box">
-            <button >Sign Up</button>
-        </div>
-    
-        </form>
-     </div>
-            
+    </div>
+    <div class="button_box">
+        <button>Sign Up</button>
+    </div>
+
+    </form>
+</div>
+
+
+
 
 </html>

@@ -16,7 +16,7 @@
 
 
             <nav>
-                <a class="nav_link" href=""><b>About Us</b></a>
+                <a class="nav_link" href="login"><b>Log In</b></a>
                 <a class="nav_link" href="signup"><b>Sign Up</b></a>
             </nav>
         </header>
