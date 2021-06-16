@@ -44,7 +44,7 @@
                 $gambar = $this->db->escapeString($gambar);
                 
                  $query = "INSERT INTO track 
-                         VALUES (5,'$harga', '$gambar','$jarak','$nama','$region')";
+                         VALUES (5,'$harga', '$gambar','$jarak','$name','$region')";
                  $this->db->executeNonSelectQuery($query);
 
               

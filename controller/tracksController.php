@@ -1,9 +1,8 @@
 <?php
  require_once "controller/services/mysqlDB.php";
-// require_once "model/book.php";
  require_once "view/view.php";
 
-    class landingController{
+    class tracksController{
         
         protected $db;
 
@@ -12,7 +11,7 @@
         }
 
         public function viewAll(){
-            return View::createView("landing.php",[]);
+            return View::createView("tracks.php",[]);
     
         }
 

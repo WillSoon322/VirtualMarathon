@@ -16,19 +16,21 @@
 
 
             <nav>
-                <a class="nav_link" href="track"><b>Tracks</b></a>
+                <a class="nav_link" href="tracks"><b>Tracks</b></a>
                 <a class="nav_link" href="login"><b>Log In</b></a>
                 <a class="nav_link" href="signup"><b>Sign Up</b></a>
             </nav>
         </header>
-        <?php
-        echo $content
-        ?>
+    </div>
 
-        <div id="footer">
-            <h4>Virtual Marathon 2021, all rights not reserved</h4>
-            <h5 id="ig">instagram</h5>
-        </div>
+    <?php
+    echo $content
+    ?>
+
+    <!-- <div id="footer">
+        <h4>Virtual Marathon 2021, all rights not reserved</h4>
+        <h5 id="ig">instagram</h5>
+    </div> -->
 </body>
 
 </html>
