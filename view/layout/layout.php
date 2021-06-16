@@ -16,11 +16,11 @@
 
 
             <nav>
+                <a class="nav_link" href="track"><b>Tracks</b></a>
                 <a class="nav_link" href="login"><b>Log In</b></a>
                 <a class="nav_link" href="signup"><b>Sign Up</b></a>
             </nav>
         </header>
-
         <?php
         echo $content
         ?>
