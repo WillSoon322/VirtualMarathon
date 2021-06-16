@@ -5,19 +5,21 @@
 .login_box{
     background-color: rgb(49, 49, 49);
 
-    margin-left: 3vw;
-    margin-right: 35vw;
-    margin-top: 3vh;
-    margin-bottom: 5vh;
+    margin-left: 3%;
+    margin-right: 35%;
+    margin-top: 3%;
+    margin-bottom: 5%;
 
-    padding-top: 4vh;
+    padding-top: 4%;
 
-    height: 110vh;
-    width: 53vw;
+    height: 120vh;
+    width: 125vh;
 }
 
 .login_input_box{
     /* background-color: rgb(255, 255, 255); */
+
+    position: absolute;
     
     margin-left: 10%;
     margin-right:10% ;
@@ -55,6 +57,7 @@
 
 #remember_check{
     float: right;
+    margin-right: 10px;
 }
 
 #remember_label{
@@ -64,6 +67,9 @@
 }
 
 .button_box{
+    position: absolute;
+    bottom: -5vh;
+    left: 15vw;
     display: flex;
     justify-content: space-around;
 }

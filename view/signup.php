@@ -43,9 +43,10 @@
 
             <label id="remember_label" for="Agreement" name="agreement">I agree to <a href="#">Agreement</a></label>
             <input id="remember_check" type="checkbox" name="agreement">
-    </div>
-    <div class="button_box">
-        <button>Sign Up</button>
+
+            <div class="button_box">
+                <button>Sign Up</button>
+            </div>
     </div>
 
     </form>
