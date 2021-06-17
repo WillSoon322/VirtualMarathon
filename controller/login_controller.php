@@ -1,6 +1,6 @@
 <?php
  require_once "controller/services/mysqlDB.php";
- require_once "view/view.php";
+ require_once "view/view2.php";
 
     class LoginController{
         

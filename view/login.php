@@ -4,7 +4,7 @@
     <title>Virtual Marathon Login</title>
 </head>
 <body>
-    <img class="back" src="view/assets/login_big2.jpg" alt="">
+    <img class="back" src="view/assets/login_big.jpg" alt="">
     <div class="login_box">
         <div class="login_input_box">
             <img src="view/assets/login_small.png" alt="gambar">
