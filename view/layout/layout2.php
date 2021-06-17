@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="view/JS/signup.js"></script>
 </head>
 
 <body>
-    <div class="home_left">
         <header>
             <div class="logo">
                 <h1>LOGO</h1>
@@ -20,7 +20,6 @@
                 <a class="nav_link" href="signup"><b>Sign Up</b></a>
             </nav>
         </header>
-
     <?php
     echo $content
     ?>
