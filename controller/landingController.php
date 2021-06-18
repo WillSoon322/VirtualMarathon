@@ -17,14 +17,15 @@
     
         }
         public function getAllTracks(){
-            $query = " SELECT TOP 3 tema, count (idP) as 'pengikut' from Track t inner join Aktivitas a
-                        ON t.idT=a.idT GROUP BY t.tema ORDER BY 'pengikut' DESC
+            $query = " SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
+                        FROM track t
 
                      ";
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
             foreach($query_result as $key => $value){
-                $result[] = new track($value["idT"],$value["pengikut"]);
+                $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
+                ,$value["tema"],$value["region"]);
             }
            
             return $result;

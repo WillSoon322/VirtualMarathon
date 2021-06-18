@@ -5,36 +5,39 @@
 
 <div class="scroll_container">
 
-        <section class="section">
-                <div class="info_left">
-                    <h1 class="info_name">RUNNING THE WORLD</h1>
-                    <div class="act">
-                        Start Your JOURNEY
-                    </div>
-                </div>
+    <section class="home_left section">
+
+
+
+        <header>
+            <div class="logo">
+                <h1>LOGO</h1>
             </div>
 
-            <div class="carousel_container">
-                <div class="overlay"></div>
-                <img src="view/assets/1.jpg" alt="">
+
+            <nav>
+                <a class="nav_link" href="tracks"><b>Tracks</b></a>
+                <a class="nav_link" href="login"><b>Log In</b></a>
+                <a class="nav_link" href="signup"><b>Sign Up</b></a>
+                <a class="nav_link" href="profile"><b>Profile</b></a>
+            </nav>
+        </header>
+        <div class="carousel_container">
+            <div class="overlay"></div>
+            <img src="view/assets/1.jpg" alt="">
+        </div>
+    </section>
+    <section class="section">
+        <div class="popular_sect">
+            <div class="pop_title"><b> POPULAR TRACK </b></div><hr>
+            <div class="pop_tagline">some tagline put here</div>
+            <div class="pop_top3">
+                <div class="t2nd">2nd</div>
+                <div class="t1st">1st</div>
+                <div class="t3rd">3rd</div>
             </div>
+        </div>
+    </section>
+</div>
 
-           
-
-        </section>
-       
-    </div>
-
-
-    <div class="grid_container">
-        <?php foreach($result as $key => $row) {
-                ?>
-                <div class="grid_track_card">
-                <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($row->getGambar()).'"/>' ?></div>
-                <!-- //CLASS NAME NYA DIGANTI,  BUKAN CARD PRICE TAPI PENGIKUT -->
-                <div class="pengikut"><?php echo $result["pengikut"] ?></div>    
-                <div class="card_name"><?php echo $row->getTema()?></div>
-            </div>
-            <?php } ?>
-           </div>
-    <script src="view/JS/landingpage.js"></script>
+<script src="view/JS/landingpage.js"></script>
