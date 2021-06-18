@@ -1,5 +1,5 @@
 <?php 
-    class View {
+    class View2 {
         public static function createView ($view , $param){
             //looping satu per satu elemen di array "parameter" di viewAll
             //nanti dapet setiap elemen oisinya key dan value
@@ -15,6 +15,7 @@
 
             ob_start();
             include 'view/layout/layout2.php';//tinggal salin layout, setelah menyalin content
+            //var_dump($param);
             $include=ob_get_contents();
             ob_end_clean();
 
