@@ -8,6 +8,9 @@
 
 <body>
     <div class="home_left">
+
+        
+
         <header>
             <div class="logo">
                 <h1>LOGO</h1>
