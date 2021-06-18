@@ -74,22 +74,22 @@
         </div>
         <div class="grid_container">
             <div class="grid_track_card">
-                <div class="card_image"><?php echo '<img src="data:image/jpg;base64,'.base64_encode($result[0]->getGambar()).'"/>' ?></div>
+                <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($result[0]->getGambar()).'"/>' ?></div>
                 <div class="card_price"><?php echo $result[0]->getHarga().' Rp' ?></div>
                 <div class="card_distance"><?php echo $result[0]->getJarak() ?></div>
                 <div class="card_name"><?php echo $result[0]->getTema()?></div>
             </div>
             <div class="grid_track_card">
-                <div class="card_image">img</div>
-                <div class="card_price">price</div>
-                <div class="card_distance">distance</div>
-                <div class="card_name">name</div>
+                <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($result[1]->getGambar()).'"/>' ?></div>
+                <div class="card_price"><?php echo $result[1]->getHarga().' Rp' ?></div>
+                <div class="card_distance"><?php echo $result[1]->getJarak() ?></div>
+                <div class="card_name"><?php echo $result[1]->getTema()?></div>
             </div>
             <div class="grid_track_card">
-                <div class="card_image">img</div>
-                <div class="card_price">price</div>
-                <div class="card_distance">distance</div>
-                <div class="card_name">name</div>
+                <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($result[2]->getGambar()).'"/>' ?></div>
+                <div class="card_price"><?php echo $result[2]->getHarga().' Rp' ?></div>
+                <div class="card_distance"><?php echo $result[2]->getJarak() ?></div>
+                <div class="card_name"><?php echo $result[2]->getTema()?></div>
             </div>
             <div class="grid_track_card">
                 <div class="card_image">img</div>

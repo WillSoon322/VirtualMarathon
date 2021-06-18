@@ -49,7 +49,7 @@ nav{
     height: fit-content;
 
     display: grid;
-    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-template-columns: 12.5% 12.5% 14% 14% 14% 10%;
     grid-template-rows: 11% 11% 11% 11% 11% 11% 11% 11%;
     grid-gap: 2em;
     /* opacity: 0.7; */
@@ -57,7 +57,7 @@ nav{
 
 .content > div{
     padding: 6px;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -126,4 +126,8 @@ nav{
 .statistic{
     grid-column: 3/6;
     grid-row: 6/9 ;
+}
+
+.openweathermap-widget-21{
+    margin-top: 200px;
 }
