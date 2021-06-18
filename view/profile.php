@@ -31,18 +31,18 @@
             <div class="detil_info info_alamat"></div>
         </div>
         <div class="current_track">
-            
+
         </div>
         <div class="owned_medal">
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-                <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
         </div>
         <div class="API_weather">
             <div>
@@ -51,7 +51,7 @@
         </div>
         <div class="statistic">
             <div>
-                HALO
+                
             </div>
         </div>
 
