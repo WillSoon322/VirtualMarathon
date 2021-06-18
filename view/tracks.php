@@ -67,10 +67,30 @@
             <!--image slider end-->
         </div>
         <div class="grid_container">
-            <div class="grid_track_card">1</div>
-            <div class="grid_track_card">2</div>
-            <div class="grid_track_card">3</div>
-            <div class="grid_track_card">4</div>
+            <div class="grid_track_card">
+                <div class="card_image">img</div>
+                <div class="card_price">price</div>
+                <div class="card_distance">distance</div>
+                <div class="card_name">name</div>
+            </div>
+            <div class="grid_track_card">
+                <div class="card_image">img</div>
+                <div class="card_price">price</div>
+                <div class="card_distance">distance</div>
+                <div class="card_name">name</div>
+            </div>
+            <div class="grid_track_card">
+                <div class="card_image">img</div>
+                <div class="card_price">price</div>
+                <div class="card_distance">distance</div>
+                <div class="card_name">name</div>
+            </div>
+            <div class="grid_track_card">
+                <div class="card_image">img</div>
+                <div class="card_price">price</div>
+                <div class="card_distance">distance</div>
+                <div class="card_name">name</div>
+            </div>
             <div class="grid_track_card">5</div>
             <div class="grid_track_card">6</div>
             <div class="grid_track_card">7</div>

@@ -34,6 +34,11 @@
 				$tracks = new tracksController();
 				echo $tracks -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/profile':
+				require_once "controller/profileController.php";
+				$profile = new profileController();
+				echo $profile -> viewAll();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;

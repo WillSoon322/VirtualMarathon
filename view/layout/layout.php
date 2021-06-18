@@ -18,6 +18,7 @@
                 <a class="nav_link" href="tracks"><b>Tracks</b></a>
                 <a class="nav_link" href="login"><b>Log In</b></a>
                 <a class="nav_link" href="signup"><b>Sign Up</b></a>
+                <a class="nav_link" href="profile"><b>Profile</b></a>
             </nav>
         </header>
 
