@@ -11,7 +11,7 @@
         }
 
         public function viewAll(){
-            return View::createView("profile.php",[]);
+            return View2::createView("profile.php",[]);
     
         }
 

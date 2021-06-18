@@ -32,7 +32,7 @@
 			case $baseURL.'/tracks':
 				require_once "controller/tracksController.php";
 				$tracks = new tracksController();
-				echo $tracks -> getAlLTracks();//echo hasil FINAL
+				echo $tracks -> viewAll();//echo hasil FINAL
 			break;
 			case $baseURL.'/profile':
 				require_once "controller/profileController.php";

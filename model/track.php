@@ -19,7 +19,9 @@
         public function getHarga(){
             return $this->harga;
         }
-
+        public function getJarak(){
+            return $this->jarak;
+        }
         public function getGambar(){
             return $this->gambar;
         }

@@ -3,6 +3,7 @@
         public static function createView ($view , $param){
             //looping satu per satu elemen di array "parameter" di viewAll
             //nanti dapet setiap elemen oisinya key dan value
+            
             foreach ($param as $key=>$value){
                 $$key=$value;//$$key nanti rubah nama jadi $'nama key di elemen'
             }
