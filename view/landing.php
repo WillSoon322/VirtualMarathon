@@ -18,6 +18,23 @@
                 <div class="overlay"></div>
                 <img src="view/assets/1.jpg" alt="">
             </div>
+
+           
+
         </section>
+       
     </div>
+
+
+    <div class="grid_container">
+        <?php foreach($result as $key => $row) {
+                ?>
+                <div class="grid_track_card">
+                <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($row->getGambar()).'"/>' ?></div>
+                <!-- //CLASS NAME NYA DIGANTI,  BUKAN CARD PRICE TAPI PENGIKUT -->
+                <div class="pengikut"><?php echo $result["pengikut"] ?></div>    
+                <div class="card_name"><?php echo $row->getTema()?></div>
+            </div>
+            <?php } ?>
+           </div>
     <script src="view/JS/landingpage.js"></script>

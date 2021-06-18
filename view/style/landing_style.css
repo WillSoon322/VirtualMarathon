@@ -148,3 +148,60 @@ nav{
         left:0;
     }
 }
+
+.grid_container{
+    /* background-color: cadetblue;  */
+   padding: 10px;
+   height: 300vh;
+   margin-top: 2em;
+
+
+   width: 94%;
+
+   display: grid;
+   grid-template-columns: 22% 22% 22% 22%;
+   grid-auto-rows: 22em;
+   grid-gap: 2em;
+}
+
+.grid_track_card{
+   background-color: rgb(248, 246, 236);
+   font-size: large;
+   text-align: center;
+   box-shadow: black 5px 3px 7px;
+   overflow: hidden;
+
+}
+
+.card_image{
+ position: relative;
+ background-color: aqua;
+ height: 60%;
+}
+
+.card_price{
+ background-color: blanchedalmond;
+ position: relative;
+ top: -55%;
+
+ width: 50%;
+ height: 2.5rem;
+}
+
+.card_distance{
+ background-color: yellow;
+
+ position: relative;
+ top: -2.5rem;
+}
+
+.card_name{
+ background-color: violet;
+ position: relative;
+ top: -2.5rem;
+ height: fit-content;
+}
+
+.inside_image{
+ height: 100%;
+}
