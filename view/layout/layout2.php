@@ -8,18 +8,7 @@
 </head>
 
 <body>
-        <header>
-            <div class="logo">
-                <h1>LOGO</h1>
-            </div>
-
-
-            <nav>
-                <a class="nav_link" href="tracks"><b>Tracks</b></a>
-                <a class="nav_link" href="login"><b>Log In</b></a>
-                <a class="nav_link" href="signup"><b>Sign Up</b></a>
-            </nav>
-        </header>
+        
     <?php
     echo $content
     ?>
