@@ -10,7 +10,7 @@
 <body>
         
     <?php
-    echo $content
+    echo $content;
     ?>
 
     <!-- <div id="footer">

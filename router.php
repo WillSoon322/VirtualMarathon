@@ -32,7 +32,7 @@
 			case $baseURL.'/tracks':
 				require_once "controller/tracksController.php";
 				$tracks = new tracksController();
-				echo $tracks -> viewAll();//echo hasil FINAL
+				echo $tracks -> getAlLTracks();//echo hasil FINAL
 			break;
 			case $baseURL.'/profile':
 				require_once "controller/profileController.php";
@@ -57,13 +57,14 @@
 				$signupCtrl = new PemilikController();
 				echo $signupCtrl -> addTrack();//echo hasil FINAL
 				header('location: pemilik');
-			 default:
-			 case $baseURL.'/addAdmin':
+				break;
+			case $baseURL.'/addAdmin':
 				require_once "controller/addAdminController.php";
 				$pemilikCtrl = new addAdminController();
 				echo $pemilikCtrl -> addAdmin();//echo hasil FINAL
 				header('location: addAdmin');
-			break;
+				break;
+			default:
 				echo "404 not found";
 				break;
 		}
