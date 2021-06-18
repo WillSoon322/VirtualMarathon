@@ -31,7 +31,9 @@
             <div class="detil_info info_alamat"></div>
         </div>
         <div class="current_track">
-
+            <div class="go_button">
+            <a href="#" class="myButton">GO!!</a>
+            </div>
         </div>
         <div class="owned_medal">
             <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
