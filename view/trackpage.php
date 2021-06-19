@@ -26,5 +26,9 @@
             </div>
             <div class="bar"></div>
         </div>
+
+        <div class="bottom_part">
+            
+        </div>
     </div>
 </body>
