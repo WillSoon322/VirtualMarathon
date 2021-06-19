@@ -9,22 +9,36 @@
             <h1>LOGO</h1>
         </div>
 
-          <?php
-            // foreach($result as $key =>$row){
-            //     echo $row->getGambar();
-            // }
-           // var_dump($result);
-           
-        ?>  
-        
+        <?php
+        // foreach($result as $key =>$row){
+        //     echo $row->getGambar();
+        // }
+        // var_dump($result);
+
+        ?>
+
         <nav>
             <div class="nav_link"><a href="login"><b>Log In</b></a></div>
             <div class="nav_link"><a href="signup"><b>Sign Up</b></a></div>
-            
+
         </nav>
 
         <div class="track_utils">
-            UTILS
+            <fieldset>
+                <button class="region_accordion">Select Region</button>
+                <div class="region_panel">
+                    <a href="#">Region1</a>
+                    <a href="#">Region2</a>
+                    <a href="#">Region3</a>
+                    <a href="#">Region4</a>
+                    <a href="#">Region5</a>
+                </div>
+                <label for="">MIN : </label>
+                <input type="text">
+                <br>
+                <label for="">MAX : </label>
+                <input type="text">
+            </fieldset>
         </div>
     </header>
 
@@ -74,18 +88,18 @@
             <!--image slider end-->
         </div>
         <div class="grid_container">
-    
-            <?php foreach($result as $key => $row) {
-                ?>
+
+            <?php foreach ($result as $key => $row) {
+            ?>
                 <div class="grid_track_card">
-                <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($row->getGambar()).'"/>' ?></div>
-                <div class="card_price"><?php echo $row->getHarga().' Rp' ?></div>
-                <div class="card_distance"><?php echo $row->getJarak() ?></div>
-                <div class="card_name"><?php echo $row->getTema()?></div>
-            </div>
+                    <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div>
+                    <div class="card_price"><?php echo $row->getHarga() . ' Rp' ?></div>
+                    <div class="card_distance"><?php echo $row->getJarak() ?></div>
+                    <div class="card_name"><?php echo $row->getTema() ?></div>
+                </div>
             <?php } ?>
-            
-            
+
+
 
         </div>
     </div>
@@ -100,5 +114,7 @@
             }
         }, 15000);
     </script>
+
+    <script defer src="view/JS/tracks.js"></script>
 
 </body>

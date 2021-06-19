@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    position: fixed;
+    background-color: rgb(221, 221, 221);
+    width: 15vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    box-shadow: 2px 2px 8px rgb(51, 51, 51);
+}
+
+.logo{
+    background-color: azure;
+    height: 10%;
+}
+
+nav{
+    /* background-color: blue; */
+    height: 5%;
+    display: flex;
+}
+
+.nav_link{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+
+    /* border: 1px black solid; */
+}
+
+.nav_link a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
+
+.nav_link:hover{
+    background-color: rgb(104, 231, 189);
+}
+
+.content{
+    position: absolute;
+    /* background-color: aqua; */
+
+    left: 15vw;
+
+    height: 100%;
+    width: 85vw
+}
+
+.top_part{
+    background-color: burlywood;
+    width: 100%;
+    height: 60%;
+}
+
+.main_image{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.main_atribute{
+    position: relative;
+    top: -25%;
+    right: -57%;
+    /* background-color: brown; */
+    width: 40%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.main_atribute div{
+    height: 200%;
+}
+
+.main_badge{
+    /* background-color: rgb(236, 165, 140); */
+}
+
+.main_atribute div img{
+    height: 100%;
+}
+
+.main_medal{
+    /* background-color: rgb(114, 211, 127); */
+}
+.bar{
+    background-color: rgb(92, 92, 92);
+    position: relative;
+    top: -25%;
+    width: 100%;
+    height: 1rem;
+    z-index: -10;
+}

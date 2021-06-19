@@ -39,6 +39,11 @@
 				$profile = new profileController();
 				echo $profile -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/trackpage':
+				require_once "controller/trackpagecontroller.php";
+				$profile = new trackpageController();
+				echo $profile -> viewAll();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;
