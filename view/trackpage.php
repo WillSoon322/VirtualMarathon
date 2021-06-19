@@ -28,7 +28,7 @@
         </div>
 
         <div class="bottom_part">
-            
+            <div class="bottom_title"></div>
         </div>
     </div>
 </body>
