@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 6%;
+    background-color: rgb(230, 230, 230);
+    opacity: 0.75;
+    display: flex;
+    z-index: 2;
+}
+
+.logo{
+    /* background-color: blueviolet; */
+    width: 25%;
+}
+
+nav{
+    width: 75%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav_link{
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+    text-decoration: none;
+    font-size: x-large;
+
+    color: rgb(43, 43, 43);
+}
+        .content{
+            position: absolute;
+            /* background-color: yellow; */
+            top: 6%;
+            margin-left: 20%;
+            width: 50%;
+        }
+        h3{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+
+
+        <nav>
+            <a class="nav_link" href="tracks"><b>Tracks</b></a>
+            <a class="nav_link" href="#"><b>Log Out</b></a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h3>About the Website</h3>
+        <p>Virtual Marathon adalah website yang telah kami buat dengan tujuan untuk memberi keuntungan bagi para penggemar lari marathon. Dengan adanya website kami menyediakan
+            kesempatan para pelari untuk mendaftar untuk marathon manapun kapan pun. Website ini bisa diakses kapanpun dengan adanya website ini kami ingin memberi kemudahan dan berbagai
+            pilihan track marathon yang orang bisa jalani dan ikut partisipasi. Dengan sistem pembayaran yang mudah
+        </p>
+        <img src="orang.png" alt="">
+        <p>Inilah para pendiri kami, dari yang kiri adalah Wilson Nathanael. Lalu yang tengah Reynaldi Lukas dan yang kanan adalah Dionisius Yoga. Website ini dibuat sebagai tugas akhir salah satu mata kuliah mereka</p>
+
+        <h3>Visi</h3>
+        <p>Website Virtual Marathon kami akan menjadi media utama dalam kegiatan marathon</p>
+        <h3>Misi</h3>
+        <p>1. Memberi berbagai event yang menyediakan rute marathon unik dalam waktu terbatas untuk meingkatkan</p>
+        <p>2. mengimplementasikan penggunaan GPS untuk mempermudah dalam perhitungan jarak lari yang telah ditempuh</p>
+        <p>3. melakukan kerja sama dengan berbagai yayasan untuk melakukan event marathon untuk donasi untuk amal</p>
+    </div>
+</body>
+</html>
