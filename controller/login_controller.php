@@ -1,7 +1,10 @@
 <?php
  require_once "controller/services/mysqlDB.php";
  require_once "view/view2.php";
-
+ require_once "model/peserta.php";
+ require_once "model/user.php";
+ require_once "model/track.php";
+ require_once "model/peserta.php";
     class LoginController{
         
         protected $db;
@@ -15,10 +18,64 @@
     
         }
 
+        public function logIn(){
+            $username=$_POST["name"];
+            $pass=$_POST["password"];
+            $remember=$_POST["remember"];
+            $query = "SELECT *
+            FROM user u  INNER JOIN peserta p ON u.idU=p.idU INNER JOIN aktivitas a ON u.idU=a.idP INNER JOIN track t ON a.idT=t.idT 
+            WHERE username='$username'";
+
+            $query_result = $this->db->executeSelectQuery($query);
+            $result = [];
+            $tracks=[];
+            $peserta=[];
+            $progress=[];
+            
+            foreach($query_result as $key => $value){
+                $result[] = new User($value["idU"],$value["username"],$value["pass"],$value["profile_picture"]);
+                $peserta[] = new Peserta($value["idU"],$value["no_telepon"],$value["email"],$value["nama"],$value["Gender"],$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"],$value["idA"]);
+                $tracks[] = new Track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"],$value["tema"],$value["region"]);
+            }
+
+            if(count($result)==0){
+                echo "username no exist la";
+                var_dump($result);
+                // echo '<script> 
+                //         alert ("Username Does Not Exist")
+                //      </script>';
+                //      header("location: login");
+            }
+            else{
+                if($pass!=$result[0]->getPassword()){
+                    echo "password no exist la";
+                    //VALIDATION MASIH GABENER
+                    // header("location: login");
+                    // echo '<script> 
+                    //     alert ("Wrong Password")
+                    // </script>';
+                }
+                else{
+                    session_start();
+                    $_SESSION["username"] = $result[0]->getUsername();
+                    $_SESSION["nama"] = $peserta[0]->getNama();
+                    $_SESSION["gambar"] = $result[0]->getGambar();
+                    $_SESSION["usia"] = $peserta[0]->getUsia();
+                    $_SESSION["Gender"] = $peserta[0]->getGender();
+                    $_SESSION["Alamat"]=$peserta[0]->getAlamat();
+                    $_SESSION["tracks"]=$tracks;
+                    header("location: profile");
+                }
+            }
+
+            return $result;
+
+        }
        
         }
     
-   
+        // $value["idU"],$value["no_telepon"],$value["email"],$value["jarak"]
+        // ,$value["tema"],$value["region"]
 
     
 ?>

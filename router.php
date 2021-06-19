@@ -64,6 +64,11 @@
 				echo $pemilikCtrl -> addAdmin();//echo hasil FINAL
 				header('location: addAdmin');
 				break;
+			case $baseURL.'/login':
+				require_once "controller/login_controller.php";
+				$loginCtrl = new LoginController();
+				echo $loginCtrl -> logIn();//echo hasil FINAL
+			   break;
 			default:
 				echo "404 not found";
 				break;

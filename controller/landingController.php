@@ -17,9 +17,14 @@
     
         }
         public function getAllTracks(){
+<<<<<<< Updated upstream
             $query = " SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
                         FROM track t
 
+=======
+            $query = "SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
+            FROM track t
+>>>>>>> Stashed changes
                      ";
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
@@ -36,3 +41,9 @@
     
        
 ?>
+
+<!-- SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
+                        FROM track t -->
+
+<!-- SELECT TOP 3 tema, count (idP) as 'pengikut' from Track t inner join Aktivitas a
+                        ON t.idT=a.idT GROUP BY t.tema ORDER BY 'pengikut' DESC -->

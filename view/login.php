@@ -22,20 +22,23 @@
     <div class="login_box">
         <div class="login_input_box">
             <img src="view/assets/login_small.png" alt="gambar">
+            <form action="login" method="post">
+                <input class="text_input" type="text" name="name">
+                <label class="text_label" for="name">Username : </label>
 
-            <input class="text_input" type="text">
-            <label class="text_label" for="name">Username : </label>
+                <input class="text_input" type="password" name="password">
+                <label class="text_label" for="Password">Password : </label>
 
-            <input class="text_input" type="password">
-            <label class="text_label" for="Password">Password : </label>
-
-            <label id="remember_label" for="remember">Remember Me</label>
-            <input id="remember_check" type="checkbox" name="remember">
+                <label id="remember_label" for="remember">Remember Me</label>
+                <input id="remember_check" type="checkbox" name="remember">
+                <div class="button_box">
+            <button type="submit">Log In</button>
+            <button href="signup">Sign Up</button>
         </div>
-        <div class="button_box">
-            <button>Log In</button>
-            <button>Sign Up</button>
+            </form>
+            
         </div>
+        
     </div>
 </body>
 

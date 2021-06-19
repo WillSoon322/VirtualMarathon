@@ -3,7 +3,12 @@
     <title>Document</title>
 </head>
 
+
 <body>
+    <?php
+        session_start();
+        
+    ?>
     <header>
         <div class="logo">
             <h1>LOGO</h1>
@@ -19,16 +24,47 @@
     <div class="content">
         <div class="user_info">
             <div class="user_info_picture">
-
+            <?php
+                    if(isset($_SESSION["gambar"])){
+                        $user=$_SESSION["gambar"];
+                        echo  '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($user).'"/>';
+                    }
+                ?>
             </div>
             <div class="info_1">
-
+                <?php
+                    if(isset($_SESSION["username"])){
+                        $user=$_SESSION["username"];
+                        echo "<h2> '$user' </h2>";
+                    }
+                ?>
             </div>
             <hr>
             <br>
-            <div class="detil_info info_umur"></div>
-            <div class="detil_info info_gender"></div>
-            <div class="detil_info info_alamat"></div>
+            <div class="detil_info info_umur">
+            <?php
+                    if(isset($_SESSION["usia"])){
+                        $user=$_SESSION["usia"];
+                        echo "<h2> '$user' </h2>";
+                    }
+                ?>
+            </div>
+            <div class="detil_info info_gender">
+            <?php
+                    if(isset($_SESSION["Gender"])){
+                        $user=$_SESSION["Gender"];
+                        echo "<h2> '$user' </h2>";
+                    }
+                ?>
+            </div>
+            <div class="detil_info info_alamat">
+            <?php
+                    if(isset($_SESSION["Alamat"])){
+                        $user=$_SESSION["Alamat"];
+                        echo "<h2> '$user' </h2>";
+                    }
+                ?>
+            </div>
         </div>
         <div class="current_track">
             <div class="go_button">

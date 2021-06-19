@@ -1,6 +1,6 @@
 <?php
     class Track{
-        protected $idT, $harga, $gambar, $jarak, $tema, $region;
+        protected $idT, $harga, $gambar, $jarak, $tema, $region,$pengikut;
 
         public function __construct( $idT, $harga, $gambar, $jarak, $tema, $region)
         {
@@ -10,6 +10,7 @@
             $this->jarak = $jarak;
             $this->tema = $tema;
             $this->region = $region;
+           
         }
 
         public function getIdT(){
@@ -31,6 +32,9 @@
         }
         public function getRegion(){
             return $this->region;
+        }
+        public function getPengikut(){
+            return $this->pengikut;
         }
 
     }
