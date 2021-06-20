@@ -59,7 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 			$profile = new buyTrackController();
 			echo $profile->viewAll(); //echo hasil FINAL
 			break;
-		default:
+		case $baseURL . '/topup':
+			require_once "controller/topupController.php";
+			$profile = new topupController();
+			echo $profile->viewAll(); //echo hasil FINAL
+			break;
+			default:
 			echo "404 not found";
 			break;
 	}
