@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="view/style/aboutus.css">
+    <link rel="stylesheet" href="style/aboutus.css">
     <title>Virtual Marathon About Us</title>
 </head>
 <body>
