@@ -17,15 +17,8 @@
     
         }
         public function getAllTracks(){
-<<<<<<< Updated upstream
             $query = " SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
-                        FROM track t
-
-=======
-            $query = "SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
-            FROM track t
->>>>>>> Stashed changes
-                     ";
+                        FROM track t";
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
             foreach($query_result as $key => $value){
