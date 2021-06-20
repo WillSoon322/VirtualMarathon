@@ -4,7 +4,7 @@
     class logoutController{
         
        function logout(){
-            session_destory();
+            session_destroy();
        }
 
        
