@@ -3,7 +3,11 @@
     <link rel="stylesheet" href="view/style/trackpage.css">
     <title>Document</title>
 </head>
-
+<?php
+//session_start();
+//var_dump($result);
+//var_dump($result);
+?>
 <body>
     <header>
         <div class="logo">
@@ -19,8 +23,8 @@
 
     <div class="content">
         <div class="top_part">
-            <div class="flag"><img src="view/assets/flag/japan.gif" alt=""></div>
-            <img class="main_image" src="view/assets/current_track/fuji.jpg" alt="track">
+        <!-- <div class="flag"><img src="view/assets/flag/japan.gif" alt=""></div> -->
+        <?php echo '<img class="main_image" src="data:image/jpg;base64,' . base64_encode($result[0]->getGambar()) . '"/>' ?>
             <div class="main_atribute">
                 <div class="main_badge"><img src="view/assets/badge/mountain1.png" alt="badge"></div>
                 <div class="main_medal"><img src="view/assets/medal/japan.png" alt="medal"></div>
@@ -29,8 +33,13 @@
         </div>
 
         <div class="bottom_part">
+            <div class="bottom_title"></div>
             <div class="bottom_title">
-                <h1>Mt. Fuji - JAPAN</h1>
+                <?php
+                    echo '<h1>'.$result[0]->getTema().' - '.$result[0]->getRegion().'</h1>';
+                    
+                ?>
+               
             </div>
             <br>
             <hr>
@@ -44,7 +53,27 @@
                 <div>SOME OTHER RANDOM STUFF</div>
 
                 <div class="get_track">
-                    GET THIS TRACK NOW
+                     <?php
+                        if(isset($_SESSION["loginStatus"])){
+                            if($_SESSION["loginStatus"]==true){
+                                if(isset($_SESSION["pemilikTrack"])){
+                                    if($_SESSION["pemilikTrack"]==true){
+                                        echo '<a href="progress">ADD PROGRESS</a>';
+                                        //echo "ADD PROGRESS";
+                                    }
+                                    else{
+                                        echo '<a href="buyTrack">GET THIS TRACK</a>';
+                                        //echo "GET THIS TRACK";
+                                    }
+                                }
+                            }
+                        }
+                        else{
+                            echo '<a href="login">LOG IN TO GET THIS TRACK</a>';
+                            //echo "LOG IN TO GET THIS TRACK";
+                        }
+                     ?>
+                    
                 </div>
             </div>
             <div class="bottom_statistic">
@@ -52,4 +81,5 @@
             </div>
         </div>
     </div>
+    
 </body>

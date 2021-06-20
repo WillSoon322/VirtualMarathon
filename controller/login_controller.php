@@ -64,6 +64,8 @@
                     $_SESSION["Gender"] = $peserta[0]->getGender();
                     $_SESSION["Alamat"]=$peserta[0]->getAlamat();
                     $_SESSION["tracks"]=$tracks;
+                    $_SESSION["loginStatus"]=true;
+                    $_SESSION["idU"]=$peserta[0]->getIdU();
                     header("location: profile");
                 }
             }

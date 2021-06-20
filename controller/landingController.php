@@ -17,14 +17,8 @@
     
         }
         public function getAllTracks(){
-<<<<<<< Updated upstream
-            $query = " SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
-                        FROM track t
-
-=======
-            $query = "SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
-            FROM track t
->>>>>>> Stashed changes
+            $query = "SELECT tema, count (idP) as 'pengikut' from Track t inner join Aktivitas a
+            ON t.idT=a.idT GROUP BY t.tema ORDER BY 'pengikut' DESC
                      ";
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
@@ -35,7 +29,12 @@
            
             return $result;
         }
-    
+        public function logOut (){
+           session_start();
+           session_destroy();
+           $result = $this->getAllTracks();
+            return View::createView("landing.php",["result"=>$result]);
+        }
        
         }
     

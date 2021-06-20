@@ -9,6 +9,11 @@
 				$landCtrl = new landingController();
 				echo $landCtrl -> viewAll();//echo hasil FINAL
 			   break;
+			case $baseURL.'/logout':
+				require_once "controller/landingController.php";
+				$landCtrl = new landingController();
+				echo $landCtrl -> logOut();//echo hasil FINAL
+			   break;
 			case $baseURL.'/login':
 				require_once "controller/login_controller.php";
 				$loginCtrl = new LoginController();
@@ -74,7 +79,13 @@
 				$loginCtrl = new LoginController();
 				echo $loginCtrl -> logIn();//echo hasil FINAL
 			   break;
-			default:
+			case $baseURL.'/trackpage':
+				require_once "controller/trackpagecontroller.php";
+				$trackPageCtrl = new trackpageController();
+				echo $trackPageCtrl -> viewAll();//echo hasil FINAL
+				
+				break;
+				default:
 				echo "404 not found";
 				break;
 		}

@@ -1,3 +1,4 @@
+
 <head>
     <link rel="stylesheet" href="view/style/profile.css">
     <title>Document</title>
@@ -17,7 +18,7 @@
 
         <nav>
             <a class="nav_link" href="tracks"><b>Tracks</b></a>
-            <a class="nav_link" href="#"><b>Log Out</b></a>
+            <a class="nav_link" href="logout"><b>Log Out</b></a>
         </nav>
     </header>
 

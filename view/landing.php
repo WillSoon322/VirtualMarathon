@@ -3,6 +3,8 @@
     <title>Virtual Marathon Landing Page</title>
 </head>
 
+
+
 <div class="scroll_container">
 
     <section class="home_left section">
@@ -15,7 +17,6 @@
             </div>
 
 
-<<<<<<< Updated upstream
             <nav>
                 <a class="nav_link" href="tracks"><b>Tracks</b></a>
                 <a class="nav_link" href="login"><b>Log In</b></a>
@@ -42,7 +43,6 @@
 </div>
 
 <script src="view/JS/landingpage.js"></script>
-=======
     < <?php foreach($result as $key => $row) {
                 ?>
 
@@ -54,4 +54,3 @@
             </div>
      <?php } ?>
     <script src="view/JS/landingpage.js"></script>
->>>>>>> Stashed changes
