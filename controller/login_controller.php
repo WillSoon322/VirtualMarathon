@@ -39,7 +39,7 @@
             }
 
             if(count($result)==0){
-                echo "username no exist la";
+                echo "user no exist la";
                 var_dump($result);
                 // echo '<script> 
                 //         alert ("Username Does Not Exist")
