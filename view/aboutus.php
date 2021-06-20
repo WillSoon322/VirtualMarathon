@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="style/aboutus.css">
+    <link rel="stylesheet" href="view/style/aboutus.css">
     <title>Virtual Marathon About Us</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="view/assets/founder1.jpg" alt="Lukas" style="width:100%">
+      <img src="Asset/founders/founder1.jpg" alt="Lukas" style="width:100%">
       <div class="container">
         <h2>Reynaldi Lukas</h2>
         <p>Salah satu pendiri.</p>
@@ -33,7 +33,7 @@
 
   <div class="column">
     <div class="card">
-      <img src="view/assets/founder2.jpg" alt="Wilson" style="width:100%">
+      <img src="Asset/founders/founder2.jpg" alt="Wilson" style="width:100%">
       <div class="container">
         <h2>Wilson Nathanael</h2>
         <p>Salahs satu dari pendiri kami</p>
@@ -45,7 +45,7 @@
   
   <div class="column">
     <div class="card">
-      <img src="view/assets/founder3.jpg" alt="Yoga" style="width:100%">
+      <img src="Asset/founders/founder3.jpg" alt="Yoga" style="width:100%">
       <div class="container">
         <h2>Dionisius Yoga</h2>
         <p>Salah satu dari pendiri kami</p>

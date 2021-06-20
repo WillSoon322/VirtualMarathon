@@ -56,10 +56,12 @@
                      <?php
                         if(isset($_SESSION["loginStatus"])){
                             if($_SESSION["loginStatus"]==true){
+                                //var_dump($_SESSION["pemilikTrack"]);
+                                //var_dump($_POST["tema"]);
                                 if(isset($_SESSION["pemilikTrack"])){
                                     if($_SESSION["pemilikTrack"]==true){
-                                        echo '<a href="progress">ADD PROGRESS</a>';
-                                        //echo "ADD PROGRESS";
+                                        echo "<a href=".'progress'.">ADD PROGRESS</a>";
+                                        $_SESSION["trackDestination"]=$_POST["tema"];
                                     }
                                     else{
                                         echo '<a href="buyTrack">GET THIS TRACK</a>';
@@ -81,5 +83,5 @@
             </div>
         </div>
     </div>
-    
+   
 </body>

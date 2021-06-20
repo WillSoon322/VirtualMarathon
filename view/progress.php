@@ -16,12 +16,22 @@
     <div class="back_button">
         BACK
     </div>
+    <?php
+        //var_dump($result);
+    ?>
     <div class="flex_container">
         <div class="logo">LOGO</div>
-        <div class="your">YOUR PROGRESS IN [TRACK]</div>
-        <div class="progress">74%</div>
+        <?php $tema= $result[0]->getTema() ;?>
+        <div class="your">YOUR PROGRESS IN <?php echo "$tema"; ?></div>
+        <?php $temp= $result[0]->getPersentase() ?>
+        <div class="progress"><?php echo "$temp";?>%</div>
         <div class="progress_bar">BAR</div>
-        <button class="add_progress">WOI GOBLOK INI BUAT NAMBAH PROGRESS</button>
+        <form action="progress" name="progressInput" method="POST">
+            <label for="progressInputText">Progress: </label>
+            <input type="text" name="progressInputText">
+            <button type="submit" class="add_progress">SUBMIT</button>
+        </form>
+        
     </div>
 </body>
 </html>
