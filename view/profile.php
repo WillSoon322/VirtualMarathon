@@ -28,7 +28,7 @@
             <?php
                     if(isset($_SESSION["gambar"])){
                         $user=$_SESSION["gambar"];
-                        echo  '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($user).'"/>';
+                        echo  '<img class="user_info_picture" src="data:image/jpg;base64,'.base64_encode($user).'"/>';
                     }
                 ?>
             </div>

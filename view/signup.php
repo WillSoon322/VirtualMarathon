@@ -10,9 +10,7 @@
 
 
     <nav>
-        <a class="nav_link" href="tracks"><b>Tracks</b></a>
         <a class="nav_link" href="login"><b>Log In</b></a>
-        <a class="nav_link" href="signup"><b>Sign Up</b></a>
     </nav>
 </header>
 <div class="sign_up_right">
