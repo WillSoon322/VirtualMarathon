@@ -49,6 +49,11 @@
 				$profile = new trackpageController();
 				echo $profile -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/progress':
+				require_once "controller/progressController.php";
+				$profile = new progressController();
+				echo $profile -> viewAll();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;
