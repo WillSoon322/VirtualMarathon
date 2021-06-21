@@ -2,22 +2,10 @@
 
 <head>
     <link rel="stylesheet" href="view/style/login.css">
-    <title>Virtual Marathon Login</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>LOGO</h1>
-        </div>
-
-
-        <nav>
-            <a class="nav_link" href="tracks"><b>Tracks</b></a>
-            <a class="nav_link" href="login"><b>Log In</b></a>
-            <a class="nav_link" href="signup"><b>Sign Up</b></a>
-        </nav>
-    </header>
     <img class="back" src="view/assets/login_big.jpg" alt="">
     <div class="login_box">
         <div class="login_input_box">
