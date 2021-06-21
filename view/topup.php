@@ -31,7 +31,7 @@
                     <div class="panel_content">
                         <!-- <div class="vertical_line"></div> -->
                         <div class="method_grid">
-                            <button class="method_item">OVO</button>
+                            <button class="method_item" id="OVO">OVO</button>
                             <button class="method_item">GOPAY</button>
                             <button class="method_item">JENIUS</button>
                             <button class="method_item">BCA</button>
@@ -43,22 +43,24 @@
                             <button class="method_item"></button>
                             <button class="method_item"></button>
                             <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
                         </div>
+
+                        <input class="payment_confirm" type="text" disabled>
+                        <a class="next1" href="#ammount">NEXT</a>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="payment_ammount second">
+        <section class="payment_ammount second" id="ammount">
             <div class="section_panel left">
                 <div class="panel">
                     <div class="panel_title">
                         <form action="confirmation" method="post">
-                        <input type="number" method="post" action="confirmation">
+                            <input type="number" method="post" action="confirmation" class="ammount_input">
+                            <a href="#confirmation">NEXT</a>
                         </form>
                     </div>
-                    <div class="panel_content">
+                    <div class="next2" class="panel_content">
                         <div class="vertical_line"></div>
                     </div>
                 </div>
@@ -67,24 +69,32 @@
                 <img src="view/assets/payment2.png" alt="">
             </div>
         </section>
-        <section class="payment_email third">
+        <section class="payment_email third" id="confirmation">
             <div class="section_img">
                 <img src="view/assets/payment3.png" alt="">
             </div>
             <div class="section_panel right">
                 <div class="panel">
                     <div class="panel_title">
-                        PLEASE ENTER YOUR EMAIL
+                        YOUR ORDER
                     </div>
                     <div class="panel_content">
                         <div class="vertical_line"></div>
-                        
+                        <form action="">
+                            <input type="text" id="confirm_method" disabled>
+
+                            <input type="text" id="confirm_ammount" disabled>
+
+                            <button type="submit">CONFIRM</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
         <section><img style="height: 100vh; width: 100vw;" class="section" src="4.jpg" alt="4"></section>
     </div>
+
+    <script defer src="view/JS/topUp.js"></script>
 </body>
 
 </html>
