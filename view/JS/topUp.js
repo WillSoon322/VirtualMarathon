@@ -14,7 +14,7 @@ function start(){
 
     let next = document.querySelector('.ammount_input')
 
-    next.addEventListener('keyup',function(){
+    next.addEventListener('focusout',function(){
         let confirm_ammount = document.querySelector('#confirm_ammount');
         confirm_ammount.value = next.value
     })

@@ -91,7 +91,20 @@
                 </div>
             </div>
         </section>
-        <section><img style="height: 100vh; width: 100vw;" class="section" src="4.jpg" alt="4"></section>
+        <section class="payment_ammount second" id="ammount">
+            <div class="section_panel left">
+                <div class="panel">
+                    <div class="panel_title">
+                    <form action="">
+                        <input type="file">
+                    </form>
+                    </div>
+                </div>
+            </div>
+            <div class="section_img">
+                <img src="view/assets/payment2.png" alt="">
+            </div>
+        </section>
     </div>
 
     <script defer src="view/JS/topUp.js"></script>
