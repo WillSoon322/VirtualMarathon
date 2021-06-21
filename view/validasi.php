@@ -3,10 +3,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <?php
     //var_dump($result);
     ?>
 <body>
+ 
+
+    <header>
+        navigasi
+    </header>
     <div class="dim_overlay"></div>
     <div class="modal">
         <button class="exit_button"> X </button>
@@ -14,14 +20,11 @@
             <input class="id_top_up" type="text" readonly>
             <button class="request_data">Fetch Data</button>
         </form>
-    </div>
-
-    <header>
-        navigasi
-    </header>
+    </div> 
     
     <div class="content">
         <table>
+        
             <tr>
                 <th>Id Top-Up</th>
                 <th>Nama Peserta</th>
@@ -30,6 +33,7 @@
                 <th>Waktu Pembayaran</th>
                 <th>Status</th>
                 <th>Action</th>
+                <th>gambar</th>
             </tr>
             <?php foreach ($result[0] as $key => $row) {
             ?>
@@ -41,6 +45,7 @@
                 <td><?php echo $row->getTanggal()?></td>
                 <td><?php echo $row->getStatus()?>
                 <td><button class="validate_button">Validate</button></td>
+               <td><div class="overlay_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div></td> 
                 </tr>
             <?php } ?>
             <?php foreach ($result[1] as $key => $row) {
@@ -53,6 +58,7 @@
                 <td><?php echo $row->getTanggal()?></td>
                 <td><?php echo $row->getStatus()?></td>
                 <td><button class="validate_button">Validate</button></td>
+                <td><div class="overlay_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div></td> 
                 </tr>
             <?php } ?>
             <?php foreach ($result[2] as $key => $row) {
@@ -65,6 +71,7 @@
                 <td><?php echo $row->getTanggal()?></td>
                 <td><?php echo $row->getStatus()?></td>
                 <td><button class="validate_button">Validate</button></td>
+                <td><div class="overlay_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div></td> 
                 </tr>
             <?php } ?>
 
@@ -75,3 +82,5 @@
 </body>
 
 </html>
+
+

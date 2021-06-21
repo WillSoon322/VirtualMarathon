@@ -22,3 +22,12 @@ Fetch.addEventListener('click', function () {
     event.preventDefault();
     console.log("dapet data");
 })
+
+/* <div class="dim_overlay"></div>
+    <div class="modal">
+        <button class="exit_button"> X </button>
+        <form action="">
+            <input class="id_top_up" type="text" readonly>
+            <button class="request_data">Fetch Data</button>
+        </form>
+    </div> */
