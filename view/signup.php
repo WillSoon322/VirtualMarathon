@@ -1,18 +1,9 @@
 <head>
     <link rel="stylesheet" href="view/style/signup.css">
-    <title>Virtual Marathon Signup</title>
+    <title>SignUp</title>
 </head>
 
-<header>
-    <div class="logo">
-        <h1>LOGO</h1>
-    </div>
 
-
-    <nav>
-        <a class="nav_link" href="login"><b>Log In</b></a>
-    </nav>
-</header>
 <div class="sign_up_right">
     <img src="view/assets/signup_big.jpg" alt="">
 </div>

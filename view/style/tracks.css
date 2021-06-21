@@ -17,6 +17,7 @@ header{
 .logo{
     background-color: azure;
     height: 10%;
+    width: 100%;
 }
 
 nav{
