@@ -18,6 +18,7 @@ header{
     /* background-color: blueviolet; */
     width: 25%;
     margin: 1px 2px;
+    overflow: hidden;
 }
 
 .logo img{
