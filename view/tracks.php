@@ -38,7 +38,38 @@
                 <br>
                 <label for="">MAX : </label>
                 <input type="text">
+                <br>
+                <label for="searchTrack">Search : </label>
+                <input type="text" name="searchTrack" id="keyword">
+                <button onclick="buttonClick()">Search</button>
             </fieldset>
+            <script>
+                const ajax=new XLMHttpRequest();
+                ajax.onload=function(){
+                    const data=JSON.parse(ajax.responseText);
+                    clearProducts();
+                    displayProducts(data);
+                };
+                const url=getProductsUrl(keyword);
+                ajax.open("GET",url);
+                ajax.send();
+
+                const response=JSON.parse(ajax.responseText);
+                console.log(response);
+
+                function clearProducts() {
+                    const productUl = document.getElementById("products");
+                    productUl.textContent = "";
+                 }
+
+                function displayProducts(data) {
+                    data.data.products.forEach(product => displayProduct(product));
+                }
+
+                function buttonClick() {
+                    getProducts(document.getElementById("keyword").value);
+                }
+            </script>
         </div>
     </header>
 
@@ -91,24 +122,18 @@
 
             <?php foreach ($result as $key => $row) {
             ?>
-            
-           
-             <!-- <a href="trackpage" class="trackForm">  -->
-                
-
                     <div class="grid_track_card" >
                      <form action="trackpage" method="post" class="trackForm" >
                         <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div>
                         <div class="card_price"><?php echo $row->getHarga() . ' Rp' ?></div>
                         <div class="card_distance"><?php echo $row->getJarak() ?></div>
                         <div class="card_name"><?php echo $row->getTema() ?></div>
-
                         <input type="text" value="<?php echo $row->getTema()?>" name="tema">
                      </form>
                     </div>
                 
                
-             <!-- </a>  -->
+            
                
             <?php } ?>
 

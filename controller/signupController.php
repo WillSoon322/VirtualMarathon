@@ -75,6 +75,7 @@
                 $query = "INSERT INTO peserta (idU,no_telepon,email,nama,Gender,Alamat,usia) 
                         VALUES (7,'$phone','$email','$name','$gender','$address','$age')";
                 $this->db->executeNonSelectQuery($query);
+                
                 session_start();
                 $_SESSION["loginStatus"] = true;
                 $_SESSION["username"] = $username;

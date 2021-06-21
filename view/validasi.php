@@ -1,9 +1,11 @@
 <head>
-    <link rel="stylesheet" href="style/validasi.css">
+    <link rel="stylesheet" href="view/style/validasi.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<?php
+    //var_dump($result);
+    ?>
 <body>
     <div class="dim_overlay"></div>
     <div class="modal">
@@ -17,11 +19,10 @@
     <header>
         navigasi
     </header>
-
+    
     <div class="content">
         <table>
             <tr>
-                <th>No</th>
                 <th>Id Top-Up</th>
                 <th>Nama Peserta</th>
                 <th>Metode Pembayaran</th>
@@ -30,91 +31,47 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
+            <?php foreach ($result[0] as $key => $row) {
+            ?>
+                <tr>
+                <td><?php echo $row->getIdTopUp()?></td>
+                <td><?php echo $row->getNama()?></td>
+                <td><?php echo $row->getJenis()?></td>
+                <td><?php echo $row->getNominal()?></td>
+                <td><?php echo $row->getTanggal()?></td>
+                <td><?php echo $row->getStatus()?>
                 <td><button class="validate_button">Validate</button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>2</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
+                </tr>
+            <?php } ?>
+            <?php foreach ($result[1] as $key => $row) {
+            ?>
+                <tr>
+                <td><?php echo $row->getIdTopUp()?></td>
+                <td><?php echo $row->getNama()?></td>
+                <td><?php echo $row->getJenis()?></td>
+                <td><?php echo $row->getNominal()?></td>
+                <td><?php echo $row->getTanggal()?></td>
+                <td><?php echo $row->getStatus()?></td>
                 <td><button class="validate_button">Validate</button></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>3</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
+                </tr>
+            <?php } ?>
+            <?php foreach ($result[2] as $key => $row) {
+            ?>
+                <tr>
+                <td><?php echo $row->getIdTopUp()?></td>
+                <td><?php echo $row->getNama()?></td>
+                <td><?php echo $row->getJenis()?></td>
+                <td><?php echo $row->getNominal()?></td>
+                <td><?php echo $row->getTanggal()?></td>
+                <td><?php echo $row->getStatus()?></td>
                 <td><button class="validate_button">Validate</button></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>4</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
-                <td><button class="validate_button">Validate</button></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
-                <td><button class="validate_button">Validate</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
-                <td><button class="validate_button">Validate</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
-                <td><button class="validate_button">Validate</button></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>Kaneki Ken</td>
-                <td>GOPAY</td>
-                <td>100000</td>
-                <td>12-03-2020 (12:30)</td>
-                <td>Waiting</td>
-                <td><button class="validate_button">Validate</button></td>
-            </tr>
+                </tr>
+            <?php } ?>
 
         </table>
     </div>
 
-    <script defer src="JS/validasi.js"></script>
+    <script defer src="view/JS/validasi.js"></script>
 </body>
 
 </html>

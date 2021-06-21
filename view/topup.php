@@ -29,7 +29,6 @@
                         CHOOSE YOUR PAYMENT METHOD
                     </div>
                     <div class="panel_content">
-                        <!-- <div class="vertical_line"></div> -->
                         <div class="method_grid">
                             <button class="method_item" id="OVO">OVO</button>
                             <button class="method_item">GOPAY</button>
@@ -55,9 +54,7 @@
             <div class="section_panel left">
                 <div class="panel">
                     <div class="panel_title">
-                        <form action="confirmation" method="post">
                             <input type="number" method="post" action="confirmation" class="ammount_input">
-                            <a href="#confirmation">NEXT</a>
                         </form>
                     </div>
                     <div class="next2" class="panel_content">
@@ -80,11 +77,9 @@
                     </div>
                     <div class="panel_content">
                         <div class="vertical_line"></div>
-                        <form action="">
-                            <input type="text" id="confirm_method" disabled>
-
-                            <input type="text" id="confirm_ammount" disabled>
-
+                        <form action="topup" method="POST">
+                            <input type="text" id="confirm_method" name="confirm_method" readonly>
+                            <input type="text" id="confirm_ammount" name="confirm_ammount" readonly>
                             <button type="submit">CONFIRM</button>
                         </form>
                     </div>

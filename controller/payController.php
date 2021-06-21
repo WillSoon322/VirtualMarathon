@@ -28,15 +28,15 @@
             $harga=$result[0]->getHarga();
 
             $saldo=$_SESSION["saldo"];
-            echo $saldo;
-            echo $harga;
-            echo $tema;            
+            //echo $saldo;
+            //echo $harga;
+            //echo $tema;            
             $idU=$_SESSION["idU"];
             $saldoAfter=(int) $saldo-$harga;
             $_SESSION["saldo"]=$saldoAfter;
-            echo $saldoAfter;
-            echo "idT";
-            echo $result[0]->getIdT();
+            //echo $saldoAfter;
+            //echo "idT";
+            //echo $result[0]->getIdT();
 
             $query = "UPDATE peserta ps
             SET ps.saldo = '$saldoAfter'

@@ -49,6 +49,11 @@ $baseURL = '/VirtualMarathon';
 				$profile = new profileController();
 				echo $profile -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/profileAdmin':
+				require_once "controller/profileAdminController.php";
+				$laCtrl = new ProfileAdminController();
+				echo $laCtrl -> viewAll();//echo hasil FINAL
+			break;
 			case $baseURL.'/trackpage':
 				require_once "controller/trackpagecontroller.php";
 				$profile = new trackpageController();
@@ -74,6 +79,16 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/topupController.php";
 				$tCtrl = new TopUpController();
 				echo $tCtrl -> viewAll();//echo hasil FINAL
+			break;
+			case $baseURL.'/validasi':
+				require_once "controller/validasiController.php";
+				$vCtrl = new ValidasiController();
+				echo $vCtrl -> viewAll();//echo hasil FINAL
+			break;
+			case $baseURL.'/loginAdmin':
+				require_once "controller/loginAdminController.php";
+				$laCtrl = new LoginAdminController();
+				echo $laCtrl -> viewAll();//echo hasil FINAL
 			break;
 			default:
 				echo "404 not found";
@@ -113,8 +128,18 @@ $baseURL = '/VirtualMarathon';
 			case $baseURL.'/trackpage':
 				require_once "controller/trackpagecontroller.php";
 				$trackPageCtrl = new trackpageController();
-				echo $trackPageCtrl -> viewAll();//echo hasil FINAL
-				
+				echo $trackPageCtrl -> viewAll();//echo hasil FINAL	
+			break;
+			case $baseURL.'/loginAdmin':
+				require_once "controller/loginAdminController.php";
+				$laCtrl = new LoginAdminController();
+				echo $laCtrl -> loginAdmin();//echo hasil FINAL
+			break;
+			case $baseURL.'/topup':
+				require_once "controller/topupController.php";
+				$trackPageCtrl = new TopUpController();
+				echo $trackPageCtrl -> topUp();//echo hasil FINAL	
+				header("location: profile")	;
 				break;
 				default:
 				echo "404 not found";

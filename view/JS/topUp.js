@@ -1,8 +1,8 @@
-function start(){
+function start() {
     let method = document.querySelector('.method_grid').children;
-    
-    for(let x of method){
-        x.addEventListener('click',function(){
+
+    for (let x of method) {
+        x.addEventListener('click', function () {
             let conf = document.querySelector('.payment_confirm');
             let confinal = document.querySelector('#confirm_method');
 
@@ -14,7 +14,8 @@ function start(){
 
     let next = document.querySelector('.ammount_input')
 
-    next.addEventListener('focusout',function(){
+
+    next.addEventListener('focusout', function () {
         let confirm_ammount = document.querySelector('#confirm_ammount');
         confirm_ammount.value = next.value
     })
