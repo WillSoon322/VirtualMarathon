@@ -31,13 +31,13 @@
                     <div class="panel_content">
                         <!-- <div class="vertical_line"></div> -->
                         <div class="method_grid">
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
+                            <button class="method_item">OVO</button>
+                            <button class="method_item">GOPAY</button>
+                            <button class="method_item">JENIUS</button>
+                            <button class="method_item">BCA</button>
+                            <button class="method_item">BRI</button>
+                            <button class="method_item">MEGA</button>
+                            <button class="method_item">OCBC</button>
                             <button class="method_item"></button>
                             <button class="method_item"></button>
                             <button class="method_item"></button>
@@ -54,7 +54,9 @@
             <div class="section_panel left">
                 <div class="panel">
                     <div class="panel_title">
-                        CHOOSE YOUR TOP-UP AMMOUNT
+                        <form action="confirmation" method="post">
+                        <input type="number" method="post" action="confirmation">
+                        </form>
                     </div>
                     <div class="panel_content">
                         <div class="vertical_line"></div>

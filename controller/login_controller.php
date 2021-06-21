@@ -58,6 +58,7 @@
                 else{
                     session_start();
                     $_SESSION["username"] = $result[0]->getUsername();
+                    $_SESSION["saldo"] = $peserta[0]->getSaldo();
                     $_SESSION["nama"] = $peserta[0]->getNama();
                     $_SESSION["gambar"] = $result[0]->getGambar();
                     $_SESSION["usia"] = $peserta[0]->getUsia();

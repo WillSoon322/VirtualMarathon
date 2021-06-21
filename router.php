@@ -59,6 +59,22 @@ $baseURL = '/VirtualMarathon';
 				$profile = new ProgressController();
 				echo $profile -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/buyTrack':
+				require_once "controller/buyTrackController.php";
+				$bCtrl = new BuyTrackController();
+				echo $bCtrl -> viewAll();//echo hasil FINAL
+			break;
+			case $baseURL.'/payController':
+				require_once "controller/payController.php";
+				$pCtrl = new PayController();
+				echo $pCtrl -> pay();//echo hasil FINAL
+				header("location: tracks");
+			break;
+			case $baseURL.'/topUp':
+				require_once "controller/topupController.php";
+				$tCtrl = new TopUpController();
+				echo $tCtrl -> viewAll();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;

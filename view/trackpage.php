@@ -5,7 +5,7 @@
 </head>
 <?php
 //session_start();
-//var_dump($result);
+//var_dump($_SESSION["saldo"]);
 //var_dump($result);
 ?>
 <body>
@@ -64,6 +64,7 @@
                                         $_SESSION["trackDestination"]=$_POST["tema"];
                                     }
                                     else{
+                                        $_SESSION["trackDestination"]=$_POST["tema"];
                                         echo '<a href="buyTrack">GET THIS TRACK</a>';
                                         //echo "GET THIS TRACK";
                                     }
