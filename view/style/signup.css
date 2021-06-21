@@ -13,7 +13,9 @@ body{
     top: 6em;
     left: 3em;
 
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(255, 255, 255);
+
+    box-shadow:0 20px 75px rgba(0, 0, 0, 0.8); ;
 
     padding-top: 2.5em;
 
@@ -27,6 +29,7 @@ body{
     /* background-color: rgb(255, 255, 255); */
 
     position: absolute;
+    left: 2em;
     
 
     height: 40em;
@@ -34,7 +37,7 @@ body{
 }
 
 .text_input{
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(255, 255, 255);
 
     float: right;
 
@@ -45,14 +48,21 @@ body{
     width: 65%;
     height: 2rem;
 
-    color: white;
+    color: rgb(0, 0, 0);
 
     border: 0;
     border-bottom: 2px solid gray;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
+
+
+
 .text_label{
-    color: gray;
+    color: rgb(2, 2, 2);
     float: right;
     margin-right:1.5rem;
     margin-top: 1rem;

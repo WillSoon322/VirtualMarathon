@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="view/style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
     <script src="view/JS/signup.js"></script>
 </head>
 
@@ -12,7 +13,7 @@
 
 <header>
     <div class="logo">
-        <img src="view/assets/logo_white.png" alt="LOGO">
+        <a href="landing"><img src="view/assets/logo_white_nav.png" alt="LOGO"></a>
     </div>
 
 
