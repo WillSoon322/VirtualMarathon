@@ -56,8 +56,30 @@
 
             return $result;
         }
-       
+
+        function validate(){
+            if(isset($_POST["validate"])){
+                if($_POST["validate"]==true){
+                    $val="Tervalidasi";
+                }
+            }
+            else if (isset($_POST["reject"])){
+                    if($_POST["reject"]==true){
+                    $val="Ditolak";
+                }
+            }
+            else{
+                    echo "error validating";
+             }
+                
+                $idT=$_POST["idT"];
+                $query = "UPDATE transaksi_top_up SET status='$val' WHERE id_top_up='$idT'
+                     ";
+                $query_result = $this->db->executeNonSelectQuery($query);
+            }
         }
+       
+        
     
        
 ?>

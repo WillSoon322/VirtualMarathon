@@ -16,9 +16,13 @@
     <div class="dim_overlay"></div>
     <div class="modal">
         <button class="exit_button"> X </button>
-        <form action="">
-            <input class="id_top_up" type="text" readonly>
-            <button class="request_data">Fetch Data</button>
+        <form action="validasi" method="post">
+            <input class="id_top_up" type="text" name="idT"  readonly >
+            <label for="validate">validate</label>
+            <input type="radio" class="request_data" value="true" name="validate">
+            <label for="validate">reject</label>
+            <input type="radio" class="request_data" value="false" name="validate">
+           <button type="submit">Submit</button>
         </form>
     </div> 
     

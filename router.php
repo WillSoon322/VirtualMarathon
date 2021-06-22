@@ -141,6 +141,12 @@ $baseURL = '/VirtualMarathon';
 				echo $trackPageCtrl -> topUp();//echo hasil FINAL	
 				header("location: profile")	;
 				break;
+			case $baseURL.'/validasi':
+				require_once "controller/validasiController.php";
+				$trackPageCtrl = new ValidasiController();
+				echo $trackPageCtrl -> validate();//echo hasil FINAL	
+				//header("location: validasi")	;
+				break;
 				default:
 				echo "404 not found";
 				break;
