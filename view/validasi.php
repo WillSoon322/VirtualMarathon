@@ -18,10 +18,10 @@
         <button class="exit_button"> X </button>
         <form action="validasi" method="post">
             <input class="id_top_up" type="text" name="idT" >
-            <label for="validate">validate</label>
-            <input type="radio" class="" value="true" name="validate">
-            <label for="validate">reject</label>
-            <input type="radio" class="" value="false" name="validate">
+            <label for="validation">validate</label>
+            <input type="radio" class="" value="true" name="validation">
+            <label for="validation">reject</label>
+            <input type="radio" class="" value="false" name="validation">
            <button type="submit">Submit</button>
         </form>
     </div> 

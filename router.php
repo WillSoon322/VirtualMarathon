@@ -129,7 +129,7 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/progressController.php";
 				$progCtrl = new ProgressController();
 				echo $progCtrl -> addProgress();//echo hasil FINAL
-				header("location: progress");
+				header("location: profile");
 			case $baseURL.'/trackpage':
 				require_once "controller/trackpagecontroller.php";
 				$trackPageCtrl = new trackpageController();
@@ -150,7 +150,7 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/validasiController.php";
 				$trackPageCtrl = new ValidasiController();
 				echo $trackPageCtrl -> validate();//echo hasil FINAL	
-				//header("location: validasi")	;
+				header("location: validasi");
 				break;
 				default:
 				echo "404 not found";

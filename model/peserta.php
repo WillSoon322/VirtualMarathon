@@ -2,7 +2,7 @@
     class Peserta{
         protected $idU,  $no_telepon, $email, $nama, $Gender,$kota, $Alamat,$usia,$saldo,$idA;
 
-        public function __construct( $idU, $no_telepon, $email, $nama, $Gender,$kota, $Alamat,$usia,$saldo,$idA)
+        public function __construct( $idU, $no_telepon, $email, $nama, $Gender,$kota, $Alamat,$usia,$saldo)
         {
             $this->idU = $idU;
             $this->no_telepon = $no_telepon;
@@ -13,7 +13,7 @@
             $this->Alamat = $Alamat;
             $this->usia = $usia;
             $this->saldo = $saldo;
-            $this->idA = $idA;
+            
         }
 
         public function getIdU(){
@@ -45,9 +45,7 @@
         public function getUsia(){
             return $this->usia;
         }
-        public function getIdA(){
-            return $this->idA;
-        }
+        
 
     }
 ?>

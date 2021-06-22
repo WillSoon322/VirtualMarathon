@@ -23,7 +23,7 @@
             $pass=$_POST["password"];
             $remember=$_POST["remember"];
             $query = "SELECT *
-            FROM user u  INNER JOIN peserta p ON u.idU=p.idU INNER JOIN aktivitas a ON u.idU=a.idP INNER JOIN track t ON a.idT=t.idT 
+            FROM user u  INNER JOIN peserta p ON u.idU=p.idU INNER JOIN progress a ON u.idU=a.idU INNER JOIN track t ON a.idT=t.idT 
             WHERE username='$username'";
 
             $query_result = $this->db->executeSelectQuery($query);
@@ -34,8 +34,8 @@
             
             foreach($query_result as $key => $value){
                 $result[] = new User($value["idU"],$value["username"],$value["pass"],$value["profile_picture"]);
-                $peserta[] = new Peserta($value["idU"],$value["no_telepon"],$value["email"],$value["nama"],$value["Gender"],$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"],$value["idA"]);
-                $tracks[] = new Track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"],$value["tema"],$value["region"]);
+                $peserta[] = new Peserta($value["idU"],$value["no_telepon"],$value["email"],$value["nama"],$value["Gender"],$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"]);
+                $tracks[] = new Track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"],$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
             }
 
             if(count($result)==0){

@@ -32,10 +32,10 @@
             $peserta=[];
             foreach($query_result as $key => $value){
                 $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
-                ,$value["tema"],$value["region"]);
+                ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
 
                 $peserta[] = new Peserta($value["idU"],$value["no_telepon"],$value["email"],$value["nama"],$value["Gender"]
-                ,$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"],$value["idA"]);
+                ,$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"]);
                 if(isset($_SESSION["idU"])){
                 if($peserta[$key]->getIdU()==$_SESSION["idU"]){
                     $bolAdaTrack=true;

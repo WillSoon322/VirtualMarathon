@@ -2,7 +2,7 @@
     class TopUp{
         protected $id_top_up, $saldo_awal,$saldo_akhir,$nominal,$tanggal,$status, $gambar_bukti,$idP,$jenis;
 
-        public function __construct($id_top_up, $saldo_awal,$saldo_akhir,$nominal,$tanggal,$status, $gambar_bukti,$idP,$jenis,$nama)
+        public function __construct($id_top_up, $saldo_awal,$saldo_akhir,$nominal,$tanggal,$status, $gambar_bukti,$idP,$jenis,$nama,$idA)
         {
            $this->id_top_up=$id_top_up;
            $this->saldo_awal=$saldo_awal;
@@ -14,6 +14,7 @@
            $this->idP=$idP;
            $this->jenis=$jenis;
             $this->nama=$nama;
+            $this->idA=$idA;
         }
 
         public function getIdTopUp(){
@@ -54,6 +55,10 @@
 
         public function getJenis(){
             return $this->jenis;
+        }
+
+        public function getIdA(){
+            return $this->idA;
         }
     }
 ?>

@@ -24,7 +24,7 @@
             $result = [];
             foreach($query_result as $key => $value){
                 $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
-                ,$value["tema"],$value["region"]);
+                ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
             }
            
             return $result;

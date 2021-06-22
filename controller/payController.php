@@ -21,10 +21,10 @@
             $result = [];
             foreach($query_result as $key => $value){
                 $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
-                ,$value["tema"],$value["region"]);
+                ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
             }
             $idT=$result[0]->getIdT();
-            $jarak=$result[0]->getIdT();
+            $jarak=$result[0]->getJarak();
             $harga=$result[0]->getHarga();
 
             $saldo=$_SESSION["saldo"];
@@ -42,11 +42,18 @@
             SET ps.saldo = '$saldoAfter'
             WHERE ps.idU='$idU' ";
 
-            $query_result = $this->db->executeSelectQuery($query);
+            $query_result = $this->db->executeNonSelectQuery($query);
             
             $query = "INSERT INTO progress  VALUES ('$idU','$idT',0,'$jarak',0)";
 
-            $query_result = $this->db->executeSelectQuery($query);
+            $query_result = $this->db->executeNonSelectQuery($query);
+
+            $tgl=date("Y-m-d");
+
+            $query="INSERT INTO transaksi_pembayaran 
+                    VALUES (NULL,'$saldo','$saldoAfter','$tema','$tgl','$idU')
+            ";
+            $query_result = $this->db->executeNonSelectQuery($query);
         }
        
         }

@@ -54,7 +54,7 @@ session_start();
                SET p.persentase = '$persentase', p.jarak_total = '$jarak_total', p.sisa_jarak='$jarakSisa'
                WHERE p.idU='$idU' AND p.idT ='$idT'
                ";
-               $query_result = $this->db->executeSelectQuery($query);
+               $query_result = $this->db->executeNonSelectQuery($query);
            }
            else{
                echo "error, progress not found";

@@ -4,6 +4,7 @@
  require_once "model/topUp.php";
  require_once "model/peserta.php";
 
+ session_start();
     class ValidasiController{
         
         protected $db;
@@ -38,7 +39,7 @@
             $temp=[];//tervalidasi
             foreach($query_result as $key => $value){
                  $temp[] = new TopUp($value["id_top_up"],$value["saldo_awal"],$value["saldo_akhir"],$value["nominal"]
-                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"]);
+                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);
             }
             $result[1]=$temp;
 
@@ -58,22 +59,30 @@
         }
 
         function validate(){
-            if(isset($_POST["validate"])){
-                if($_POST["validate"]==true){
+            if(isset($_SESSION["idA"])){
+                $idA=$_SESSION["idA"];
+            }
+            else{
+                echo "error no admin detected";
+            }
+             //echo $_POST["validation"];
+            // echo $_POST["idT"];
+            if(isset($_POST["validation"])){
+                if($_POST["validation"]=="true"){
                     $val="Tervalidasi";
                 }
-            }
-            else if (isset($_POST["reject"])){
-                    if($_POST["reject"]==true){
+                else {
                     $val="Ditolak";
                 }
             }
             else{
                     echo "error validating";
              }
-                
-                $idT=$_POST["idT"];
-                $query = "UPDATE transaksi_top_up SET status='$val' WHERE id_top_up='$idT'
+             echo $val;
+                if(isset($_POST["idT"])){
+                    $idT=$_POST["idT"];
+                }
+                $query = "UPDATE transaksi_top_up t SET status ='$val', idA='$idA' WHERE t.id_top_up='$idT'
                      ";
                 $query_result = $this->db->executeNonSelectQuery($query);
             }

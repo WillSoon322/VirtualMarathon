@@ -2,7 +2,7 @@
     class Track{
         protected $idT, $harga, $gambar, $jarak, $tema, $region,$pengikut;
 
-        public function __construct( $idT, $harga, $gambar, $jarak, $tema, $region)
+        public function __construct( $idT, $harga, $gambar, $jarak, $tema, $region,$gambarMedal, $gambarBadge)
         {
             $this->idT = $idT;
             $this->harga = $harga;
@@ -10,7 +10,8 @@
             $this->jarak = $jarak;
             $this->tema = $tema;
             $this->region = $region;
-           
+            $this->gambarMedal = $gambarMedal;
+            $this->gambarBadge = $gambarBadge;
         }
 
         public function getIdT(){
@@ -35,6 +36,12 @@
         }
         public function getPengikut(){
             return $this->pengikut;
+        }
+        public function getGambarMedal(){
+            return $this->gambarMedal;
+        }
+        public function getGambarBadge(){
+            return $this->gambarBadge;
         }
 
     }

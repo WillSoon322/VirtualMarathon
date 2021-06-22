@@ -28,15 +28,16 @@
             $saldoAfter=(int) $saldo+$nominal;
             $_SESSION["saldo"]=$saldoAfter;
             $date=date("y/m/d");
+            
             $query = "UPDATE peserta ps
             SET ps.saldo = '$saldoAfter'
             WHERE ps.idU='$idU' ";
 
-            $query_result = $this->db->executeSelectQuery($query);
+            $query_result = $this->db->executeNonSelectQuery($query);
             
-            $query = "INSERT INTO transaksi_top_up  VALUES (NULL,'$saldo','$saldoAfter','$nominal','$date','Belum Tervalidasi',NULL,'$idU','$method')";
+            $query = "INSERT INTO transaksi_top_up  VALUES (NULL,'$saldo','$saldoAfter','$nominal','$date','Belum Tervalidasi',NULL,'$idU','$method',NULL)";
 
-            $query_result = $this->db->executeSelectQuery($query);
+            $query_result = $this->db->executeNonSelectQuery($query);
         }
 
         }
