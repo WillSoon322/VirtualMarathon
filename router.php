@@ -90,6 +90,11 @@ $baseURL = '/VirtualMarathon';
 				$laCtrl = new LoginAdminController();
 				echo $laCtrl -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/statusPeserta':
+				require_once "controller/statusPesertaController.php";
+				$stsPeserta = new statusPesertaController();
+				echo $stsPeserta -> viewAll();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;
