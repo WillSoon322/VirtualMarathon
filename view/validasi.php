@@ -17,11 +17,11 @@
     <div class="modal">
         <button class="exit_button"> X </button>
         <form action="validasi" method="post">
-            <input class="id_top_up" type="text" name="idT"  readonly >
+            <input class="id_top_up" type="text" name="idT" >
             <label for="validate">validate</label>
-            <input type="radio" class="request_data" value="true" name="validate">
+            <input type="radio" class="" value="true" name="validate">
             <label for="validate">reject</label>
-            <input type="radio" class="request_data" value="false" name="validate">
+            <input type="radio" class="" value="false" name="validate">
            <button type="submit">Submit</button>
         </form>
     </div> 
