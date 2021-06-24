@@ -24,6 +24,7 @@
         <a class="nav_link" href="profile" id="Profile_btn"><b>Profile</b></a>
         <a class="nav_link" href="logout" id="Logout_btn"><b>Logout</b></a>
         <a class="nav_link" href="topUp" id="Wallet_btn"><b>Wallet</b></a>
+        <!-- <a class="nav_link" href="logoutAdmin" id="Logout_Admin"><b>Logout</b></a> -->
     </nav>
 </header>
         

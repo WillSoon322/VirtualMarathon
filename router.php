@@ -29,9 +29,9 @@ $baseURL = '/VirtualMarathon';
 				$signupCtrl = new SignupController();
 				echo $signupCtrl -> viewAll();//echo hasil FINAL
 			   break;
-			case $baseURL.'/pemilik':
-				require_once "controller/pemilikController.php";
-				$pemilikCtrl = new PemilikController();
+			case $baseURL.'/addTrack':
+				require_once "controller/addTrackController.php";
+				$pemilikCtrl = new AddTrackController();
 				echo $pemilikCtrl -> viewAll();//echo hasil FINAL
 			break;
 			case $baseURL.'/addAdmin':
@@ -53,6 +53,11 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/profileAdminController.php";
 				$laCtrl = new ProfileAdminController();
 				echo $laCtrl -> viewAll();//echo hasil FINAL
+			break;
+			case $baseURL.'/profilePemilik':
+				require_once "controller/profilePemilikController.php";
+				$ppCtrl = new ProfilePemilikController();
+				echo $ppCtrl -> viewAll();//echo hasil FINAL
 			break;
 			case $baseURL.'/trackpage':
 				require_once "controller/trackpagecontroller.php";
@@ -90,6 +95,11 @@ $baseURL = '/VirtualMarathon';
 				$laCtrl = new LoginAdminController();
 				echo $laCtrl -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/loginPemilik':
+				require_once "controller/loginPemilikController.php";
+				$lpCtrl = new LoginPemilikController();
+				echo $lpCtrl -> viewAll();//echo hasil FINAL
+			break;
 			case $baseURL.'/statusPeserta':
 				require_once "controller/statusPesertaController.php";
 				$stsPeserta = new statusPesertaController();
@@ -113,11 +123,11 @@ $baseURL = '/VirtualMarathon';
 				echo $signupCtrl -> addUser();//echo hasil FINAL
 				header('location: landing');
 			   break;
-			 case $baseURL.'/pemilik':
-				require_once "controller/pemilikController.php";
-				$signupCtrl = new PemilikController();
+			 case $baseURL.'/addTrack':
+				require_once "controller/addTrackController.php";
+				$signupCtrl = new AddTrackController();
 				echo $signupCtrl -> addTrack();//echo hasil FINAL
-				header('location: pemilik');
+				header('location: addTrack');
 				break;
 			case $baseURL.'/addAdmin':
 				require_once "controller/addAdminController.php";
@@ -144,6 +154,12 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/loginAdminController.php";
 				$laCtrl = new LoginAdminController();
 				echo $laCtrl -> loginAdmin();//echo hasil FINAL
+			break;
+			case $baseURL.'/loginPemilik':
+				require_once "controller/loginPemilikController.php";
+				$laCtrl = new LoginPemilikController();
+				echo $laCtrl -> loginPemilik();//echo hasil FINAL
+				//header("location: profilePemilik");
 			break;
 			case $baseURL.'/topup':
 				require_once "controller/topupController.php";

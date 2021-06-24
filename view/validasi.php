@@ -52,6 +52,7 @@
                <td><div class="overlay_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div></td> 
                 </tr>
             <?php } ?>
+           
             <?php foreach ($result[1] as $key => $row) {
             ?>
                 <tr>
@@ -65,6 +66,7 @@
                 <td><div class="overlay_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div></td> 
                 </tr>
             <?php } ?>
+            
             <?php foreach ($result[2] as $key => $row) {
             ?>
                 <tr>
