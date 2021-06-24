@@ -27,7 +27,7 @@
             $temp=[];//belum tervalidasi
             foreach($query_result as $key => $value){
                 $temp[] = new TopUp($value["id_top_up"],$value["saldo_awal"],$value["saldo_akhir"],$value["nominal"]
-                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"]);
+                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);
             }
            $result[0]=$temp;
 
@@ -39,7 +39,7 @@
             $temp=[];//tervalidasi
             foreach($query_result as $key => $value){
                  $temp[] = new TopUp($value["id_top_up"],$value["saldo_awal"],$value["saldo_akhir"],$value["nominal"]
-                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);
+                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);//NULL karena di kasuss ini idA ga butuh
             }
             $result[1]=$temp;
 
@@ -51,7 +51,7 @@
              $temp=[];//ditolak
              foreach($query_result as $key => $value){
                   $temp[] = new TopUp($value["id_top_up"],$value["saldo_awal"],$value["saldo_akhir"],$value["nominal"]
-                 ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"]);
+                 ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);//NULL karena di kasuss ini idA ga butuh
              }
              $result[2]=$temp;
 

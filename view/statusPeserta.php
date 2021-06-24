@@ -10,8 +10,10 @@
             <div class="part_overlay medali_overlay">1</div>
             <div class="part_modal medali_modal">
                 <div class="exit1">X</div>
-                <form action="">
-                    <input type="text" class="requestMedali" readonly>
+                <form action="statusPeserta" method="POST">
+                    <label for="resi">no resi</label>
+                    <input type="text" class="requestMedali" name="resi">
+                    <button type="submit">Send</button>
                 </form>
             </div>
             <div class="accordion_head">
@@ -20,74 +22,71 @@
             <div class="accordion_content">
                 <table class="styled_table request_table">
                     <tr>
-                        <th>Id</th>
+                        <th>Id Medali</th>
                         <th>Nama</th>
                         <th>Track</th>
                         <th>Alamat</th>
                         <th>Action</th>
                     </tr>
-                    <tr>
+                    <?php foreach ($result[0] as $key => $row) {
+                       
+                    ?>
+                        <tr>
+                            <td><?php echo $row->getId()  ?></td>
+                            <td><?php echo $row->getNama()  ?></td>
+                            <td><?php echo $row->getTema()  ?></td>
+                            <td><?php echo $row->getAlamat()  ?></td>
+                            <td><button>Send</button></td>
+                        </tr>
+                  <?php } ?>
+                    <!-- <tr>
                         <td>3</td>
                         <td>Wilson</td>
                         <td>Mt. Fuji</td>
                         <td>Jalan Terusan Kiaracondong 272</td>
                         <td><button>Send</button></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Wilson</td>
-                        <td>Mt. Fuji</td>
-                        <td>Jalan Terusan Kiaracondong 272</td>
-                        <td><button>Send</button></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Wilson</td>
-                        <td>Mt. Fuji</td>
-                        <td>Jalan Terusan Kiaracondong 272</td>
-                        <td><button>Send</button></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Wilson</td>
-                        <td>Mt. Fuji</td>
-                        <td>Jalan Terusan Kiaracondong 272</td>
-                        <td><button>Send</button></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Wilson</td>
-                        <td>Mt. Fuji</td>
-                        <td>Jalan Terusan Kiaracondong 272</td>
-                        <td><button>Send</button></td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
         </div>
-        <div class="status_medali part">
+         <div class="status_medali part">
             <div class="part_overlay medali2_overlay">1</div>
             <div class="part_modal medali2_modal">
                 <div class="exit2">X</div>
                 <form action="">
                     <input type="text" class="statusMedali" readonly>
                 </form>
-            </div>
+            </div> 
             <div class="accordion_content">
                 <table class="styled_table medali_table">
                     <tr>
-                        <th>Id</th>
+                        <th>Id medali</th>
                         <th>Nama</th>
-                        <th>Track</th>
                         <th>Alamat</th>
-                        <th>Action</th>
+                        <th>Status</th>
+                        <th>No resi</th>
                     </tr>
-                    <tr>
+                    <?php foreach ($result[1] as $key => $row) {
+                        
+                    ?>  
+                    
+                        <tr>
+                            <td><?php echo $row->getId()  ?></td>
+                            <td><?php echo $row->getNama()  ?></td>
+                            <td><?php echo $row->getAlamat()  ?></td>
+                            <td><?php echo $row->getStatus()  ?></td>
+                            <td><?php echo $row->getNoResi()  ?></td>
+                            
+                           
+                        </tr>
+                  <?php } ?>
+                    <!-- <tr>
                         <td>1</td>
                         <td>Wilson</td>
                         <td>Mt. Fuji</td>
                         <td>Jalan Terusan Kiaracondong 272</td>
                         <td><button>Send</button></td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
         </div>
@@ -98,26 +97,36 @@
                 <form action="">
                     <input type="text" class="statusPeserta" readonly>
                 </form>
-            </div>
+            </div> 
             <div class="accordion_head">
                 Status Peserta
             </div>
             <div class="accordion_content">
                 <table class="styled_table peserta_table">
                     <tr>
-                        <th>Id</th>
+                        <th>Id Peserta</th>
                         <th>Nama</th>
                         <th>Track</th>
-                        <th>Alamat</th>
-                        <th>Action</th>
+                        <th>Progress</th>
+                       
                     </tr>
-                    <tr>
+                    <?php foreach ($result[2] as $key => $row) {
+                        ?>  
+                            <tr>
+                                <td><?php echo $row->getId()  ?></td>
+                                <td><?php echo $row->getNama()  ?></td>
+                                <td><?php echo $row->getTema()  ?></td>
+                                <td><?php echo $row->getProgress(). '%'  ?></td>
+                                
+                            </tr>
+                      <?php } ?>
+                    <!-- <tr>
                         <td>1</td>
                         <td>Wilson</td>
                         <td>Mt. Fuji</td>
                         <td>Jalan Terusan Kiaracondong 272</td>
                         <td><button>Send</button></td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
         </div>

@@ -3,6 +3,7 @@ session_start();
  require_once "controller/services/mysqlDB.php";
  require_once "view/view2.php";
  require_once "model/progress.php";
+ require_once "model/track.php";
     class ProgressController{
         
         protected $db;
@@ -36,12 +37,21 @@ session_start();
             $result=$this->getProgress();
            if(isset($_POST["progressInputText"])){
                $jarak_total=(int) $result[0]->getJarakTotal();//JARAK TOTAL=CURRENT JARAK
+               $jarak=(int) $result[0]->getJarak();//JARAK=JARAK TOTAL TRACK 
                $jarak_total=$jarak_total+ (int) $_POST["progressInputText"];
-               
+               if($jarak_total>$jarak){
+                   $jarak_total=$jarak;
+               }
+
               $jarakSisa=(int) $result[0]->getSisaJarak();
                $jarakSisa=($jarakSisa - (int) $_POST["progressInputText"]);
 
-               $jarak=(int) $result[0]->getJarak();//JARAK=JARAK TOTAL TRACK 
+               if($jarakSisa<=0){//belum di test (by 22 june 2021)
+                    $jarakSisa=0;
+                    $this->addMedal();
+               }
+
+               
                 
                $persentase= (float) ($jarak_total/$jarak)*100;
                 
@@ -60,6 +70,26 @@ session_start();
                echo "error, progress not found";
            }
             
+       }
+
+       private function addMedal(){
+           if(isset($_SESSION["trackDestination"])){
+               $tema=$_SESSION["trackDestination"];
+           }
+           if(isset($_SESSION["idU"])){
+            $idU=$_SESSION["idU"];
+        }
+           $query="SELECT idT FROM track where tema='$tema'";
+           $query_result = $this->db->executeSelectQuery($query);
+           foreach($query_result as $key => $value){
+            $result = new track($value["idT"],NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+            }
+            $idT=$result->getIdT();
+            $query = "INSERT INTO medali 
+             VALUES (NULL,'Belum Dikirim','$idT','$idU',NULL)
+           
+            ";
+            $query_result = $this->db->executeNonSelectQuery($query);
        }
         }
     

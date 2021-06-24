@@ -13,15 +13,14 @@
            $this->gambar_bukti=$gambar_bukti;
            $this->idP=$idP;
            $this->jenis=$jenis;
-            $this->nama=$nama;
+           $this->nama=$nama;
             $this->idA=$idA;
         }
 
         public function getIdTopUp(){
             return $this->id_top_up;
         }
-
-        public function getnama(){
+        public function getNama(){
             return $this->nama;
         }
         

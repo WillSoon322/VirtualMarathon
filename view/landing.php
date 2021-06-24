@@ -45,12 +45,8 @@
 <script src="view/JS/landingpage.js"></script>
     < <?php foreach($result as $key => $row) {
                 ?>
-
             <div class="grid_track_card">
                 <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($row->getGambar()).'"/>' ?></div>
-                <div class="card_price"><?php echo $row->getHarga().' Rp' ?></div>
-                <div class="card_distance"><?php echo $row->getJarak() ?></div>
-                <div class="card_name"><?php echo $row->getTema()?></div>
             </div>
      <?php } ?>
     <script src="view/JS/landingpage.js"></script>

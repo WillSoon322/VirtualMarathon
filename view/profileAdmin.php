@@ -43,9 +43,13 @@
             <br><br><br><br>
             <hr>
             <button onclick="validatePage()" id="goToValidate">Validate</button>
+            <button onclick="statusPage()" id="goToStats">Lihat Status Peserta</button>
             <script>
                 function validatePage(){
                     location.href="validasi";
+                }
+                function statusPage(){
+                    location.href="statusPeserta";
                 }
             </script>
         </div>
