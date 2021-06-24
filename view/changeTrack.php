@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="style/ubahtrack.css">
+    <link rel="stylesheet" href="view/style/ubahtrack.css">
     <title>Virtual Marathon Signup</title>
 </head>
 
@@ -16,30 +16,34 @@
         <a class="nav_link" href="signup"><b>Sign Up</b></a>
     </nav>
 </header>
-<img class="back" src="assets/bg.jpg" alt="">
+<img class="back" src="view/assets/bg.jpg" alt="">
 <div class="track_box">
     <div class="ubah_track_box">
-        <form method="POST" action="signup">
+        <form method="POST" action="changeTrack">
+            
             <input class="text_input" type="text" name="track">
-            <label class="text_label" for="email">Nama Track: </label>
+            <label class="text_label" for="track">Nama Track: </label> <br>
 
+           
             <input class="text_input" type="text" name="trackbaru">
-            <label class="text_label" for="username">Track Baru : </label>
-
+            <label class="text_label" for="username">Nama Baru : </label>
+            
+            
             <input class="text_input" type="text" name="harga">
-            <label class="text_label" for="name">Harga Track: </label>
+            <label class="text_label" for="harga">Harga Baru: </label>
+            
 
-            <a class="text_label">Foto Track:</a>
+            <a class="text_label">Foto Track Baru:</a>
             <b class="text_input">
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload Image" name="submit"> <br><br>
             </b>
-            <a class="text_label">Foto Medali:</a>
+            <a class="text_label">Foto Medali Baru:</a>
             <b class="text_input">
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload Image" name="submit"> <br><br>
             </b>
-            <a class="text_label">Foto Badge:</a>
+            <a class="text_label">Foto Badge Baru:</a>
             <b class="text_input">
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload Image" name="submit"> <br><br>
