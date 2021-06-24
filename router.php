@@ -9,6 +9,11 @@ $baseURL = '/VirtualMarathon';
 				$landCtrl = new landingController();
 				echo $landCtrl -> viewAll();//echo hasil FINAL
 			   break;
+			case $baseURL.'/changeTrack':
+				require_once "controller/changeTrackController.php";
+				$landCtrl = new ChangeTrackController();
+				echo $landCtrl -> viewAll();//echo hasil FINAL
+			   break;
 			case $baseURL.'/aboutus':
 				require_once "controller/aboutUsController.php";
 				$abtCtrl = new AboutUsController();
