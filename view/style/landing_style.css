@@ -165,22 +165,40 @@ nav{
     height: 60%;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    flex-direction: row;
 }
 
-.t2nd{
-    background-color: azure;
-    width: 28%;
+.card_image{
+    background-color: aquamarine;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
 }
 
-.t1st{
-    background-color: violet;
-    width: 30%;
+.card_image img{
+    width: 100%;
+    height: 100%;
 }
 
-.t3rd{
-    background-color: teal;
-    width: 28%;
+.mini_about img{
+    position: relative;
+    width: 70%;
+    left: 2em;
+    top: 2em;
+}
+
+.story{
+    position: relative;
+    top: -30%;
+    left: 45%;
+    /* background-color: aliceblue; */
+    box-shadow: inset 0 0 15px white;
+    padding: 20px;
+    width: 50%;
+    height: 30%;
+    color: aliceblue;
+    font-size: x-large;
 }
 
 

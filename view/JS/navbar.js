@@ -20,4 +20,7 @@ else if(page === "Profile"){
     tracks.classList.add("show")
     logout.classList.add("show")
     wallet.classList.add("show")
+}else if(page === "laporan"){
+    console.log("Laporan");
+    wallet.classList.add("show")
 }

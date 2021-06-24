@@ -18,10 +18,8 @@
 
 
             <nav>
-                <a class="nav_link" href="tracks"><b>Tracks</b></a>
                 <a class="nav_link" href="login"><b>Log In</b></a>
                 <a class="nav_link" href="signup"><b>Sign Up</b></a>
-                <a class="nav_link" href="profile"><b>Profile</b></a>
             </nav>
         </header>
         <div class="carousel_container">
@@ -30,23 +28,28 @@
         </div>
     </section>
     <section class="section">
+        <div class="mini_about">
+            <img src="view/assets/logo_white.png" alt="">
+            <div class="story">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium facilis minima inventore sed optio pariatur aut cupiditate asperiores harum consequatur magnam dolore, nobis temporibus at quidem similique nihil non quae.</div>
+        </div>
+    </section>
+    <section class="section">
         <div class="popular_sect">
-            <div class="pop_title"><b> POPULAR TRACK </b></div><hr>
+            <div class="pop_title"><b> POPULAR TRACK </b></div>
+            <hr>
             <div class="pop_tagline">some tagline put here</div>
             <div class="pop_top3">
-                <div class="t2nd">2nd</div>
-                <div class="t1st">1st</div>
-                <div class="t3rd">3rd</div>
+                <?php foreach ($result as $key => $row) {
+                ?>
+                    <div class="grid_track_card">
+                        <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </section>
 </div>
 
 <script src="view/JS/landingpage.js"></script>
-    < <?php foreach($result as $key => $row) {
-                ?>
-            <div class="grid_track_card">
-                <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,'.base64_encode($row->getGambar()).'"/>' ?></div>
-            </div>
-     <?php } ?>
-    <script src="view/JS/landingpage.js"></script>
+< <script src="view/JS/landingpage.js">
+    </script>

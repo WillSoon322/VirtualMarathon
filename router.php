@@ -95,6 +95,11 @@ $baseURL = '/VirtualMarathon';
 				$stsPeserta = new statusPesertaController();
 				echo $stsPeserta -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/laporan':
+				require_once "controller/laporanController.php";
+				$stsPeserta = new LaporanController();
+				echo $stsPeserta -> viewAll();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;
