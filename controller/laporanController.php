@@ -1,6 +1,8 @@
 <?php
  require_once "controller/services/mysqlDB.php";
  require_once "view/view2.php";
+ require_once "model/trackCount.php";
+ require_once "model/count.php";
     class LaporanController{
         
         protected $db;
@@ -75,11 +77,68 @@
              $temp[11]=$query_result[0]["SUM(nominal)"];
              $result[3]=$temp;
             //var_dump($result[3]);
-             return $result;
+
+            //track terpopuler
+            $query="SELECT t.idT,tema,c FROM track t INNER JOIN (SELECT p.idT, count(p.idT) as c FROM progress p GROUP BY p.idT ORDER BY c DESC )as R ON t.idT=R.idT";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp=[];
+            foreach($query_result as $key => $value){
+                $temp[] = new TrackCount($value["idT"],$value["tema"],$value["c"]);
+            }
+            $result[4]=$temp;
+
+            //range umur
+            $temp=[];
+            $query="SELECT count(usia) FROM peserta WHERE usia>=1 AND usia<=10";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[0]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=11 AND usia<=20";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[1]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=21 AND usia<=30";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[2]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=31 AND usia<=40";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[3]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=41 AND usia<=50";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[4]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=51 AND usia<=60";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[5]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=61 AND usia<=70";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[6]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=71 AND usia<=80";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[7]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=81 AND usia<=90";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[8]=new Count($query_result[0]["count(usia)"]);
+            $query="SELECT count(usia) FROM peserta WHERE usia>=91 AND usia<=100";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[9]=new Count($query_result[0]["count(usia)"]);
+    
+            $result[5]=$temp;
+            //var_dump($result[5]);
+
+            $temp=[];//0 buat cowo 1 buat cewe
+            $query="SELECT count(Gender) FROM peserta WHERE Gender='Pria'";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[0]=new Count($query_result[0]["count(Gender)"]);
+            $query="SELECT count(Gender) FROM peserta WHERE Gender='Wanita'";
+            $query_result=$this->db->executeSelectQuery($query);
+            $temp[1]=new Count($query_result[0]["count(Gender)"]);
+            $result[6]=$temp;
+            //var_dump($result[6]);
+            return $result;
+            }
+             
             //GRAPH
             // PAKE $RESULT[1]
         }
-    }
+    
    
 ?>
 <!-- //TOTAL DUIT

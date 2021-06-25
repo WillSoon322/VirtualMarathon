@@ -12,6 +12,7 @@
             $this->region = $region;
             $this->gambarMedal = $gambarMedal;
             $this->gambarBadge = $gambarBadge;
+           
         }
 
         public function getIdT(){
@@ -43,6 +44,6 @@
         public function getGambarBadge(){
             return $this->gambarBadge;
         }
-
+       
     }
 ?>

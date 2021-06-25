@@ -15,7 +15,8 @@
     <div class="content">
         <?php
         $temp = $result[0][3];
-        var_dump(json_encode($temp));
+        //var_dump(json_encode($temp));
+
         ?>
 
         <script>
@@ -90,11 +91,16 @@
                 </div>
                 <div class="tracks_item track2">
                     <i class="fas fa-road"></i>
-                    <p></p>
+                    <p><?php echo $result[0][2] ?></p>
                 </div>
                 <div class="tracks_item">3</div>
                 <div class="tracks_item">4</div>
-                <div class="tracks_item stat2">5</div>
+                <div class="tracks_item stat2">
+                        Track paling diminati: 
+                        <?php $track=$result[0][4][0] ;
+                            echo $track->getTema();
+                        ?>
+                </div>
                 <div class="tracks_item table_user_track">
                     <table>
                         <tr>
@@ -102,28 +108,83 @@
                             <th>Tema Track</th>
                             <th>Jumlah Peserta</th>
                         </tr>
+                    <?php foreach ($result[0][4] as $key => $row) {
+                ?>
+                    <tr>
+                        <!-- //TRACK TERKENAL -->
+                        <td><?php $idT=$row->getIdT(); echo "$idT" ?></td>
+                        <td><?php $tema=$row->getTema();echo "$tema" ?></td>
+                        <td><?php $count=$row->getCount();echo "$count" ?></td>
+                    </tr>    
+                
+               
+            <?php } ?>
                     </table>
                 </div>
                 <div class="tracks_item table_income_track">
                     <table>
                         <tr>
-                            <th>idTrack</th>
-                            <th>Tema Track</th>
-                            <th>Income</th>
+                            <th>Region</th>
+                            <th>Jumlah Peserta</th>
                         </tr>
+                       
                     </table>
                 </div>
             </div>
         </div>
         <div class="page users">
             <div class="user_grid">
-                <div class="user_item age_span">1</div>
+                <div class="user_item age_span">
+                    <table>
+                        <tr>
+                            <th>Range Umur</th>
+                            <th>Jumlah</th>
+                        </tr>
+                        <?php $counter1=1;$counter2=10; foreach ($result[0][5] as $key => $row) {
+                     ?>
+                    <tr>
+                        <!-- RANGE UMUR -->
+                            <td> <?php echo "$counter1".'-'."$counter2";?></td>
+                            <?php $counter1=1+$counter2;$counter2+=10?>
+                            <td> <?php echo $row->getCount();?></td>
+                            
+                    </tr>    
+                
+               
+            <?php } ?>
+                    </table>
+                </div>
                 <div class="user_item user_count">2</div>
-                <div class="user_item male_user">3</div>
-                <div class="user_item female_user">4</div>
-                <div class="user_item">5</div>
-                <div class="user_item">6</div>
-                <div class="user_item">7</div>
+                <div class="user_item male_user">
+                        JUMLAH PRIA:<?php echo $result[0][6][0]->getCount()?>
+                </div>
+                <div class="user_item female_user">
+                        JUMLAH WANITA :<?php echo $result[0][6][1]->getCount()?>
+                </div>
+                <div class="user_item">
+                            <!-- jumlah anak muda -->
+                            jumlah anak muda: <br>
+                            <?php
+                                $anakMuda=0+$result[0][5][0]->getCount()+$result[0][5][1]->getCount();
+                                echo $anakMuda;
+                            ?>
+                </div>
+                <div class="user_item">
+                             <!-- jumlah orang dewasa -->
+                             jumlah orang dewasa: <br>
+                            <?php
+                                $dewasa=0+$result[0][5][2]->getCount()+$result[0][5][3]->getCount()+$result[0][5][4]->getCount()+$result[0][5][5]->getCount();
+                                echo $dewasa;
+                            ?>
+                </div>
+                <div class="user_item">
+                 <!-- jumlah lansia -->
+                    jumlah lansia: <br>
+                            <?php
+                                $lansia=0+$result[0][5][5]->getCount()+$result[0][5][3]->getCount()+$result[0][5][3]->getCount()+$result[0][5][4]->getCount();
+                                echo $lansia;
+                            ?>
+                </div>
             </div>
         </div>
     </div>
