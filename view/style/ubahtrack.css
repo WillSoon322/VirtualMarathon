@@ -79,6 +79,16 @@ nav{
     width: 65%;
 }
 
+select{
+    float: right;
+
+    margin-right: 10%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    width: 65%;
+}
+
 .text_label{
 
     color: gray;

@@ -177,7 +177,12 @@ $baseURL = '/VirtualMarathon';
 				$trackPageCtrl = new ValidasiController();
 				echo $trackPageCtrl -> validate();//echo hasil FINAL	
 				header("location: validasi");
-				break;
+			break;
+			case $baseURL.'/changeTrack':
+				require_once "controller/changeTrackController.php";
+				$landCtrl = new ChangeTrackController();
+				echo $landCtrl -> changeTrack();//echo hasil FINAL
+			break;
 				default:
 				echo "404 not found";
 				break;
