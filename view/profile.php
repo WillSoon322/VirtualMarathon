@@ -13,6 +13,7 @@
         function pindah()
         {
             //session thingy here
+
         }
         ?>
         <div class="user_info">
