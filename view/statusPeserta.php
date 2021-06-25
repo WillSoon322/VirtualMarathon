@@ -57,6 +57,9 @@
                     <input type="text" class="statusMedali" readonly>
                 </form>
             </div> 
+            <div class="accordion_head">
+                Status Medali
+            </div>
             <div class="accordion_content">
                 <table class="styled_table medali_table">
                     <tr>

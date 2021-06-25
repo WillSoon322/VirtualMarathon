@@ -1,7 +1,7 @@
 
 <head>
     <link rel="stylesheet" href="view/style/profile.css">
-    <title>Document</title>
+    <title>Profile_Admin</title>
 </head>
 
 
@@ -10,17 +10,6 @@
         session_start();
         
     ?>
-    <header>
-        <div class="logo">
-            <h1>LOGO</h1>
-        </div>
-
-
-        <nav>
-            <a class="nav_link" href="tracks"><b>Tracks</b></a>
-            <a class="nav_link" href="logout"><b>Log Out</b></a>
-        </nav>
-    </header>
 
     <div class="content">
         <div class="user_info">
