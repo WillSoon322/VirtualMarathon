@@ -12,6 +12,7 @@ header{
     opacity: 1;
     display: flex;
     z-index: 2;
+    box-shadow: 5px 5px 5px;
 }
 
 .logo{

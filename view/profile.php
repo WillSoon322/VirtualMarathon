@@ -1,6 +1,7 @@
 
 <head>
     <link rel="stylesheet" href="view/style/profile.css">
+    <script defer src="view/JS/profile.js"></script>
     <title>Profile</title>
 </head>
 
@@ -74,7 +75,7 @@
             
             <?php foreach ($result[1] as $key => $row) {
                 ?>
-                  <a href="progress" onclick="pindahTrack()" id="<?php echo $row->getTema()?>"><?php echo $row->getTema();?><br></a>
+                  <a href="progress" id="<?php echo $row->getTema()?>"><?php echo $row->getTema();?></a>
                 <?php } ?>
             
             </div>
@@ -99,12 +100,6 @@
                     var s = document.getElementsByTagName('script')[0];
                     s.parentNode.insertBefore(script, s);
                 })();
-                function pindahTrack(){
-                    event.preventDefault();
-                    console.log(this);
-                    let trackDestination=document.querySelector("#")
-                    '<%Session["trackDestination"] = ; %>';
-                }
             </script>
         </div>
 
