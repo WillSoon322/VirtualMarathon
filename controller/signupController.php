@@ -68,12 +68,12 @@
                 $agreement = $this->db->escapeString($agreement);
                 $email= $this->db->escapeString($email);
                 
-                 $query = "INSERT INTO user (idU, pass,username) 
-                         VALUES (7,'$password', '$username')";
+                 $query = "INSERT INTO user 
+                         VALUES (NULL,'$password', '$username',NULL)";
                  $this->db->executeNonSelectQuery($query);
 
-                $query = "INSERT INTO peserta (idU,no_telepon,email,nama,Gender,Alamat,usia) 
-                        VALUES (7,'$phone','$email','$name','$gender','$address','$age')";
+                $query = "INSERT INTO peserta 
+                        VALUES (NULL,'$phone','$email','$name','$gender','$address','$age',0)";
                 $this->db->executeNonSelectQuery($query);
                 
                 session_start();

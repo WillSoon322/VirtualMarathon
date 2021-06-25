@@ -7,7 +7,7 @@
     <script src="view/JS/Chart.bundle.js"></script>
     <script src="view/JS/utils.js"></script>
 </head>
-
+<?php var_dump($result);?>
 <body>
     <div class="content">
         <div class="default">WELCOME</div>
@@ -26,15 +26,34 @@
             <div class="grid_container">
                 <div class="grid_item user">
                     <i class="fas fa-user"></i>
-                    <p>210</p>
+                    <p>
+                        <?php
+                            $totalUser=$result[0][0];
+                            echo"$totalUser";
+                        ?>
+                    </p>
                 </div>
                 <div class="grid_item income">
                     <i class="fas fa-wallet"> TOTAL INCOME</i>
-                    <p>Rp. 3.000.000</p>
+                    <?php
+                        
+                        // $total=0;
+                        // //echo $result[0][1][0][1];
+                        //  foreach ($result[0][1] as $key => $row){
+                        //     // echo $row[0];//dapet count , jadi $row itu udah jadi [0] lagi
+                        //     $count=0+$row[0];
+                        //     $harga=0+$row[1];
+                        //     $total+=$count*$harga;
+                        //  }
+                    ?>
+                     <p>Rp <?php 
+                        $totalIncome=$result[0][1];
+                        echo"$totalIncome";
+                     ?></p> 
                 </div>
                 <div class="grid_item track">
                     <i class="fas fa-road"></i>
-                    <p>3</p>
+                    <p><?php echo $result[0][2]?></p>
                 </div>
                 <div class="grid_item income_graph">
                     <div style="width:100%;">
@@ -56,7 +75,7 @@
                 </div>
                 <div class="tracks_item track2">
                     <i class="fas fa-road"></i>
-                    <p>3</p>
+                    <p></p>
                 </div>
                 <div class="tracks_item">3</div>
                 <div class="tracks_item">4</div>
@@ -94,19 +113,18 @@
         </div>
     </div>
     <script>
+        <?php
+                // $jan=0+$result[0][1][0][0]*$result[0][1][0][1];
+               [1,2,3,4,5,6,7,8,9,10,11,12]
+
+        ?>
         var dataPemasukan = [
-            1000000,
-            3000000,
-            3000000,
-            3500000,
-            6500000,
-            1000000,
-            1000000
+           <?php echo "$jan".','."$feb".','."$mar".','."$apr".','."$may".','."$june".','."$jul".','."$aug".','."$sep".','."$oct".','."$nov".','."$dec"?>
         ];
         var myChart = {
             type: 'line',
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
                 datasets: [{
                     label: "Pemasukan",
                     backgroundColor: window.chartColors.red,

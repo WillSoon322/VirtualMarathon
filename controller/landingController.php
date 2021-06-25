@@ -17,7 +17,7 @@
     
         }
         public function getAllTracks(){
-            $query = "SELECT * FROM track t INNER JOIN (SELECT p.idT, count(p.idT) FROM progress p GROUP BY p.idT asc LIMIT 3)as R ON t.idT=R.idT
+            $query = "SELECT * FROM track t INNER JOIN (SELECT p.idT, count(p.idT) as c FROM progress p GROUP BY p.idT ORDER BY c DESC LIMIT 3)as R ON t.idT=R.idT
                      ";
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];

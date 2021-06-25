@@ -14,7 +14,7 @@
 
         public function viewAll(){
             $result = $this->getTrack();
-            return View2::createView("trackpage.php",["result"=>$result]);
+            return View2::createView("trackpage.php",["result"=>$result]);//ngirim param isi data
     
         }
 

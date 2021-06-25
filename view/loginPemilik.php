@@ -15,7 +15,7 @@
     <img class="back" src="view/assets/login_big.jpg" alt="">
     <div class="login_box">
         <div class="login_input_box">
-            <img src="view/assets/adminLogin.png" alt="gambar">
+            <img src="view/assets/pemilikLogin.png" alt="gambar">
             <form action="loginPemilik" method="post">
                 <input class="text_input" type="text" name="name">
                 <label class="text_label" for="name">Username : </label>
