@@ -127,7 +127,6 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/signupController.php";
 				$signupCtrl = new SignupController();
 				echo $signupCtrl -> addUser();//echo hasil FINAL
-				header('location: landing');
 			   break;
 			 case $baseURL.'/addTrack':
 				require_once "controller/addTrackController.php";
