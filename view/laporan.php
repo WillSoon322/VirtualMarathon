@@ -28,8 +28,9 @@
                     <i class="fas fa-user"></i>
                     <p>
                         <?php
+                        //TOTAL PESERTA
                             $totalUser=$result[0][0];
-                            echo"$totalUser";
+                            echo "$totalUser";
                         ?>
                     </p>
                 </div>
@@ -47,12 +48,14 @@
                         //  }
                     ?>
                      <p>Rp <?php 
+                     //TOTAL INCOME
                         $totalIncome=$result[0][1];
                         echo"$totalIncome";
                      ?></p> 
                 </div>
                 <div class="grid_item track">
                     <i class="fas fa-road"></i>
+                    <!-- BANYAK TRACK -->
                     <p><?php echo $result[0][2]?></p>
                 </div>
                 <div class="grid_item income_graph">
@@ -112,15 +115,31 @@
            </div>
         </div>
     </div>
+   
     <script>
+        
         <?php
                 // $jan=0+$result[0][1][0][0]*$result[0][1][0][1];
-               [1,2,3,4,5,6,7,8,9,10,11,12]
+               $arr= [];
+               for($i=0;$i<12;$i++){
+                   if($result[0][3][$i]==NULL){
+                     $arr[$i]=0;
+                   }
+                   else{
+                    $arr[$i]=0+$result[0][3][$i];
+                   }     
+               }
+               var_dump($arr);
 
         ?>
-        var dataPemasukan = [
-           <?php echo "$jan".','."$feb".','."$mar".','."$apr".','."$may".','."$june".','."$jul".','."$aug".','."$sep".','."$oct".','."$nov".','."$dec"?>
-        ];
+        var tab = <?php echo $arr?>;
+        //[0];
+            <?php echo $arr;?>
+               console.log(tab[0])
+        
+        //console.log((tab[0]))
+        var dataPemasukan=tab;
+        //[0];
         var myChart = {
             type: 'line',
             data: {
