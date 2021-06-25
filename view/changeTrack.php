@@ -7,7 +7,7 @@
 <div class="track_box">
 
     <div class="ubah_track_box">
-        <form method="POST" action="changeTrack">
+        <form method="post" action="changeTrack" enctype="multipart/form-data">
 
             <select name="track" id="cars">
 
@@ -37,19 +37,19 @@
 
             <a class="text_label">Foto Track Baru:</a>
             <b class="text_input">
-                <input type="file" name="fileToUploadGambar" id="fileToUpload">
+                <input type="file" accept="image/*" name="fileToUploadGambar" id="fileToUpload">
+                <button class="test">test</button>
+                <div class="testdiv"></div>
             </b>
             <a class="text_label">Foto Medali Baru:</a>
             <b class="text_input">
-                <input type="file" name="fileToUploadMedal" id="fileToUpload">
+                <input type="file" name="fileToUploadMedal">
             </b>
             <a class="text_label">Foto Badge Baru:</a>
             <b class="text_input">
-                <input type="file" name="fileToUploadBagde" id="fileToUpload">
+                <input type="file" name="fileToUploadBagde">
             </b>
-            <div class="button_box">
-                <button>Ubah Track</button>
-            </div>
+            <button type="submit">Ubah Track</button>
     </div>
 
     </form>

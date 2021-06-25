@@ -7,9 +7,22 @@
     <script src="view/JS/Chart.bundle.js"></script>
     <script src="view/JS/utils.js"></script>
 </head>
-<?php var_dump($result);?>
+
+
+
+
 <body>
     <div class="content">
+        <?php
+        $temp = $result[0][3];
+        var_dump(json_encode($temp));
+
+        ?>
+
+        <script>
+            var tab = <?php echo json_encode($temp) ?>;
+            console.log(tab);
+        </script>
         <div class="default">WELCOME</div>
         <div class="type">
             <div class="general_button active">
@@ -29,34 +42,34 @@
                     <p>
                         <?php
                         //TOTAL PESERTA
-                            $totalUser=$result[0][0];
-                            echo "$totalUser";
+                        $totalUser = $result[0][0];
+                        echo "$totalUser";
                         ?>
                     </p>
                 </div>
                 <div class="grid_item income">
                     <i class="fas fa-wallet"> TOTAL INCOME</i>
                     <?php
-                        
-                        // $total=0;
-                        // //echo $result[0][1][0][1];
-                        //  foreach ($result[0][1] as $key => $row){
-                        //     // echo $row[0];//dapet count , jadi $row itu udah jadi [0] lagi
-                        //     $count=0+$row[0];
-                        //     $harga=0+$row[1];
-                        //     $total+=$count*$harga;
-                        //  }
+
+                    // $total=0;
+                    // //echo $result[0][1][0][1];
+                    //  foreach ($result[0][1] as $key => $row){
+                    //     // echo $row[0];//dapet count , jadi $row itu udah jadi [0] lagi
+                    //     $count=0+$row[0];
+                    //     $harga=0+$row[1];
+                    //     $total+=$count*$harga;
+                    //  }
                     ?>
-                     <p>Rp <?php 
-                     //TOTAL INCOME
-                        $totalIncome=$result[0][1];
-                        echo"$totalIncome";
-                     ?></p> 
+                    <p>Rp <?php
+                            //TOTAL INCOME
+                            $totalIncome = $result[0][1];
+                            echo "$totalIncome";
+                            ?></p>
                 </div>
                 <div class="grid_item track">
                     <i class="fas fa-road"></i>
                     <!-- BANYAK TRACK -->
-                    <p><?php echo $result[0][2]?></p>
+                    <p><?php echo $result[0][2] ?></p>
                 </div>
                 <div class="grid_item income_graph">
                     <div style="width:100%;">
@@ -93,7 +106,7 @@
                     </table>
                 </div>
                 <div class="tracks_item table_income_track">
-                <table>
+                    <table>
                         <tr>
                             <th>idTrack</th>
                             <th>Tema Track</th>
@@ -104,46 +117,34 @@
             </div>
         </div>
         <div class="page users">
-           <div class="user_grid">
-               <div class="user_item age_span">1</div>
-               <div class="user_item user_count">2</div>
-               <div class="user_item male_user">3</div>
-               <div class="user_item female_user">4</div>
-               <div class="user_item">5</div>
-               <div class="user_item">6</div>
-               <div class="user_item">7</div>
-           </div>
+            <div class="user_grid">
+                <div class="user_item age_span">1</div>
+                <div class="user_item user_count">2</div>
+                <div class="user_item male_user">3</div>
+                <div class="user_item female_user">4</div>
+                <div class="user_item">5</div>
+                <div class="user_item">6</div>
+                <div class="user_item">7</div>
+            </div>
         </div>
     </div>
-   
-    <script>
-        
-        <?php
-                // $jan=0+$result[0][1][0][0]*$result[0][1][0][1];
-               $arr= [];
-               for($i=0;$i<12;$i++){
-                   if($result[0][3][$i]==NULL){
-                     $arr[$i]=0;
-                   }
-                   else{
-                    $arr[$i]=0+$result[0][3][$i];
-                   }     
-               }
-               var_dump($arr);
 
-        ?>
-        var tab = <?php echo $arr?>;
-        //[0];
-            <?php echo $arr;?>
-               console.log(tab[0])
-        
-        //console.log((tab[0]))
-        var dataPemasukan=tab;
+
+    <script>
+        var dataPemasukan = []
+        for (let a in tab) {
+            if (tab[a] == null) {
+                dataPemasukan[a] = 0;
+            }else{
+                dataPemasukan[a] = parseInt(tab[a])
+            }
+        }
+        console.log(dataPemasukan);
         //[0];
         var myChart = {
             type: 'line',
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 datasets: [{
                     label: "Pemasukan",
                     backgroundColor: window.chartColors.red,

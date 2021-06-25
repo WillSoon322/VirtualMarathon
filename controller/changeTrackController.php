@@ -44,11 +44,9 @@ class ChangeTrackController
     public function changeTrack()
     {
         if($_POST['track']!='default'){
-        var_dump($_POST);
         if(isset($_POST['trackbaru']) and $_POST['trackbaru'] != ""){ //nama
             $tempId = (int)$_POST['track'];
             $tempNama = $_POST['trackbaru'];
-            var_dump($tempNama);
             $query = "UPDATE track SET tema = '$tempNama' WHERE track.idT=$tempId";
             $this->db->executeNonSelectQuery($query);
         }else{
@@ -67,7 +65,6 @@ class ChangeTrackController
         if(isset($_POST['region']) and $_POST['region'] != ""){ //region
             $tempId = (int)$_POST['track'];
             $tempValue = $_POST['region'];
-            var_dump($tempValue);
             $query = "UPDATE track SET region = $tempValue WHERE track.idT=$tempId";
             $this->db->executeNonSelectQuery($query);
         }else{
@@ -82,6 +79,8 @@ class ChangeTrackController
         }else{
             echo "ga";
         }
+
+        var_dump($_FILES);
 
         if(isset($_POST['fileToUploadGambar']) and $_POST['fileToUploadGambar'] != ""){ //jarak
             $tempId = (int)$_POST['track'];
