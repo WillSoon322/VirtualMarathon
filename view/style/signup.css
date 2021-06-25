@@ -19,7 +19,7 @@ body{
 
     padding-top: 2.5em;
 
-    height: 48em;
+    height: 53em;
     width: 46em;
 
     opacity: 1;
@@ -104,6 +104,12 @@ button{
 
 .sign_up_right img{
     height: 60em;
+}
+
+button{
+    position: relative;
+    top: 40px;
+    left: 15em;
 }
 
 .wrong{

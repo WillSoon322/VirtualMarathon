@@ -16,13 +16,12 @@
         <?php
         $temp = $result[0][3];
         var_dump(json_encode($temp));
-
         ?>
 
         <script>
             var tab = <?php echo json_encode($temp) ?>;
-            console.log(tab);
         </script>
+        
         <div class="default">WELCOME</div>
         <div class="type">
             <div class="general_button active">

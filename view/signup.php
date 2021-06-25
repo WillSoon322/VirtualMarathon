@@ -10,7 +10,7 @@
 </div>
 <div class="login_box">
     <div class="login_input_box">
-        <form method="POST" action="signup">
+        <form method="POST" action="signup" autocomplete="off">
             <input class="text_input" type="email" name="email" required>
             <label class="text_label" for="email">Email : </label>
 
@@ -33,6 +33,12 @@
             <input class="text_input" type="text" name="address" required>
             <label class="text_label" for="Address">Address : </label>
 
+            <input class="text_input" type="text" name="city" required style="display: none;">
+            <label class="text_label" for="city" style="display: none;">City : </label>
+
+            <input class="text_input" type="text" name="country" required style="display: none;">
+            <label class="text_label" for="country" style="display: none;">Country : </label>
+
             <input class="text_input" type="number" name="phone" id="phone" required>
             <label class="text_label" for="phone">Phone Number : </label>
 
@@ -43,13 +49,9 @@
             <label class="text_label" for="re_password">Retype Password : </label>
 
             <label id="remember_label" for="Agreement" name="agreement">I agree to <a href="#">Agreement</a></label>
-            <input id="remember_check" type="checkbox" name="agreement">
-
-            <div class="button_box">
-                <button>Sign Up</button>
-            </div>
+            <input id="remember_check" type="checkbox" name="agreement" required    >
+            <button>Sign Up</button>
     </div>
 
     </form>
 </div>
-
