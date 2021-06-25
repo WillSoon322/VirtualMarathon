@@ -24,7 +24,7 @@
         }
 
         public function getIdP(){
-            return $this->gambar;
+            return $this->idP;
         }
 
         public function getNoResi(){

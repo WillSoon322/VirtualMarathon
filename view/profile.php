@@ -7,8 +7,8 @@
 
 <body>
     <?php
-        session_start();
-        
+        //session_start();
+        //var_dump($result);
     ?>
 
     <div class="content">
@@ -25,7 +25,7 @@
                 <?php
                     if(isset($_SESSION["username"])){
                         $user=$_SESSION["username"];
-                        echo "<h2> '$user' </h2>";
+                        echo "<h2> $user </h2>";
                     }
                 ?>
             </div>
@@ -35,7 +35,7 @@
             <?php
                     if(isset($_SESSION["usia"])){
                         $user=$_SESSION["usia"];
-                        echo "<h2> '$user' </h2>";
+                        echo "<h2> $user </h2>";
                     }
                 ?>
             </div>
@@ -43,7 +43,7 @@
             <?php
                     if(isset($_SESSION["Gender"])){
                         $user=$_SESSION["Gender"];
-                        echo "<h2> '$user' </h2>";
+                        echo "<h2> $user </h2>";
                     }
                 ?>
             </div>
@@ -51,7 +51,7 @@
             <?php
                     if(isset($_SESSION["Alamat"])){
                         $user=$_SESSION["Alamat"];
-                        echo "<h2> '$user' </h2>";
+                        echo "<h2> $user </h2>";
                     }
                 ?>
             </div>
@@ -62,19 +62,21 @@
             </div>
         </div>
         <div class="owned_medal">
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
-            <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div>
+            <!-- <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div> -->
+            <?php foreach ($result[0] as $key => $row) {
+                ?>
+                    <div class="medal"><?php echo $row->getGambarBadge()?></div>           
+                <?php } ?>
+           
         </div>
         <div class="API_weather">
-            <div>
-                HALO
+            <div class="trackList">
+            
+            <?php foreach ($result[1] as $key => $row) {
+                ?>
+                  <a href="progress" onclick="pindahTrack()" id="<?php echo $row->getTema()?>"><?php echo $row->getTema();?><br></a>
+                <?php } ?>
+            
             </div>
         </div>
         <div class="statistic">
@@ -97,6 +99,12 @@
                     var s = document.getElementsByTagName('script')[0];
                     s.parentNode.insertBefore(script, s);
                 })();
+                function pindahTrack(){
+                    event.preventDefault();
+                    console.log(this);
+                    let trackDestination=document.querySelector("#")
+                    '<%Session["trackDestination"] = ; %>';
+                }
             </script>
         </div>
 
