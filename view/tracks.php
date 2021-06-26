@@ -72,15 +72,15 @@
             ?>
                 <div class="grid_track_card">
                     <form action="trackpage" method="post" class="trackForm">
-                        <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div>
-                        <div class="card_price"><?php echo 'Rp ' . $row->getHarga() ?></div>
-                        <div class="card_distance"><?php echo $row->getJarak() . " km" ?></div>
+                        <div class="card_image"><img class="inside_image" src="<?php echo $row->getGambar() ?>" alt=""></div>
+                        <div class="card_price"><?php echo $row->getHarga() . ' Rp' ?></div>
+                        <div class="card_distance"><?php echo $row->getJarak() ?></div>
                         <div class="card_name"><?php echo $row->getTema() ?></div>
                         <input type="text" value="<?php echo $row->getTema() ?>" name="tema">
                     </form>
                 </div>
 
-
+                <!-- div class="card_image"><?php //echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div> -->
 
 
             <?php } ?>

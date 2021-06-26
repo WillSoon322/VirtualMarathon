@@ -21,25 +21,36 @@
         public function logIn(){
             $username=$_POST["name"];
             $pass=$_POST["password"];
-            $remember=$_POST["remember"];
+            
             $query = "SELECT *
-            FROM user u  INNER JOIN peserta p ON u.idU=p.idU INNER JOIN progress a ON u.idU=a.idU INNER JOIN track t ON a.idT=t.idT 
+            FROM user u  INNER JOIN peserta p ON u.idU=p.idU 
             WHERE username='$username'";
 
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
             $tracks=[];
             $peserta=[];
-            $progress=[];
+            $user=[];
             
             foreach($query_result as $key => $value){
-                $result[] = new User($value["idU"],$value["username"],$value["pass"],$value["profile_picture"]);
+                $user[] = new User($value["idU"],$value["username"],$value["pass"],$value["profile_picture"]);
                 $peserta[] = new Peserta($value["idU"],$value["no_telepon"],$value["email"],$value["nama"],$value["Gender"],$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"]);
+                //$tracks[] = new Track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"],$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
+            }
+            $result[0]=$user;
+            $result[1]=$peserta;
+            $query = "SELECT *
+            FROM user u  INNER JOIN peserta p ON u.idU=p.idU 
+            INNER JOIN progress a ON u.idU=a.idU 
+            INNER JOIN track t ON a.idT=t.idT 
+            WHERE username='$username'";
+            $query_result = $this->db->executeSelectQuery($query);
+            foreach($query_result as $key => $value){
                 $tracks[] = new Track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"],$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
             }
-
-            if(count($result)==0){
-                echo "user no exist la";
+            $result[2]=$tracks;
+            if(count($user)==0){
+                echo "user no exist la<br>";
                 var_dump($result);
                 // echo '<script> 
                 //         alert ("Username Does Not Exist")
@@ -47,7 +58,7 @@
                 //      header("location: login");
             }
             else{
-                if($pass!=$result[0]->getPassword()){
+                if($pass!=$user[0]->getPassword()){
                     echo "password no exist la";
                     //VALIDATION MASIH GABENER
                     // header("location: login");
@@ -57,10 +68,10 @@
                 }
                 else{
                     session_start();
-                    $_SESSION["username"] = $result[0]->getUsername();
+                    $_SESSION["username"] = $user[0]->getUsername();
                     $_SESSION["saldo"] = $peserta[0]->getSaldo();
                     $_SESSION["nama"] = $peserta[0]->getNama();
-                    $_SESSION["gambar"] = $result[0]->getGambar();
+                    $_SESSION["gambar"] = $user[0]->getGambar();
                     $_SESSION["usia"] = $peserta[0]->getUsia();
                     $_SESSION["Gender"] = $peserta[0]->getGender();
                     $_SESSION["Alamat"]=$peserta[0]->getAlamat();

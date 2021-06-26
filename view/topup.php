@@ -66,16 +66,18 @@
                     </div>
                     <div class="panel_content">
                         <div class="vertical_line"></div>
-                        <form action="topup" method="POST">
+                        <form action="topup" method="POST" enctype="multipart/form-data">
                             <input type="text" id="confirm_method" name="confirm_method" readonly>
                             <input type="text" id="confirm_ammount" name="confirm_ammount" readonly>
+                            <input type="file" id="bukti" name="bukti">
                             <button type="submit">CONFIRM</button>
+
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="payment_ammount second" id="ammount">
+        <!-- <section class="payment_ammount second" id="ammount">
             <div class="section_panel left">
                 <div class="panel">
                     <div class="panel_title">
@@ -88,7 +90,7 @@
             <div class="section_img">
                 <img src="view/assets/payment2.png" alt="">
             </div>
-        </section>
+        </section> -->
     </div>
 
     <script defer src="view/JS/topUp.js"></script>

@@ -25,7 +25,7 @@
                 <?php
                     if(isset($_SESSION["usernameAdmin"])){
                         $user=$_SESSION["usernameAdmin"];
-                        echo "<h2> '$user' </h2>";
+                        echo "<h2> $user </h2>";
                     }
                 ?>
             </div>

@@ -42,7 +42,7 @@
                 <?php foreach ($result as $key => $row) {
                 ?>
                     <div class="grid_track_card">
-                        <div class="card_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div>
+                        <div class="card_image"><img src="<?php echo $row->getGambar()?>" alt=""></div>
                     </div>
                 <?php } ?>
             </div>

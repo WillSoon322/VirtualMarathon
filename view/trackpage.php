@@ -6,7 +6,8 @@
 <?php
 //session_start();
 //var_dump($_SESSION["saldo"]);
-//var_dump($result);
+
+var_dump($result);
 ?>
 <body>
     <header>
@@ -24,10 +25,11 @@
     <div class="content">
         <div class="top_part">
         <!-- <div class="flag"><img src="view/assets/flag/japan.gif" alt=""></div> -->
-        <?php echo '<img class="main_image" src="data:image/jpg;base64,' . base64_encode($result[0]->getGambar()) . '"/>' ?>
+        <img class="main_image" src="<?php echo $result[0]->getGambar()?>">
             <div class="main_atribute">
-                <div class="main_badge"><img src="view/assets/badge/mountain1.png" alt="badge"></div>
-                <div class="main_medal"><img src="view/assets/medal/japan.png" alt="medal"></div>
+                <div class="main_badge"><img src="<?php echo $result[0]->getGambarBadge()?>" alt="badge"></div>
+                
+                <div class="main_medal"><img src="<?php echo $result[0]->getGambarMedal()?>"></div>
             </div>
             <div class="bar"></div>
         </div>
@@ -44,13 +46,15 @@
             <br>
             <hr>
             <div class="bottom_desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aspernatur. Esse, ut, odit non nobis corporis quam quod, tempora adipisci eos cumque in! Perferendis reiciendis nisi ducimus eaque fugiat ipsa!
+               <div class="medalImage">
+              
+                
+                </div>
                 <br><br><br>
-                <hr>
-                <div>SOME OTHER RANDOM STUFF</div>
-                <div>SOME OTHER RANDOM STUFF</div>
-                <div>SOME OTHER RANDOM STUFF</div>
-                <div>SOME OTHER RANDOM STUFF</div>
+                <div class="badgeImage">
+                
+              
+                </div>
 
                 <div class="get_track">
                      <?php
@@ -79,9 +83,9 @@
                     
                 </div>
             </div>
-            <div class="bottom_statistic">
+            <!-- <div class="bottom_statistic">
                 statistic
-            </div>
+            </div> -->
         </div>
     </div>
    

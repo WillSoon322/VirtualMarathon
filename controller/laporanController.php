@@ -72,7 +72,7 @@
              $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=11";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[10]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=12";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=12";//and tahun= curr tahun
              $query_result=$this->db->executeSelectQuery($query);
              $temp[11]=$query_result[0]["SUM(nominal)"];
              $result[3]=$temp;

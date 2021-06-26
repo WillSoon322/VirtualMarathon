@@ -83,6 +83,7 @@ nav{
     flex-direction: row;
     justify-content: space-around;
     align-items: baseline;
+    z-index: 200;
 }
 
 .main_atribute div{
@@ -91,6 +92,7 @@ nav{
 
 .main_badge{
     /* background-color: rgb(236, 165, 140); */
+    width:250px;
 }
 
 .main_atribute div img{
@@ -99,6 +101,12 @@ nav{
 
 .main_medal{
     /* background-color: rgb(114, 211, 127); */
+    width:250px;
+    height:100px;
+    
+}
+.main_medal img{
+    width:100%;
 }
 .bar{
     background-color: rgb(92, 92, 92);

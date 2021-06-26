@@ -9,10 +9,13 @@
         <div class="request_medali part">
             <div class="part_overlay medali_overlay">1</div>
             <div class="part_modal medali_modal">
+
                 <div class="exit1">X</div>
                 <form action="statusPeserta" method="POST">
+                    <label for="id">idM</label>
+                    <input type="text" class="requestMedali" name="id" readonly>
                     <label for="resi">no resi</label>
-                    <input type="text" class="requestMedali" name="resi">
+                    <input type="text" class="inputResi" name="resi" >
                     <button type="submit">Send</button>
                 </form>
             </div>
@@ -25,6 +28,7 @@
                         <th>Id Medali</th>
                         <th>Nama</th>
                         <th>Track</th>
+                        <th>Kota</th>
                         <th>Alamat</th>
                         <th>Action</th>
                     </tr>
@@ -35,6 +39,7 @@
                             <td><?php echo $row->getId()  ?></td>
                             <td><?php echo $row->getNama()  ?></td>
                             <td><?php echo $row->getTema()  ?></td>
+                            <td><?php echo $row->getKota()  ?></td>
                             <td><?php echo $row->getAlamat()  ?></td>
                             <td><button>Send</button></td>
                         </tr>

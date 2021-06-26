@@ -4,7 +4,7 @@
 
         public function __construct($idA, $username, $password, $gambar)
         {
-            $this->idU=$idA;
+            $this->idA=$idA;
             $this->username=$username;
             $this->password=$password;
             $this->gambar=$gambar;

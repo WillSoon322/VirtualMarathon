@@ -20,7 +20,7 @@
     <div class="black_bar left"></div>
     <div class="black_bar right"></div>
     <div class="content">
-        <div class="left_big_box"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($gambar) . '"/>' ?></div>
+        <div class="left_big_box"><img src="<?php echo $gambar?>" alt=""></div>
         <div class="right_small_box">
             
             <h1>BUY <?php echo $tema?></h1>=

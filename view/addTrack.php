@@ -1,7 +1,7 @@
 
 <body>
   <div class="new_track" style="background-color: burlywood; position:absolute;">
-    <form action="addTrack" method="POST" >
+    <form action="addTrack" method="POST" enctype="multipart/form-data">
       <label for="namatrack">Nama Track:</label>
       <input type="text" id="namatrack" name="name"><br><br>
       <label for="harga">Harga:</label>
@@ -12,12 +12,12 @@
       <input type="number" id="jarak" name="jarak"><br><br>
       
       Foto Track:
-      <input type="file" name="gambar" id="fileToUpload"><br><br>
+      <input type="file" name="gambarTrack" id="gambarTrack"><br><br>
       Gambar Medali:
-      <input type="file" name="gambarMedali" id="medalUpload"><br><br>
+      <input type="file" name="gambarMedali" id="gambarMedali"><br><br>
       Gambar Badge:
-      <input type="file" name="gambarBadge" id="badgeUpload"><br><br>
-      <button type="submit">Submit</button>
+      <input type="file" name="gambarBadge" id="gambarBadge"><br><br>
+      <input type="submit">Submit</button>
     </form>
     <button onclick="back()">Back</button>
     <script>

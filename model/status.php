@@ -1,12 +1,13 @@
 <?php
     class Status{
-        protected $id, $nama, $track, $alamat, $status,$progress;
+        protected $id, $nama, $track,$kota, $alamat, $status,$progress;
 
-        public function __construct( $id, $nama, $track, $alamat, $status,$progress,$noResi)
+        public function __construct( $id, $nama, $track, $kota,$alamat, $status,$progress,$noResi)
         {
             $this->id = $id;
             $this->nama = $nama;
             $this->track = $track;
+            $this->kota = $kota;
             $this->alamat = $alamat;
             $this->status = $status;
             $this->progress = $progress;
@@ -23,7 +24,9 @@
         public function getNama(){
             return $this->nama;
         }
-
+        public function getKota(){
+            return $this->kota;
+        }
         public function getAlamat(){
             return $this->alamat;
         }

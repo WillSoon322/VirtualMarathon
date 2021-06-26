@@ -22,37 +22,37 @@ let re_password = false;
 let Agree = document.querySelector('input[type="checkbox"]')
 
 
-Uname.addEventListener("focusout",function(){
-    if(Uname.value.length < 3){
+Uname.addEventListener("focusout", function () {
+    if (Uname.value.length < 3) {
         Uname.classList.add('wrong')
         uname = false
-    }else{
+    } else {
         Uname.classList.remove('wrong')
         uname = true
     }
 })
 
-Name.addEventListener("focusout",function(){
-    if(Name.value.length <= 0){
+Name.addEventListener("focusout", function () {
+    if (Name.value.length <= 0) {
         Name.classList.add('wrong')
         namee = false
-    }else{
+    } else {
         Name.classList.remove('wrong')
         namee = true
     }
 })
 
-Age.addEventListener("focusout",function(){
-    if(Age.value<=5 || Age.value >=100){
+Age.addEventListener("focusout", function () {
+    if (Age.value <= 5 || Age.value >= 100) {
         Age.classList.add('wrong')
         age = false
-    }else{
+    } else {
         Age.classList.remove('wrong')
         age = true
     }
 })
 
-Address.addEventListener('focusout',function(){
+Address.addEventListener('focusout', function () {
     console.log("halo");
     document.querySelector('input[name="city"]').style.display = "block"
     document.querySelector('label[for="city"]').style.display = "block"
@@ -60,23 +60,23 @@ Address.addEventListener('focusout',function(){
     document.querySelector('label[for="country"]').style.display = "block"
 })
 
-Password.addEventListener("focusout",function(){
-    if(Password.value.length <= 7){
+Password.addEventListener("focusout", function () {
+    if (Password.value.length <= 7) {
         alert("password need to be 8 or more character")
         Password.classList.add('wrong')
         password = false
-    }else{
+    } else {
         Password.classList.remove('wrong')
         password = true
     }
 })
 
-Re_password.addEventListener("focusout",function(){
-    if(Re_password.value != Password.value){
+Re_password.addEventListener("focusout", function () {
+    if (Re_password.value != Password.value) {
         // alert("password does not match")
         Re_password.classList.add('wrong')
         re_password = false
-    }else{
+    } else {
         Re_password.classList.remove('wrong')
         re_password = true
     }
@@ -88,9 +88,9 @@ form_submit.addEventListener('click', function () {
 })
 
 function validate() {
-    if(email && uname && namee && gender && age && address && phone && password && re_password && Agree.checked){
+    if (email && uname && namee && gender && age && address && phone && password && re_password) {
         form.submit();
-    }else{
+    } else {
         alert("te tot")
         console.log(email);
         console.log(uname);

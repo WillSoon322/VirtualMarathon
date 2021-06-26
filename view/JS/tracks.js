@@ -17,10 +17,10 @@ for (i = 0; i < card.length; i++) {
 }
 let panel = document.querySelector('.region_panel').children
 
-for (let x of panel){
-    x.addEventListener('click',function(){
+for (let x of panel) {
+    x.addEventListener('click', function () {
         event.preventDefault();
-        document.querySelector('.region_accordion').innerHTML=x.innerHTML
+        document.querySelector('.region_accordion').innerHTML = x.innerHTML
         document.querySelector('input[name="namaTrack"]').value = x.innerHTML
     })
 }

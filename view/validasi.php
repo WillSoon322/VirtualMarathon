@@ -93,7 +93,7 @@ require_once "model/topUp.php";
                     <td><?php echo $row->getStatus() ?>
                     <td><button class="validate_button">Validate</button></td>
                     <td> <button class="bukti_button show">Bukti</button><button class="keluar">X</button>
-                        <div class="overlay_image"><?php echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div>
+                        <div class="overlay_image"><img class="inside_image" src="<?php echo $row->getGambar()?>"/></div>
                     </td>
                 </tr>
             <?php } ?>

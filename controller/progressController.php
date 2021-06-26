@@ -18,8 +18,13 @@ session_start();
         }
 
        public function getProgress(){
-        $tema=$_SESSION["trackDestination"];
-        $idU=$_SESSION["idU"];
+        if(isset($_SESSION["trackDestination"])){
+            $tema=$_SESSION["trackDestination"];
+        }
+        if(isset($_SESSION["idU"])){
+            $idU=$_SESSION["idU"];
+        }
+        
         $query = "SELECT *
         FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON ps.idU= p.idU
         WHERE t.tema='$tema' AND ps.idU='$idU'
@@ -36,15 +41,15 @@ session_start();
        public function addProgress(){
             $result=$this->getProgress();
            if(isset($_POST["progressInputText"])){
-               $jarak_total=(int) $result[0]->getJarakTotal();//JARAK TOTAL=CURRENT JARAK
-               $jarak=(int) $result[0]->getJarak();//JARAK=JARAK TOTAL TRACK 
-               $jarak_total=$jarak_total+ (int) $_POST["progressInputText"];
+               $jarak_total=(double) $result[0]->getJarakTotal();//JARAK TOTAL=CURRENT JARAK
+               $jarak=(double) $result[0]->getJarak();//JARAK=JARAK TOTAL TRACK 
+               $jarak_total=(double)($jarak_total+  $_POST["progressInputText"]);
                if($jarak_total>$jarak){
                    $jarak_total=$jarak;
                }
 
-              $jarakSisa=(int) $result[0]->getSisaJarak();
-               $jarakSisa=($jarakSisa - (int) $_POST["progressInputText"]);
+              $jarakSisa=(double) $result[0]->getSisaJarak();
+               $jarakSisa=(double)($jarakSisa - $_POST["progressInputText"]);
 
                if($jarakSisa<=0){//belum di test (by 22 june 2021)
                     $jarakSisa=0;

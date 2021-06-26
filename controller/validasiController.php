@@ -61,30 +61,51 @@
         function validate(){
             if(isset($_SESSION["idA"])){
                 $idA=$_SESSION["idA"];
+                if(isset($_POST["validation"])){
+                    if($_POST["validation"]=="true"){
+                        $val="Tervalidasi";
+                    }
+                    else {
+                        $val="Ditolak";
+                    }
+                }
+                else{
+                        echo "error validating";
+                 }
+                 echo $val;
+                    if(isset($_POST["idT"])){
+                        $idT=$_POST["idT"];
+                    }
+                    $query = "UPDATE transaksi_top_up t SET status ='$val', idA='$idA' WHERE t.id_top_up='$idT'";
+                    $query_result = $this->db->executeNonSelectQuery($query);
+                    if($val=="Tervalidasi"){
+                    //tambah saldo user
+                    $query="SELECT idP FROM transaksi_top_up WHERE id_top_up='$idT'";//dapet idU
+                    $temp=$this->db->executeSelectQuery($query);
+                    $idP=(int)$temp[0]["idP"];
+                    $query="SELECT saldo FROM peserta WHERE idU='$idP'";//dapet saldo sekarang
+                    $temp=$this->db->executeSelectQuery($query);
+                    $saldo=0+$temp[0]["saldo"];
+                    $query="SELECT nominal FROM transaksi_top_up WHERE id_top_up='$idT'";//dapet NAMBAH BRP
+                    $temp=$this->db->executeSelectQuery($query);
+                    $nominal=0+$temp[0]["nominal"];
+                    $saldoAkhir=$saldo+$nominal;
+                    $_SESSION["saldo"]=$saldoAkhir;
+                    $query = "UPDATE peserta ps
+                                SET ps.saldo = '$saldoAkhir'
+                                WHERE ps.idU='$idP' " ;
+                    $query_result = $this->db->executeNonSelectQuery($query);
+                   //$_SESSION["saldo"]=$saldoAfter;PINDAHIN KE VALIDASI
+                    }
             }
             else{
                 echo "error no admin detected";
             }
              //echo $_POST["validation"];
             // echo $_POST["idT"];
-            if(isset($_POST["validation"])){
-                if($_POST["validation"]=="true"){
-                    $val="Tervalidasi";
-                }
-                else {
-                    $val="Ditolak";
-                }
-            }
-            else{
-                    echo "error validating";
-             }
-             echo $val;
-                if(isset($_POST["idT"])){
-                    $idT=$_POST["idT"];
-                }
-                $query = "UPDATE transaksi_top_up t SET status ='$val', idA='$idA' WHERE t.id_top_up='$idT'
-                     ";
-                $query_result = $this->db->executeNonSelectQuery($query);
+            
+                
+
             }
         }
        

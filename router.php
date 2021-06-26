@@ -139,11 +139,17 @@ $baseURL = '/VirtualMarathon';
 				echo $signupCtrl -> addTrack();//echo hasil FINAL
 				header('location: addTrack');
 				break;
+			case $baseURL.'/statusPeserta':
+				require_once "controller/statusPesertaController.php";
+				$signupCtrl = new StatusPesertaController();
+				echo $signupCtrl -> sendMedal();//echo hasil FINAL
+				header('location: statusPeserta');
+				break;
 			case $baseURL.'/addAdmin':
 				require_once "controller/addAdminController.php";
 				$pemilikCtrl = new addAdminController();
 				echo $pemilikCtrl -> addAdmin();//echo hasil FINAL
-				header('location: addAdmin');
+				header('location: profilePemilik');
 				break;
 			case $baseURL.'/login':
 				require_once "controller/login_controller.php";
@@ -169,7 +175,7 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/loginPemilikController.php";
 				$laCtrl = new LoginPemilikController();
 				echo $laCtrl -> loginPemilik();//echo hasil FINAL
-				//header("location: profilePemilik");
+				header("location: profilePemilik");
 			break;
 			case $baseURL.'/topup':
 				require_once "controller/topupController.php";

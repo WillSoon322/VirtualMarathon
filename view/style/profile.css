@@ -46,6 +46,11 @@ body{
     width: 12em;
     height: 12em;
     border-radius: 100%;
+    overflow:hidden;
+}
+.user_info_picture img{
+    width:100%;
+
 }
 
 .info_1{

@@ -24,7 +24,7 @@
         // INNER JOIN track t on p.idT=t.idT
         // " ;//buat tabel 1 dan 3
         public function getStatus(){
-            $query="SELECT m.idU, nama, tema, alamat
+            $query="SELECT m.idM, nama, tema, alamat,kota
                     FROM medali m INNER JOIN peserta p ON m.idU=p.idU
                     INNER JOIN track t ON m.idT=t.idT
                     WHERE m.status='Belum Dikirim'
@@ -33,7 +33,7 @@
             $result = []; 
             $tabel1=[];
             foreach($query_result as $key => $value){
-                $tabel1[]=new Status($value["idU"],$value["nama"],$value["tema"],$value["alamat"],NULL,NULL,NULL);
+                $tabel1[]=new Status($value["idM"],$value["nama"],$value["tema"],$value["kota"],$value["alamat"],NULL,NULL,NULL);
             }
             $result[0]=$tabel1;
 
@@ -46,7 +46,7 @@
 
             $tabel2=[];
             foreach($query_result as $key => $value){
-                $tabel2[]=new Status($value["idM"],$value["nama"],NULL,$value["alamat"],$value["status"],NULL,$value["noResi"]);
+                $tabel2[]=new Status($value["idM"],$value["nama"],NULL,NULL,$value["alamat"],$value["status"],NULL,$value["noResi"]);
             }
             $result[1]=$tabel2;
 
@@ -58,16 +58,22 @@
         
             $query_result = $this->db->executeSelectQuery($query);
             foreach($query_result as $key => $value){
-                $tabel3[]=new Status($value["idU"],$value["nama"],$value["tema"],NULL,NULL,$value["persentase"],NULL);
+                $tabel3[]=new Status($value["idU"],$value["nama"],$value["tema"],NULL,NULL,NULL,$value["persentase"],NULL);
             }
             $result[2]=$tabel3;
             return $result;
 
         }
         public function sendMedal(){
-            if(isset($_POST["resi"])){
-                $resi=$_POST["resi"];
-            }
+             if(isset($_POST["resi"])&&($_POST["resi"]!="")){
+                 $resi=$_POST["resi"];
+                 echo  $resi;
+                 $idM=$_POST["id"];
+                 var_dump($_POST);
+                 echo $idM;
+                 $query="UPDATE medali SET status='Telah Dikirim', noResi='$resi' WHERE idM='$idM'";//buat tabel 3, progress smua peserta
+                 $query_result = $this->db->executeSelectQuery($query);
+             }
             //$query="UPDATE medali m SET noResi='$resi' WHERE idM=";
             
         }

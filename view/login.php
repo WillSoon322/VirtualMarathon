@@ -17,8 +17,6 @@
                 <input class="text_input" type="password" name="password">
                 <label class="text_label" for="Password">Password : </label>
 
-                <label id="remember_label" for="remember">Remember Me</label>
-                <input id="remember_check" type="checkbox" name="remember">
                 <div class="button_box">
             <button type="submit">Log In</button>
             <button href="signup">Sign Up</button>

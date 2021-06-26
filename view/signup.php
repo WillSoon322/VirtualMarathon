@@ -36,8 +36,8 @@
             <input class="text_input" type="text" name="city" required style="display: none;">
             <label class="text_label" for="city" style="display: none;">City : </label>
 
-            <input class="text_input" type="text" name="country" required style="display: none;">
-            <label class="text_label" for="country" style="display: none;">Country : </label>
+            <!-- <input class="text_input" type="text" name="country" required style="display: none;">
+            <label class="text_label" for="country" style="display: none;">Country : </label> -->
 
             <input class="text_input" type="number" name="phone" id="phone" required>
             <label class="text_label" for="phone">Phone Number : </label>

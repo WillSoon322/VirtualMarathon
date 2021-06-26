@@ -34,11 +34,17 @@
                 $password = $this->db->escapeString($password);
                
                 
-                $query = "INSERT INTO user (idU, pass,username) 
-                VALUES (7,'$password', '$username')";
+                $query = "INSERT INTO user 
+                VALUES (NULL,'$password', '$username',NULL)";
                 $this->db->executeNonSelectQuery($query);
 
-                $query = "INSERT INTO admin (idU) VALUES (7)";
+                $query="SELECT idU from user WHERE username='$username'";
+                $tempId=$this->db->executeSelectQuery($query);
+                var_dump($tempId);
+                $idU=0+$tempId[0]["idU"];
+                var_dump($idU);
+
+                $query = "INSERT INTO admin VALUES ('$idU')";
                 $this->db->executeNonSelectQuery($query);
                 
             }
