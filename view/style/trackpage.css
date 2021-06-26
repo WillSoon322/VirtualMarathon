@@ -73,9 +73,9 @@ nav{
 }
 
 .main_atribute{
-    position: relative;
-    top: -25%;
-    right: -57%;
+    position: absolute;
+    top: 85%;
+    right: 3%;
     /* background-color: brown; */
     width: 40%;
     height: 20%;
@@ -92,11 +92,11 @@ nav{
 
 .main_badge{
     /* background-color: rgb(236, 165, 140); */
-    width:250px;
+    
 }
 
 .main_atribute div img{
-    height: 100%;
+    width: 200px;
 }
 
 .main_medal{
