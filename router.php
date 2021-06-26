@@ -116,6 +116,11 @@ $baseURL = '/VirtualMarathon';
 				//echo $l -> getLaporan();//echo hasil FINAL
 				echo $l -> viewAll();
 			break;
+			case $baseURL.'/setting':
+				require_once "controller/settingController.php";
+				$l = new settingController();
+				echo $l -> viewAll();
+			break;
 			default:
 				echo "404 not found";
 				break;

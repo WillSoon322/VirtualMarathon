@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.back{
+    background-color: cadetblue;
+    position: absolute;
+}
+
+.content{
+    background-color: rgb(17, 17, 17);
+    width: 100vw;
+    height: 100vh;
+}
+
+.box{
+    background-color: rgb(17, 17, 17);
+    position: absolute;
+    box-shadow: inset 0px 0px 15px;
+    top: 30%;
+    left: 35%;
+    width: 30%;
+    height: 40%;
+}

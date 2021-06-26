@@ -17,6 +17,9 @@
         }
         ?>
         <div class="user_info">
+            <div class="setting">
+                <i class="fas fa-cog"></i>
+            </div>
             <div class="user_info_picture">
                 <?php
                 if (isset($_SESSION["gambar"])) {
@@ -117,5 +120,24 @@
             </script>
         </div>
 
+
+
+    </div>
+
+    <div class="over">
+        <div class="box">
+            <input type="text" name="namabaru">
+            <label for="namabaru">Name : </label>
+            <br>
+            <input type="text" name="passwordbaru">
+            <label for="passwordbaru">new password : </label>
+            <br>
+            <input type="text" name="re-passwordbaru">
+            <label for="re-passwordbaru">retype new password : </label>
+            <br>
+            <input type="file" name="gambarbaru" id="">
+            <br>
+            <button>Change</button>
+        </div>
     </div>
 </body>

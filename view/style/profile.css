@@ -64,6 +64,10 @@ body{
     margin-bottom: 2%;
 }
 
+.setting i{
+    font-size: 3em;
+}
+
 .current_track{
     grid-column: 3/8;
     grid-row: 1/5;
@@ -134,4 +138,42 @@ body{
 
 .openweathermap-widget-21{
     margin-top: 200px;
+}
+
+.over{
+    z-index: 2;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 128vh;
+    display: none;
+}
+
+.box{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    box-shadow: inset 0px 0px 15px;
+    top: 30%;
+    left: 35%;
+    width: 30%;
+    height: 40%;
+    padding: 15px;
+}
+
+.box input{
+    float: right;
+    width: 280px;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.box label{
+    float: right;
+    margin-top: 25px;
+}
+
+.box button{
+    position: relative;
+    top: 7em;
+    left: 13em;
 }
