@@ -183,6 +183,11 @@ $baseURL = '/VirtualMarathon';
 				$landCtrl = new ChangeTrackController();
 				echo $landCtrl -> changeTrack();//echo hasil FINAL
 			break;
+			case $baseURL.'/tracks':
+				require_once "controller/tracksController.php";
+				$tracks = new tracksController();
+				echo $tracks -> viewFilter();//echo hasil FINAL
+			break;
 				default:
 				echo "404 not found";
 				break;

@@ -1,6 +1,7 @@
 let accordion_button = document.querySelector('.region_accordion');
 
 accordion_button.addEventListener("click", function () {
+    event.preventDefault()
     let panel = document.querySelector('.region_panel').classList.toggle("hide")
 })
 
@@ -14,13 +15,15 @@ for (i = 0; i < card.length; i++) {
         form.submit();
     })
 }
+let panel = document.querySelector('.region_panel').children
 
-// function goTrack(){
-                    // console.log("asdasd");
-                    // let nama=document.querySelector("#trackForm");
-                    // nama.submit();
-                    // }   
-// let gridTrackCard = document.querySelector("#grid_track_card");
-// gridTrackCard.addEventListener("click", function () {
-//     console.log("gridTrackCard is clicked");
-// });
+for (let x of panel){
+    x.addEventListener('click',function(){
+        event.preventDefault();
+        document.querySelector('.region_accordion').innerHTML=x.innerHTML
+        document.querySelector('input[name="namaTrack"]').value = x.innerHTML
+    })
+}
+
+// let filter = document.querySelector('.trackUtil_btn')
+// filter.addEventListener('click')

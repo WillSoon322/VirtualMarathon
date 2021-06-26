@@ -5,7 +5,7 @@
 }
 
 body{
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .track_utils{
@@ -32,7 +32,9 @@ fieldset{
 .region_panel{
   display: none;
   flex-direction: column;
-  height: 300px;
+  height: fit-content;
+  max-height: 110px;
+  overflow-y: scroll;
 }
 
 .region_panel a{
@@ -41,9 +43,7 @@ fieldset{
   color: gray;
 }
 
-.hide{
-  display: flex;
-}
+
 
 input[type=range]{
   position: absolute;
@@ -193,7 +193,7 @@ input[type=range]{
 
     display: grid;
     grid-template-columns: 22% 22% 22% 22%;
-    grid-auto-rows: 22em;
+    grid-auto-rows: 17em;
     grid-gap: 2em;
 }
 
@@ -208,33 +208,55 @@ input[type=range]{
 
 .card_image{
   position: relative;
-  background-color: aqua;
+  background-color: rgb(221, 221, 221);
   height: 60%;
+  overflow: hidden;
 }
 
 .card_price{
   background-color: blanchedalmond;
   position: relative;
-  top: -55%;
-
-  width: 50%;
+  top: -8em;
   height: 2.5rem;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  box-shadow: inset 0px 0px 5px;
+  padding: 5px;
+  /* display: none; */
 }
 
 .card_distance{
-  background-color: yellow;
+  background-color: rgb(184, 219, 240);
 
   position: relative;
-  top: -2.5rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  top: -7em;
+  box-shadow: inset 0px 0px 5px;
+  /* right: -2.7em; */
+  /* font-size: 3em; */
 }
 
 .card_name{
-  background-color: violet;
+  /* background-color: violet; */
   position: relative;
-  top: -2.5rem;
+  top: -3rem;
+  font-size:1.8em;
   height: fit-content;
 }
 
+.trackForm input{
+  display: none;
+}
+
 .inside_image{
-  height: 100%;
+  width: 100%;
+}
+
+.hide{
+  display: flex;
 }

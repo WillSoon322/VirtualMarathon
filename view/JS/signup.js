@@ -92,5 +92,15 @@ function validate() {
         form.submit();
     }else{
         alert("te tot")
+        console.log(email);
+        console.log(uname);
+        console.log(namee);
+        console.log(gender);
+        console.log(age);
+        console.log(address);
+        console.log(phone);
+        console.log(password);
+        console.log(re_password);
+        console.log(Agree.checked);
     }
 }

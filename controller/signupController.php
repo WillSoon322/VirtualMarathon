@@ -30,6 +30,7 @@ class SignupController
         $re_password = $_POST['re_password'];
         $agreement = $_POST['agreement'];
         $email = $_POST['email'];
+        
         $querycheck = "SELECT COUNT(username) AS c FROM user WHERE username = '$username'";
         $count = $this->db->executeSelectQuery($querycheck);
         if ($count[0] == 0) {
