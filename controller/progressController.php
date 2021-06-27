@@ -34,7 +34,7 @@ session_start();
         
         $query = "SELECT *
         FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON ps.idU= p.idU
-        WHERE t.tema='$tema' AND ps.idU='$idU'
+        WHERE t.tema='$tema' AND ps.idU='$idU' AND deleted!=1
         ";
 
         $query_result = $this->db->executeSelectQuery($query);

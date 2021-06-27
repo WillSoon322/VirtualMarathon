@@ -110,6 +110,11 @@ $baseURL = '/VirtualMarathon';
 				$stsPeserta = new statusPesertaController();
 				echo $stsPeserta -> viewAll();//echo hasil FINAL
 			break;
+			case $baseURL.'/delete':
+				require_once "controller/deleteController.php";
+				$stsPeserta = new DeleteController();
+				echo $stsPeserta -> viewAll();//echo hasil FINAL
+			break;
 			case $baseURL.'/laporan':
 				require_once "controller/laporanController.php";
 				$l = new LaporanController();
@@ -190,10 +195,17 @@ $baseURL = '/VirtualMarathon';
 				echo $trackPageCtrl -> validate();//echo hasil FINAL	
 				header("location: validasi");
 			break;
+			case $baseURL.'/delete':
+				require_once "controller/deleteController.php";
+				$stsPeserta = new DeleteController();
+				echo $stsPeserta -> delete();//echo hasil FINAL
+				header("location: landing");
+			break;
 			case $baseURL.'/changeTrack':
 				require_once "controller/changeTrackController.php";
 				$landCtrl = new ChangeTrackController();
 				echo $landCtrl -> changeTrack();//echo hasil FINAL
+				header("location: profilePemilik");
 			break;
 			case $baseURL.'/tracks':
 				require_once "controller/tracksController.php";

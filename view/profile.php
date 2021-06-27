@@ -168,7 +168,13 @@
                 <br>
                 <button>Change</button>
             </form>
-
+            <br> <br> <br><br> <br> <br><br> <br> <br>
+            <button onclick="deletes()">Delete Account</button>
+            <script>
+                function deletes(){
+                    location.href="delete";
+                }
+            </script>
         </div>
     </div>
 </body>
