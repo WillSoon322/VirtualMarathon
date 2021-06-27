@@ -67,8 +67,10 @@
                 </form>
                 </fieldset>
             </div>
-
-            <?php foreach ($result as $key => $row) {
+            
+            <?php 
+            //require "pagination.php";
+            foreach ($result as $key => $row) {
             ?>
                 <div class="grid_track_card">
                     <form action="trackpage" method="post" class="trackForm">

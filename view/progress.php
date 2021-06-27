@@ -24,11 +24,11 @@
         <?php $tema= $result[0]->getTema() ;?>
         <div class="your">YOUR PROGRESS IN <?php echo "$tema"; ?></div>
         <?php $temp= $result[0]->getPersentase() ?>
-        <div class="progress"><?php echo "$temp";?>%</div>
+        <div class="progress"><?php echo number_format((float)$temp,2,',','');?>%</div>
         <div class="progress_bar">BAR</div>
         <form action="progress" name="progressInput" method="POST">
             <label for="progressInputText">Progress: </label>
-            <input type="text" name="progressInputText">
+            <input type="number" name="progressInputText" >
             <button type="submit" class="add_progress">SUBMIT</button>
         </form>
         

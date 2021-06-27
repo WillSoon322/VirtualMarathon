@@ -39,7 +39,7 @@
             $temp=[];//tervalidasi
             foreach($query_result as $key => $value){
                  $temp[] = new TopUp($value["id_top_up"],$value["saldo_awal"],$value["saldo_akhir"],$value["nominal"]
-                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);//NULL karena di kasuss ini idA ga butuh
+                ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);
             }
             $result[1]=$temp;
 
@@ -51,13 +51,12 @@
              $temp=[];//ditolak
              foreach($query_result as $key => $value){
                   $temp[] = new TopUp($value["id_top_up"],$value["saldo_awal"],$value["saldo_akhir"],$value["nominal"]
-                 ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);//NULL karena di kasuss ini idA ga butuh
+                 ,$value["tanggal"],$value["status"],$value["gambar_bukti"],$value["idP"],$value["jenis"],$value["nama"],$value["idA"]);
              }
              $result[2]=$temp;
 
             return $result;
         }
-
         function validate(){
             if(isset($_SESSION["idA"])){
                 $idA=$_SESSION["idA"];
@@ -107,11 +106,10 @@
                 
 
             }
-        }
-       
-        
     
-       
+      
+        }
+        
 ?>
 
 <!-- SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region 
