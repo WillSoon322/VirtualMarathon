@@ -2,6 +2,7 @@
 require_once "controller/services/mysqlDB.php";
 require_once "view/view2.php";
 require_once "model/track.php";
+require_once "model/progress.php";
 session_start();
 class profileController
 {
@@ -29,10 +30,10 @@ class profileController
             $result[]=$temp;//0
             $temp=[];
 
-            $query="SELECT tema FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON p.idU=ps.idU WHERE ps.idU='$idU'";
+            $query="SELECT tema , persentase FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON p.idU=ps.idU WHERE ps.idU='$idU'";
             $query_result = $this->db->executeSelectQuery($query);
             foreach($query_result as $key => $value){
-                $temp[] = new track(NULL,NULL,NULL,NULL,$value["tema"],NULL,NULL,NULL);
+                $temp[] = new Progress($value["persentase"],$value["tema"],NULL,NULL,NULL,NULL);
                 }
             $result[]=$temp;//1
             
