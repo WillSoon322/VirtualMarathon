@@ -47,11 +47,7 @@ class profileController
             $result[]=$dir;//2
                 return $result;
             }
-            public function viewUpdate()
-    {
-        $result = $this->UpdateData();
-        return View2::createView("profile.php", ["result" => $result]);
-    }
+
 
     public function updateData()
     {

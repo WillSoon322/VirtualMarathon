@@ -14,13 +14,13 @@
     </div>
 
     <div class="back_button">
-        BACK
+        <i class="fas fa-chevron-left">  Back</i>
     </div>
     <?php
         //var_dump($result);
     ?>
     <div class="flex_container">
-        <div class="logo">LOGO</div>
+        <div class="logo"><img src="view/assets/logo_dark.png" alt=""></div>
         <?php $tema= $result[0]->getTema() ;?>
         <div class="your">YOUR PROGRESS IN <?php echo "$tema"; ?></div>
         <?php $temp= $result[0]->getPersentase() ?>

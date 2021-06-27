@@ -39,13 +39,25 @@ canvas{
     align-items: center;
 }
 
+.type_button{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.type_button:hover{
+    background-color: rgb(182, 182, 182);
+}
+
 .active{
-    background-color: burlywood;
+    background-color: aliceblue;
 }
 
 .page{
     position: absolute;
-    background-color: yellowgreen;
+    background-color: aliceblue;
     height: 100%;
     width: 80%;
     left: 20%;
@@ -56,10 +68,10 @@ canvas{
 
 .general{
     display: none;
+    /* background-color: aliceblue; */
 }
 
 .grid_container{
-    background-color: chartreuse;
     width: 100%;
     height: 90%;
     display: grid;
@@ -71,6 +83,8 @@ canvas{
 .grid_item{
     background-color: rgb(255, 255, 255);
     padding: 15px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 15px;
 }
 
 .user{
@@ -138,12 +152,11 @@ canvas{
 }
 
 .tracks{
-    background-color: aquamarine;
     display: none;
 }
 
 .tracks_content{
-    background-color: bisque;
+    /* background-color: bisque; */
     width: 100%;
     height: 100%;
     display: grid;
@@ -153,7 +166,10 @@ canvas{
 }
 
 .tracks_item{
-    background-color: yellow;
+    /* background-color: yellow; */
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 15px;
 }
 
 .statistik_track{
@@ -190,7 +206,10 @@ table th{
 }
 
 .user_item{
-    background-color: violet;
+    background-color: aliceblue;
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 15px;
 }
 
 .age_span{
@@ -209,6 +228,10 @@ table th{
 
 .female_user{
     grid-column: 5/7;
+}
+
+.usercount{
+    color: rgb(33, 8, 255);
 }
 
 .show{
