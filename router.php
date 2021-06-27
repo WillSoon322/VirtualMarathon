@@ -132,6 +132,7 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/signupController.php";
 				$signupCtrl = new SignupController();
 				echo $signupCtrl -> addUser();//echo hasil FINAL
+				header('location: login');
 			   break;
 			 case $baseURL.'/addTrack':
 				require_once "controller/addTrackController.php";
@@ -198,6 +199,12 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/tracksController.php";
 				$tracks = new tracksController();
 				echo $tracks -> viewFilter();//echo hasil FINAL
+			break;
+			case $baseURL.'/profile':
+				require_once "controller/profileController.php";
+				$profile = new profileController();
+				echo $profile -> updateData();//echo hasil FINAL
+				header("location: login");
 			break;
 				default:
 				echo "404 not found";

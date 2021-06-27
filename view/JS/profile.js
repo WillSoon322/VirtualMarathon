@@ -3,15 +3,16 @@ setting.addEventListener('click', function () {
     let over = document.querySelector('.over')
     over.style.display = 'block'
 })
-// let img = document.querySelector(".currImg").src
-// console.log(img)
-// if (img == "http://localhost/VirtualMarathon/view/assets/defaultbg.jpg") {
-//     console.log("default")
-//     document.querySelector(".myButton").href = "";
-// }
-// else {
-//     document.querySelector(".myButton").href = "progress";
-// }
+let button = document.querySelector(".myButton");
+let input = document.querySelector(".inputTrack").value;
+console.log(button)
+console.log(input)
+if (input == "") {
+    button.disabled = true;
+}
+else {
+    button.disabled = false;
+}
 
 function submit() {
     let submit = document.querySelector(".buttonForm");

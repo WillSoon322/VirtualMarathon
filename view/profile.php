@@ -79,7 +79,15 @@
             <!-- //img tadinya di sini! -->
             <div class="go_button">
                 <form action="trackpage" method="POST" class="buttonForm">
-                    <input type="text" name="tema" class="inputTrack" value="<?php echo $_SESSION["progress"]?>" readonly>
+                    <?php 
+                        if (isset($_SESSION["progress"])==false){
+                        $progres="";
+                        }
+                        else{
+                            $progres=$_SESSION["progress"];
+                        }
+                    ?>
+                    <input type="text" name="tema" class="inputTrack" value="<?php echo $progres?>" readonly>
                     <button onclick="submit()" class="myButton">GO!!</button> 
                 </form>
             </div>
@@ -98,7 +106,7 @@
                 <h2>Track yang dimiliki:</h2><br><br>
                 <?php foreach ($result[1] as $key => $row) {
                 ?>
-                    <h3><?php echo $row->getTema(); ?><br></h3>
+                    <h3><?php echo $row->getTema(); ?><br><br></h3>
                     
                 <?php } ?>
 
@@ -144,15 +152,18 @@
 
     <div class="over">
         <div class="box">
-            <form action="profile" method="POST">
+            <form action="profile" method="POST" enctype="multipart/form-data">
                 <input type="text" name="namabaru">
-                <label for="namabaru">Name : </label>
+                <label for="namabaru">Nama Baru: </label>
+                <br>
+                <input type="text" name="alamatbaru">
+                <label for="alamatbaru">Alamat Baru: </label>
                 <br>
                 <input type="text" name="passwordbaru">
-                <label for="passwordbaru">new password : </label>
+                <label for="passwordbaru">New password : </label>
                 <br>
                 <input type="text" name="re-passwordbaru">
-                <label for="re-passwordbaru">retype new password : </label>
+                <label for="re-passwordbaru">Retype new password : </label>
                 <br>
                 <input type="file" name="gambarbaru" id="">
                 <br>
