@@ -19,7 +19,6 @@
 
                 <div class="button_box">
             <button type="submit">Log In</button>
-            <button href="signup">Sign Up</button>
         </div>
             </form>
             

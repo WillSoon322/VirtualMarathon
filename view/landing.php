@@ -20,6 +20,7 @@
             <nav>
                 <a class="nav_link" href="login"><b>Log In</b></a>
                 <a class="nav_link" href="signup"><b>Sign Up</b></a>
+                <a class="nav_link" href="tracks"><b>Tracks</b></a>
             </nav>
         </header>
         <div class="carousel_container">
@@ -29,8 +30,9 @@
     </section>
     <section class="section">
         <div class="mini_about">
-            <img src="view/assets/logo_white.png" alt="">
+            <img src="view/assets/logo_white_small.png" alt="">
             <div class="story">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium facilis minima inventore sed optio pariatur aut cupiditate asperiores harum consequatur magnam dolore, nobis temporibus at quidem similique nihil non quae.</div>
+            <a class="about" href="aboutus">LEARN MORE</a>
         </div>
     </section>
     <section class="section">

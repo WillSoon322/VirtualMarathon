@@ -71,8 +71,11 @@ img{
 }
 
 .button_box{
+    position: absolute;
     display: flex;
     justify-content: space-around;
+    top: 75%;
+    left: 35%;
 }
 
 button{

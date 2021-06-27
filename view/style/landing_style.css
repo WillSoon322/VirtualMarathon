@@ -201,6 +201,14 @@ nav{
     font-size: x-large;
 }
 
+.about{
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    right: 20%;
+    top: 185%;
+}
+
 
 
 @keyframes slide{

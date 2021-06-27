@@ -22,15 +22,14 @@
             </div>
             <div class="user_info_picture">
                 <?php
-                if (isset($_SESSION["gambar"])&&($_SESSION["gambar"]!=NULL)&&($_SESSION["gambar"]!='NULL')) {
-                     $dp = $_SESSION["gambar"];
-                     //var_dump($dp);
-                } 
-                else{
-                    $dp="view/assets/user.png";
+                if (isset($_SESSION["gambar"]) && ($_SESSION["gambar"] != NULL) && ($_SESSION["gambar"] != 'NULL')) {
+                    $dp = $_SESSION["gambar"];
                     //var_dump($dp);
-                }?>
-                <img src="<?php echo $dp;?>" alt="" class>
+                } else {
+                    $dp = "view/assets/user.png";
+                    //var_dump($dp);
+                } ?>
+                <img src="<?php echo $dp; ?>" alt="" class>
             </div>
             <div class="info_1">
                 <?php
@@ -42,7 +41,7 @@
             </div>
             <hr>
             <br>
-            
+
             <div class="detil_info info_umur">
                 <?php
                 if (isset($_SESSION["usia"])) {
@@ -139,18 +138,21 @@
 
     <div class="over">
         <div class="box">
-            <input type="text" name="namabaru">
-            <label for="namabaru">Name : </label>
-            <br>
-            <input type="text" name="passwordbaru">
-            <label for="passwordbaru">new password : </label>
-            <br>
-            <input type="text" name="re-passwordbaru">
-            <label for="re-passwordbaru">retype new password : </label>
-            <br>
-            <input type="file" name="gambarbaru" id="">
-            <br>
-            <button>Change</button>
+            <form action="profile" method="POST">
+                <input type="text" name="namabaru">
+                <label for="namabaru">Name : </label>
+                <br>
+                <input type="text" name="passwordbaru">
+                <label for="passwordbaru">new password : </label>
+                <br>
+                <input type="text" name="re-passwordbaru">
+                <label for="re-passwordbaru">retype new password : </label>
+                <br>
+                <input type="file" name="gambarbaru" id="">
+                <br>
+                <button>Change</button>
+            </form>
+
         </div>
     </div>
 </body>

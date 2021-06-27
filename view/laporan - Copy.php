@@ -35,7 +35,6 @@
             <div class="user_button">
                 User
             </div>
-            <button class="pdfbutton">Generate PDF</button>
         </div>
         <div class="page general">
             <div class="grid_container">
