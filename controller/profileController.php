@@ -26,7 +26,7 @@
             foreach($query_result as $key => $value){
                 $temp[] = new track(NULL,NULL,NULL,NULL,NULL,NULL,NULL,$value["gambarBadge"]);
                 }
-            $result[]=$temp;
+            $result[]=$temp;//0
             $temp=[];
 
             $query="SELECT tema FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON p.idU=ps.idU WHERE ps.idU='$idU'";
@@ -34,7 +34,17 @@
             foreach($query_result as $key => $value){
                 $temp[] = new track(NULL,NULL,NULL,NULL,$value["tema"],NULL,NULL,NULL);
                 }
-            $result[]=$temp;
+            $result[]=$temp;//1
+            
+            $dir="view/assets/defaultbg.jpg";//besok cari default nya
+           
+            if(isset($_SESSION['progress'])){
+                $gambarBackGround=$_SESSION['progress'];
+                $query="SELECT gambar FROM track t WHERE tema='$gambarBackGround'";
+                $query_result = $this->db->executeSelectQuery($query);
+                $dir=$query_result[0]['gambar'];
+            }
+            $result[]=$dir;//2
                 return $result;
             }
             

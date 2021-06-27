@@ -77,24 +77,30 @@
             </div>
         </div>
         <div class="current_track">
+            <!-- //img tadinya di sini! -->
             <div class="go_button">
-                <a href="#" class="myButton">GO!!</a>
+                <form action="trackpage" method="POST" class="buttonForm">
+                    <input type="text" name="tema" class="inputTrack" value="<?php echo $_SESSION["progress"]?>" readonly>
+                    <button onclick="submit()" class="myButton">GO!!</button> 
+                </form>
             </div>
+            <img class="currImg" src="<?php echo $result[2]?>" alt="">
         </div>
         <div class="owned_medal">
             <!-- <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div> -->
             <?php foreach ($result[0] as $key => $row) {
             ?>
-                <div class="medal"><?php echo $row->getGambarBadge() ?></div>
+                <div class="medal"><img src="<?php echo $row->getGambarBadge() ?>" alt=""></div>
             <?php } ?>
 
         </div>
         <div class="API_weather">
             <div class="trackList">
-
+                <h2>Track yang dimiliki:</h2><br><br>
                 <?php foreach ($result[1] as $key => $row) {
                 ?>
-                    <a href="progress" id="<?php echo $row->getTema() ?>"><?php echo $row->getTema(); ?></a>
+                    <h3><?php echo $row->getTema(); ?><br></h3>
+                    
                 <?php } ?>
 
             </div>

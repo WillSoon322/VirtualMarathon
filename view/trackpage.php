@@ -25,9 +25,9 @@
         <!-- <div class="flag"><img src="view/assets/flag/japan.gif" alt=""></div> -->
         <img class="main_image" src="<?php echo $result[0]->getGambar()?>">
             <div class="main_atribute">
-                <div class="main_badge"><img src="<?php echo $result[0]->getGambarBadge()?>" alt="badge"></div>
+                <div class="main_badge">Badge:<img src="<?php echo $result[0]->getGambarBadge()?>" alt="badge"></div>
                 
-                <div class="main_medal"><img src="<?php echo $result[0]->getGambarMedal()?>"></div>
+                <div class="main_medal">Medal:<img src="<?php echo $result[0]->getGambarMedal()?>"></div>
             </div>
             <div class="bar"></div>
         </div>

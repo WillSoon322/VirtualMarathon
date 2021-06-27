@@ -73,13 +73,26 @@ body{
     font-size: 3em;
 }
 
+.inputTrack{
+    display:none;
+
+}
+.currImg{
+    width:100px;
+    height:100%;
+}
 .current_track{
     grid-column: 3/8;
     grid-row: 1/5;
-
-    background-image: url("../assets/current_track/fuji.jpg");
+    overflow:hidden;
+    
+   /* background-image: url("../assets/current_track/fuji.jpg"); */
     background-repeat: no-repeat;
     background-size: 100% auto;
+}
+
+.current_track img{
+    width:100%;
 }
 
 .go_button{
@@ -87,6 +100,7 @@ body{
     top: 79%;
     left: 44%;
     right: auto;
+    
 }
 
 .myButton {
@@ -126,7 +140,9 @@ body{
 .medal{
     height: 100%;
 }
-
+.medal img{
+    width:100px;
+}
 .badge_img{
     height: 100%;
 }

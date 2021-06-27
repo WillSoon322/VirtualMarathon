@@ -20,9 +20,16 @@ session_start();
        public function getProgress(){
         if(isset($_SESSION["trackDestination"])){
             $tema=$_SESSION["trackDestination"];
+           
+        }
+        else{
+            echo "error no track destination";
         }
         if(isset($_SESSION["idU"])){
             $idU=$_SESSION["idU"];
+        }
+        else{
+            echo "error no user logged in";
         }
         
         $query = "SELECT *
@@ -35,6 +42,7 @@ session_start();
         foreach($query_result as $key => $value){
             $result[] = new Progress($value["persentase"],$value["tema"],$value["jarak_total"],$value["sisa_jarak"],$value["jarak"],$value["idT"]);
         }
+        
         return $result;
        }
       
@@ -70,11 +78,12 @@ session_start();
                WHERE p.idU='$idU' AND p.idT ='$idT'
                ";
                $query_result = $this->db->executeNonSelectQuery($query);
+               
            }
            else{
                echo "error, progress not found";
            }
-            
+           $_SESSION["progress"]=$tema;
        }
 
        private function addMedal(){
