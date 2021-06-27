@@ -22,7 +22,9 @@ class profileController
             $result=[];
             $temp=[];
             $idU=$_SESSION["idU"];
-            $query="SELECT gambarBadge FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON p.idU=ps.idU WHERE ps.idU='$idU' AND persentase=100";
+            $query="SELECT gambarBadge 
+                    FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON p.idU=ps.idU 
+                    WHERE ps.idU='$idU' AND persentase=100";
             $query_result = $this->db->executeSelectQuery($query);
             foreach($query_result as $key => $value){
                 $temp[] = new track(NULL,NULL,NULL,NULL,NULL,NULL,NULL,$value["gambarBadge"]);
@@ -76,12 +78,7 @@ class profileController
                 $sukses=false;
             }
             else{
-            //echo $trackFileType;  
-            // echo =$_FILES['gambarTrack']['name'];
-            // echo "<br>";
                 $_FILES['gambarbaru']['name']=$idU.'.'.$trackFileType;//nama file dijadiin id track
-            //echo $_FILES['gambarTrack']['name'];
-            //echo "<br>";
             }
             $oldname1=$_FILES['gambarbaru']['tmp_name'];
             $newName1="view/assets/uploads/users/".$_FILES['gambarbaru']['name'];

@@ -93,10 +93,11 @@ canvas{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 
 .grid_item p{
-    margin-left: 0.45em;
+    margin-left: 0.3em;
 }
 
 .income{
@@ -123,6 +124,7 @@ canvas{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 
 .track2{
@@ -131,6 +133,7 @@ canvas{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 
 .track2 p{
@@ -232,6 +235,18 @@ table th{
 
 .usercount{
     color: rgb(33, 8, 255);
+}
+
+.usercountp{
+    color: rgb(33, 8, 255);
+}
+
+.trackcount{
+    color: forestgreen;
+}
+
+.trackcountp{
+    color: forestgreen;
 }
 
 .show{
