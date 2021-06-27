@@ -41,7 +41,7 @@
             <div class="grid_container">
                 <div class="grid_item user">
                     <i class="fas fa-user usercount"></i>
-                    <p>
+                    <p class="usercountp">
                         <?php
                         //TOTAL PESERTA
                         $totalUser = $result[0][0];
@@ -51,17 +51,6 @@
                 </div>
                 <div class="grid_item income">
                     <i class="fas fa-wallet"> TOTAL INCOME</i>
-                    <?php
-
-                    // $total=0;
-                    // //echo $result[0][1][0][1];
-                    //  foreach ($result[0][1] as $key => $row){
-                    //     // echo $row[0];//dapet count , jadi $row itu udah jadi [0] lagi
-                    //     $count=0+$row[0];
-                    //     $harga=0+$row[1];
-                    //     $total+=$count*$harga;
-                    //  }
-                    ?>
                     <p>Rp <?php
                             //TOTAL INCOME
                             $totalIncome = $result[0][1];
@@ -69,9 +58,9 @@
                             ?></p>
                 </div>
                 <div class="grid_item track">
-                    <i class="fas fa-road"></i>
+                    <i class="fas fa-road trackcount"></i>
                     <!-- BANYAK TRACK -->
-                    <p><?php echo $result[0][2] ?></p>
+                    <p class="trackcountp"><?php echo $result[0][2] ?></p>
                 </div>
                 <div class="grid_item income_graph">
                     <div style="width:100%;">
@@ -87,7 +76,7 @@
         <div class="page tracks">
             <div class="tracks_content">
                 <div class="tracks_item statistik_track">
-                    <div style="width:50%">
+                    <div style="width:100%; height:100%;">
                         <canvas id="canvas2"> </canvas>
                     </div>
                 </div>
@@ -190,9 +179,40 @@
             </div>
         </div>
     </div>
-
-
     <script>
+        var dummyData = [
+            2,
+            3,
+            1
+        ]
+        var colors = [
+            window.chartColors.red,
+            window.chartColors.grey,
+            window.chartColors.yellow,
+            window.chartColors.green,
+            window.chartColors.blue
+        ]
+
+        var myChart2 = {
+            type: 'pie',
+            data: {
+                labels: ["Red", "Grey", "Yellow"],
+                datasets: [{
+                    backgroundColor: colors,
+                    data: dummyData,
+                }],
+
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Chart.js Pie Chart'
+                },
+                responsive: true
+
+            },
+        };
+
         var dataPemasukan = []
         for (let a in tab) {
             if (tab[a] == null) {
@@ -245,50 +265,12 @@
             var ctx = document.getElementById("canvas").getContext("2d");
             new Chart(ctx, myChart);
 
-        };
-    </script>
-
-    <!-- <script>
-        var dummyData = [
-            2,
-            3,
-            1,
-            4,
-            4
-        ]
-        var colors = [
-            window.chartColors.red,
-            window.chartColors.grey,
-            window.chartColors.yellow,
-            window.chartColors.green,
-            window.chartColors.blue
-        ]
-
-        var myChart2 = {
-            type: 'pie',
-            data: {
-                labels: ["Red", "Grey", "Yellow", "Green", "Blue"],
-                datasets: [{
-                    backgroundColor: colors,
-                    data: dummyData,
-                }],
-
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Chart.js Pie Chart'
-                },
-                responsive: true
-
-            },
-        };
-
-        window.onload = function() {
             var ctx2 = document.getElementById('canvas2').getContext("2d");
             new Chart(ctx2, myChart2);
         };
-    </script> -->
+    </script>
+
+    
 </body>
 
 </html>
