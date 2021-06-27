@@ -28,7 +28,7 @@
         <div class="progress_bar">BAR</div>
         <form action="progress" name="progressInput" method="POST">
             <label for="progressInputText">Progress: </label>
-            <input type="number" name="progressInputText" >
+            <input type="number" name="progressInputText" step="0.01">
             <button type="submit" class="add_progress">SUBMIT</button>
         </form>
         

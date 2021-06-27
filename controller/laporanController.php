@@ -20,7 +20,7 @@
         public function getLaporan(){
             $result=[];
             //TOTAL USER
-            $query = "SELECT count(idU) FROM peserta";
+            $query = "SELECT count(idU) FROM peserta WHERE deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $result[0]=$query_result[0]["count(idU)"];//TOTAL USER WEBSITE
             //var_dump($result[0]);
@@ -89,34 +89,34 @@
 
             //range umur
             $temp=[];
-            $query="SELECT count(usia) FROM peserta WHERE usia>=1 AND usia<=10";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=1 AND usia<=10 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[0]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=11 AND usia<=20";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=11 AND usia<=20 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[1]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=21 AND usia<=30";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=21 AND usia<=30 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[2]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=31 AND usia<=40";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=31 AND usia<=40 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[3]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=41 AND usia<=50";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=41 AND usia<=50 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[4]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=51 AND usia<=60";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=51 AND usia<=60 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[5]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=61 AND usia<=70";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=61 AND usia<=70 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[6]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=71 AND usia<=80";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=71 AND usia<=80 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[7]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=81 AND usia<=90";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=81 AND usia<=90 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[8]=new Count($query_result[0]["count(usia)"]);
-            $query="SELECT count(usia) FROM peserta WHERE usia>=91 AND usia<=100";
+            $query="SELECT count(usia) FROM peserta WHERE usia>=91 AND usia<=100 AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[9]=new Count($query_result[0]["count(usia)"]);
     
@@ -124,10 +124,10 @@
             //var_dump($result[5]);
 
             $temp=[];//0 buat cowo 1 buat cewe
-            $query="SELECT count(Gender) FROM peserta WHERE Gender='Pria'";
+            $query="SELECT count(Gender) FROM peserta WHERE Gender='Pria' AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[0]=new Count($query_result[0]["count(Gender)"]);
-            $query="SELECT count(Gender) FROM peserta WHERE Gender='Wanita'";
+            $query="SELECT count(Gender) FROM peserta WHERE Gender='Wanita' AND deleted!=1";
             $query_result=$this->db->executeSelectQuery($query);
             $temp[1]=new Count($query_result[0]["count(Gender)"]);
             $result[6]=$temp;

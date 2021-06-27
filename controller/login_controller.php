@@ -24,7 +24,7 @@
             
             $query = "SELECT *
             FROM user u  INNER JOIN peserta p ON u.idU=p.idU 
-            WHERE username='$username'";
+            WHERE username='$username'  AND deleted!=1";
 
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
@@ -43,7 +43,7 @@
             FROM user u  INNER JOIN peserta p ON u.idU=p.idU 
             INNER JOIN progress a ON u.idU=a.idU 
             INNER JOIN track t ON a.idT=t.idT 
-            WHERE username='$username'";
+            WHERE username='$username' ";
             $query_result = $this->db->executeSelectQuery($query);
             foreach($query_result as $key => $value){
                 $tracks[] = new Track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"],$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);

@@ -9,7 +9,7 @@
     <div class="ubah_track_box">
         <form method="post" action="changeTrack" enctype="multipart/form-data">
 
-            <select name="track" id="cars">
+            <select name="track">
 
                 <option value="default">Select Track</option>
 
@@ -28,27 +28,22 @@
 
             <input class="text_input" type="text" name="harga">
             <label class="text_label" for="harga">Harga Baru: </label>
-
+                <br>
             <input class="text_input" type="text" name="region">
             <label class="text_label" for="region">Region: </label>
-
-            <input class="text_input" type="text" name="jarak">
-            <label class="text_label" for="jarak">jarak Baru: </label>
-
-            <a class="text_label">Foto Track Baru:</a>
-            <b class="text_input">
-                <input type="file" accept="image/*" name="fileToUploadGambar" id="fileToUpload">
-                <button class="test">test</button>
-                <div class="testdiv"></div>
-            </b>
-            <a class="text_label">Foto Medali Baru:</a>
-            <b class="text_input">
-                <input type="file" name="fileToUploadMedal">
-            </b>
-            <a class="text_label">Foto Badge Baru:</a>
-            <b class="text_input">
-                <input type="file" name="fileToUploadBagde">
-            </b>
+                <br><br><br><br><br><br> <br><br><br><br><br><br>
+                
+            <label  for="gambarTrack">Foto Track: </label>
+            <input type="file" class="gambarTrack" name="gambarTrack">
+                 <br>
+            <label  for="gambarMedali">Foto Medali: </label>
+            <input type="file" class="gambarMedali" name="gambarMedali">
+            
+                <br>
+            <label  for="gambarBadge">Foto Badge: </label>
+            <input type="file" class="gambarBadge" name="gambarBadge">
+            <br><br><br>
+            <br>
             <button type="submit">Ubah Track</button>
     </div>
 
