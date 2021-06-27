@@ -1,12 +1,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="view/style/laporan.css">
     <title>laporan</title>
     <script defer src="view/JS/laporan.js"></script>
     <script src="https://kit.fontawesome.com/c3d54056dd.js" crossorigin="anonymous"></script>
     <script src="view/JS/Chart.bundle.js"></script>
     <script src="view/JS/utils.js"></script>
     <script src="view/JS/jspdf.min.js"></script>
+    <link rel="stylesheet" href="view/style/laporan.css">
 </head>
 
 
@@ -26,13 +26,13 @@
         
         <div class="default">WELCOME</div>
         <div class="type">
-            <div class="general_button active">
+            <div class="type_button general_button">
                 General
             </div>
-            <div class="track_button">
+            <div class="type_button track_button">
                 Track
             </div>
-            <div class="user_button">
+            <div class="type_button user_button">
                 User
             </div>
             <button class="pdfbutton">Generate PDF</button>
@@ -40,7 +40,7 @@
         <div class="page general">
             <div class="grid_container">
                 <div class="grid_item user">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user usercount"></i>
                     <p>
                         <?php
                         //TOTAL PESERTA
@@ -235,7 +235,7 @@
                 },
                 title: {
                     display: true,
-                    text: 'Chart.js Line Chart'
+                    text: 'Laporan Bulanan'
                 },
                 responsive: true
             }

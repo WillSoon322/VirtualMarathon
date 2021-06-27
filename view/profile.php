@@ -12,8 +12,7 @@
         <?php
         function pindah()
         {
-            //session thingy here
-
+            
         }
         ?>
         <div class="user_info">
@@ -79,7 +78,7 @@
             <!-- //img tadinya di sini! -->
             <div class="go_button">
                 <form action="trackpage" method="POST" class="buttonForm">
-                    <input type="text" name="tema" class="inputTrack" value="<?php echo $_SESSION["progress"]?>" readonly>
+                    <input type="text" name="tema" class="inputTrack" value="<?php echo $_SESSION["progress"]?>">
                     <button onclick="submit()" class="myButton">GO!!</button> 
                 </form>
             </div>

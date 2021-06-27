@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+header{
+    display: none;
+}
+
 .dim_overlay{
     position: absolute;
     background: rgba(0, 0, 0, 0.8);
@@ -55,9 +59,10 @@ input{
     position: absolute;
     top: 0.7em;
     left: 0.7em;
-    background-color: rgb(18, 18, 92);
-    width: 5em;
-    height: 5em;
+    /* background-color: rgb(18, 18, 92); */
+    width: fit-content;
+    height: fit-content;
+    font-size: 2.8em;
 }
 
 .flex_container{
@@ -69,13 +74,20 @@ input{
 }
 
 .logo{
-    background-color: bisque;
+    /* background-color: bisque; */
     height: 12em;
     width: 35em;
 }
 
+.logo img{
+    width: 100%;
+    height: auto;
+    max-width: 9999px;
+}
+
 .your{
-    background-color: aqua;
+    /* background-color: aqua; */
+    margin-top: 40px;
     font-size: xx-large;
 }
 
