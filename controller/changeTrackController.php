@@ -64,7 +64,7 @@ class ChangeTrackController
             if (isset($_POST['region']) and $_POST['region'] != "") { //region
 
                 $tempValue = $_POST['region'];
-                $query = "UPDATE track SET region = $tempValue WHERE track.idT=$tempId";
+                $query = "UPDATE track SET region = '$tempValue' WHERE track.idT=$tempId";
                 $this->db->executeNonSelectQuery($query);
             } else {
                 echo "ga";

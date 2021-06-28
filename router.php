@@ -181,7 +181,7 @@ $baseURL = '/VirtualMarathon';
 				require_once "controller/loginPemilikController.php";
 				$laCtrl = new LoginPemilikController();
 				echo $laCtrl -> loginPemilik();//echo hasil FINAL
-				header("location: profilePemilik");
+				
 			break;
 			case $baseURL.'/topup':
 				require_once "controller/topupController.php";

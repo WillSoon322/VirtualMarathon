@@ -26,7 +26,7 @@
             //var_dump($result[0]);
 
             //TOTAL DUIT
-            $query="SELECT SUM(nominal) FROM transaksi_top_up";
+            $query="SELECT SUM(nominal) FROM transaksi_top_up WHERE `status`='Tervalidasi'";
             $query_result=$this->db->executeSelectQuery($query);
             $result[1]=$query_result[0]["SUM(nominal)"];//TOTAL PENGHASILAN
             //var_dump($query_result);
@@ -39,40 +39,40 @@
 
              //GRAPH (top up per bulan)
              $temp=[];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=1";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=1 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[0]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=2";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=2 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[1]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=3";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=3 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[2]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=4";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=4 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[3]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=5";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=5 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[4]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=6";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=6 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[5]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=7";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=7 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[6]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=8";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=8 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[7]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=9";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=9 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[8]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=10";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=10 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[9]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=11";
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=11 AND `status`='Tervalidasi'";
              $query_result=$this->db->executeSelectQuery($query);
              $temp[10]=$query_result[0]["SUM(nominal)"];
-             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=12";//and tahun= curr tahun
+             $query = "SELECT SUM(nominal) FROM transaksi_top_up WHERE MONTH(tanggal)=12 AND `status`='Tervalidasi'";//and tahun= curr tahun
              $query_result=$this->db->executeSelectQuery($query);
              $temp[11]=$query_result[0]["SUM(nominal)"];
              $result[3]=$temp;
