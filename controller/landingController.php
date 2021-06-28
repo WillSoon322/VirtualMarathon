@@ -22,8 +22,9 @@
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
             foreach($query_result as $key => $value){
-                $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
-                ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
+                // $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
+                // ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
+                $result[] = new track(NULL,NULL,$value["gambar"],NULL,NULL,NULL,NULL,NULL);
             }
            
             return $result;

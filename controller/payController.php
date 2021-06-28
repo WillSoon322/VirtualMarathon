@@ -16,12 +16,13 @@
 
         public function pay(){
             $tema=$_SESSION["trackDestination"];
-            $query = "SELECT * FROM track t WHERE t.tema='$tema'";
+            //$query = "SELECT * FROM track t WHERE t.tema='$tema'";
+            $query = "SELECT idT,jarak,harga FROM track t WHERE t.tema='$tema'";
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
             foreach($query_result as $key => $value){
-                $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
-                ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
+                $result[] = new track($value["idT"],$value["harga"],NULL,$value["jarak"]
+                ,NULL,NULL,NULL,NULL);
             }
             $idT=$result[0]->getIdT();
             $jarak=$result[0]->getJarak();

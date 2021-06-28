@@ -110,7 +110,7 @@ class ChangeTrackController
                     $oldname2 = $_FILES['gambarMedali']['tmp_name'];
                     $newName2 = "view/assets/uploads/medals/" . $_FILES['gambarTrack']['name']; // harusnya jadi view/assets/uploads/tracks/1.jpg
                     move_uploaded_file($oldname2, $newName2);
-                    $query = "UPDATE track SET gambar='$newName2' WHERE idT='$tempId'";
+                    $query = "UPDATE track SET gambarMedali='$newName2' WHERE idT='$tempId'";
                     $this->db->executeNonSelectQuery($query);
                 }
             } else {
@@ -128,7 +128,7 @@ class ChangeTrackController
                     $oldname3 = $_FILES['gambarBadge']['tmp_name'];
                     $newName3 = "view/assets/uploads/badges/" . $_FILES['gambarBadge']['name']; // harusnya jadi view/assets/uploads/tracks/1.jpg
                     move_uploaded_file($oldname3, $newName3);
-                    $query = "UPDATE track SET gambar='$newName3' WHERE idT='$tempId'";
+                    $query = "UPDATE track SET gambarBadge='$newName3' WHERE idT='$tempId'";
                     $this->db->executeNonSelectQuery($query);
                 }
             } else {
