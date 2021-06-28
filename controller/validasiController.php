@@ -62,15 +62,10 @@
                 $idA=$_SESSION["idA"];
                 if(isset($_POST["validation"])){
                     if($_POST["validation"]=="true"){
-                        $val="Tervalidasi";
-                    }
-                    else {
-                        $val="Ditolak";
-                    }
-                }
-                else{
-                        echo "error validating";
-                 }
+                        $val="Tervalidasi";}
+                    else{
+                        $val="Ditolak";}}
+                else{echo "error validating";}
                  echo $val;
                     if(isset($_POST["idT"])){
                         $idT=$_POST["idT"];

@@ -32,19 +32,6 @@ class AddTrackController
         $idT=1+$result[0]['count(idT)'];
 
         $sukses=true;
-
-        // if ($_FILES["gambarTrack"]["size"] > 500000) {
-        //     echo "insert file with smaller size!";
-        //     $sukses=false;
-        // }
-        // if ($_FILES["gambarMedali"]["size"] > 500000) {
-        //     echo "insert file with smaller size!";
-        //     $sukses=false;
-        // }
-        // if ($_FILES["gambarBadge"]["size"] > 500000) {
-        //     echo "insert file with smaller size!";
-        //     $sukses=false;
-        // }
         if($_FILES['gambarTrack']['name']!==""){
             $trackFileType = strtolower(pathinfo($_FILES['gambarTrack']['name'], PATHINFO_EXTENSION));
             if($trackFileType!="jpg"&&$trackFileType!="png"&&$trackFileType!="jpeg"){
@@ -52,12 +39,7 @@ class AddTrackController
                 $sukses=false;
             }
             else{
-            //echo $trackFileType;  
-            // echo =$_FILES['gambarTrack']['name'];
-            // echo "<br>";
                 $_FILES['gambarTrack']['name']=$idT.'.'.$trackFileType;//nama file dijadiin id track
-            //echo $_FILES['gambarTrack']['name'];
-            //echo "<br>";
             }
 
             $oldname1=$_FILES['gambarTrack']['tmp_name'];
@@ -78,18 +60,11 @@ class AddTrackController
                 $sukses=false;
             }
             else{
-            //echo $trackFileType;  
-            // echo =$_FILES['gambarTrack']['name'];
-            // echo "<br>";
                 $_FILES['gambarMedali']['name']=$idT.'.'.$trackFileType;//nama file dijadiin id track
-            //echo $_FILES['gambarTrack']['name'];
-            //echo "<br>";
             }
 
             $oldname2=$_FILES['gambarMedali']['tmp_name'];
             $newName2="view/assets/uploads/medals/".$_FILES['gambarTrack']['name'];// harusnya jadi view/assets/uploads/tracks/1.jpg
-            
-           //echo "success";
         }
          else{
              echo "please insert an image for medal<br>";
@@ -104,18 +79,11 @@ class AddTrackController
                 $sukses=false;
             }
             else{
-            //echo $trackFileType;  
-            // echo =$_FILES['gambarTrack']['name'];
-            // echo "<br>";
                 $_FILES['gambarBadge']['name']=$idT.'.'.$badgeFileType;//nama file dijadiin id track
-            //echo $_FILES['gambarTrack']['name'];
-            //echo "<br>";
             }
 
             $oldname3=$_FILES['gambarBadge']['tmp_name'];
             $newName3="view/assets/uploads/badges/".$_FILES['gambarBadge']['name'];// harusnya jadi view/assets/uploads/tracks/1.jpg
-            
-           //echo "success";
         }
          else{
              echo "please insert an image for badge<br>";

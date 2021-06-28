@@ -26,11 +26,6 @@
                             <button class="method_item">BRI</button>
                             <button class="method_item">MEGA</button>
                             <button class="method_item">OCBC</button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
-                            <button class="method_item"></button>
                         </div>
 
                         <input class="payment_confirm" type="text" disabled>
@@ -43,11 +38,12 @@
             <div class="section_panel left">
                 <div class="panel">
                     <div class="panel_title">
+                    <h2>Choose the ammount for your Top-Up</h2>
                             <input type="number" method="post" action="confirmation" class="ammount_input">
                         </form>
                     </div>
                     <div class="next2" class="panel_content">
-                        <div class="vertical_line"></div>
+                        <a href="#confirmation">NEXT</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +61,6 @@
                         YOUR ORDER
                     </div>
                     <div class="panel_content">
-                        <div class="vertical_line"></div>
                         <form action="topup" method="POST" enctype="multipart/form-data">
                             <input type="text" id="confirm_method" name="confirm_method" readonly>
                             <input type="text" id="confirm_ammount" name="confirm_ammount" readonly>

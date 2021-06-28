@@ -13,7 +13,7 @@
 
         <header>
             <div class="logo">
-                <h1>LOGO</h1>
+                <img src="view/assets/logo_white_nav.png" alt="">
             </div>
 
 
@@ -26,6 +26,9 @@
         <div class="carousel_container">
             <div class="overlay"></div>
             <img src="view/assets/1.jpg" alt="">
+        </div>
+        <div class="Start">
+            Start Now
         </div>
     </section>
     <section class="section">

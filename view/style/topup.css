@@ -89,6 +89,15 @@ section{
     background-color: chartreuse;
 }
 
+.ammount_input{
+    width: 400px;
+    height: 45px;
+}
+
+h2{
+    margin-bottom: 30px;
+}
+
 .payment_confirm{
     box-sizing: border-box;
     padding: 0%;

@@ -11,7 +11,7 @@ header{
     background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(25,10,85,1) 60%, rgba(0,212,255,1) 100%);
     opacity: 1;
     display: flex;
-    z-index: 2;
+    z-index: 10;
     box-shadow: 5px 5px 5px;
 }
 

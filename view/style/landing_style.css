@@ -21,7 +21,7 @@ body, html{
 }
 
 header{
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(151, 151, 151);
     position: relative;
     top: 0.5rem;
     width: 100%;
@@ -31,8 +31,10 @@ header{
 
 .logo{
     position: absolute;
-    bottom: 8%;
-    left: 10%;
+}
+
+.logo img{
+    height: 70px;
 }
 
 nav{
@@ -79,6 +81,14 @@ nav{
     top: 0;
     left: -100%;
     width: 100%;
+}
+
+.Start{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 78%;
+    left: 35%;
+    font-size: x-large;
 }
 
 .overlay{
