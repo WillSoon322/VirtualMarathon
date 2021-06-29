@@ -105,7 +105,7 @@
                 <h2>Track yang dimiliki:</h2><br><br>
                 <?php foreach ($result[1] as $key => $row) {
                 ?>
-                    <h3><?php echo $row->getTema(); ?> / <?php echo $row->getPersentase(); ?><br><br></h3>
+                    <h3><?php echo $row->getTema(); ?> / <?php echo $row->getPersentase(); ?>%<br><br></h3>
                     
                 <?php } ?>
 

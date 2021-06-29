@@ -56,7 +56,7 @@ class SignupController
             $tempId=$this->db->executeSelectQuery($query);
             var_dump($tempId);
             $idU=0+$tempId[0]["idU"];
-            var_dump($idU);
+            //var_dump($idU);
             $query = "INSERT INTO peserta 
                         VALUES ('$idU','$phone','$email','$name','$gender','$kota','$address','$age',0,false)";
             $this->db->executeNonSelectQuery($query);

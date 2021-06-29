@@ -21,12 +21,12 @@
         public function getTrack(){
             $bolAdaTrack=false;
             $tema=$_POST["tema"];
-            $query = "SELECT *
+            $query = "SELECT t.idT, t.harga, t.gambar, t.jarak, t.tema, t.region, t.gambarMedali, t.gambarBadge, ps.idU
                         FROM track t LEFT OUTER JOIN medali m ON m.idT=t.idT 
                          LEFT OUTER JOIN (progress p  INNER JOIN peserta ps ON p.idU= ps.idU) ON t.idT=p.idT
                         WHERE tema='$tema'
                      ";
-            
+            //tadinya *
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
             $peserta=[];
@@ -34,8 +34,7 @@
                 $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
                 ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
 
-                $peserta[] = new Peserta($value["idU"],$value["no_telepon"],$value["email"],$value["nama"],$value["Gender"]
-                ,$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"]);
+                $peserta[] = new Peserta($value["idU"],NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
                 if(isset($_SESSION["idU"])){
                 if($peserta[$key]->getIdU()==$_SESSION["idU"]){
                     $bolAdaTrack=true;
