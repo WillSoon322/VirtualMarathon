@@ -35,17 +35,17 @@
                 ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
 
                 $peserta[] = new Peserta($value["idU"],NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-                if(isset($_SESSION["idU"])){
-                if($peserta[$key]->getIdU()==$_SESSION["idU"]){
+                if(isset($_SESSION["peserta"]["idU"])){
+                if($peserta[$key]->getIdU()==$_SESSION["peserta"]["idU"]){
                     $bolAdaTrack=true;
                 }
             }
             }
             if($bolAdaTrack==true){
-                $_SESSION["pemilikTrack"]=true;
+                $_SESSION["peserta"]["pemilikTrack"]=true;
             }
             else{
-                $_SESSION["pemilikTrack"]=false;
+                $_SESSION["peserta"]["pemilikTrack"]=false;
             }
             
             return $result;

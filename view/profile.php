@@ -6,7 +6,7 @@
 
 
 <body>
-
+    <?php //var_dump($result)?>
 
     <div class="content">
         <?php
@@ -20,21 +20,33 @@
             </div>
             <div class="user_info_picture">
                 <?php
-                if (isset($_SESSION["gambar"]) && ($_SESSION["gambar"] != NULL) && ($_SESSION["gambar"] != 'NULL')) {
-                    $dp = $_SESSION["gambar"];
-                    //var_dump($dp);
-                } else {
-                    $dp = "view/assets/user.png";
-                    //var_dump($dp);
-                } ?>
+                    // if (isset($_SESSION["peserta"]["gambar"]) && ($_SESSION["peserta"]["gambar"] != NULL) && ($_SESSION["peserta"]["gambar"] != 'NULL')) {
+                    //     $dp = $_SESSION["peserta"]["gambar"];
+                    //     //var_dump($dp);
+                    // } else {
+                    //     $dp = "view/assets/user.png";
+                    //     //var_dump($dp);
+                    // } 
+                    if(isset($result[3])){
+                        $dp=$result[3][0]->getGambar();
+                    }
+                    else{
+                        $dp="view/assets/user.png";
+                    }
+                ?>
                 <img src="<?php echo $dp; ?>" alt="" class>
             </div>
             <div class="info_1">
                 <?php
-                if (isset($_SESSION["nama"])) {
-                    $user = $_SESSION["nama"];
-                    echo "<h2> $user </h2>";
+                // if (isset($_SESSION["peserta"]["nama"])) {
+                //     $user = $_SESSION["peserta"]["nama"];
+                //     echo "<h2> $user </h2>";
+                // }
+                if(isset($result[4])){
+                    $nama=$result[4][0]->getNama();
+                    echo "<h2>$nama</h2>";
                 }
+                
                 ?>
             </div>
             <hr>
@@ -42,32 +54,47 @@
 
             <div class="detil_info info_umur">
                 <?php
-                if (isset($_SESSION["usia"])) {
-                    $user = $_SESSION["usia"];
-                    echo "<h2> Usia: $user </h2>";
+                // if (isset($_SESSION["peserta"]["usia"])) {
+                //     $user = $_SESSION["peserta"]["usia"];
+                //     echo "<h2> Usia: $user </h2>";
+                // }
+                if(isset($result[4])){
+                    $usia=$result[4][0]->getusia();
+                    echo "<h2>$usia</h2>";
                 }
+                
                 ?>
             </div>
             <div class="detil_info info_gender">
                 <?php
-                if (isset($_SESSION["Gender"])) {
-                    $user = $_SESSION["Gender"];
-                    echo "<h2> Gender: $user </h2>";
+                // if (isset($_SESSION["peserta"]["Gender"])) {
+                //     $user = $_SESSION["peserta"]["Gender"];
+                //     echo "<h2> Gender: $user </h2>";
+                // }
+                if(isset($result[4])){
+                    $nama=$result[4][0]->getGender();
+                    echo "<h2>$nama</h2>";
                 }
+                
                 ?>
             </div>
             <div class="detil_info info_alamat">
                 <?php
-                if (isset($_SESSION["Alamat"])) {
-                    $user = $_SESSION["Alamat"];
-                    echo "<h2> Alamat: $user </h2>";
+                // if (isset($_SESSION["peserta"]["Alamat"])) {
+                //     $user = $_SESSION["peserta"]["Alamat"];
+                //     echo "<h2> Alamat: $user </h2>";
+                // }
+                if(isset($result[4])){
+                    $nama=$result[4][0]->getAlamat();
+                    echo"<h2>$nama</h2>";
                 }
+               
                 ?>
             </div>
             <div class="detil_info info_saldo">
                 <?php
-                if (isset($_SESSION["saldo"])) {
-                    $user = $_SESSION["saldo"];
+                if (isset($_SESSION["peserta"]["saldo"])) {
+                    $user = $_SESSION["peserta"]["saldo"];
                     echo "<h2> Saldo: $user </h2>";
                 }
                 ?>
@@ -80,12 +107,13 @@
             <img class="currImg" src="<?php echo $result[2] ?>" alt="">
             <div class="go_button">
                 <form action="trackpage" method="POST" class="buttonForm">
-                    <?php
-                    if (isset($_SESSION["progress"]) == false) {
-                        $progres = "";
-                    } else {
-                        $progres = $_SESSION["progress"];
-                    }
+                    <?php 
+                        if (isset($_SESSION["peserta"]["progress"])==false){
+                        $progres="";
+                        }
+                        else{
+                            $progres=$_SESSION["peserta"]["progress"];
+                        }
                     ?>
                     <input type="text" name="tema" class="inputTrack" value="<?php echo $progres ?>" readonly>
                     <button onclick="submit()" class="myButton">GO!!</button>

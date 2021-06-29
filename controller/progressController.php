@@ -18,15 +18,15 @@ session_start();
         }
 
        public function getProgress(){
-        if(isset($_SESSION["trackDestination"])){
-            $tema=$_SESSION["trackDestination"];
+        if(isset($_SESSION["peserta"]["trackDestination"])){
+            $tema=$_SESSION["peserta"]["trackDestination"];
            
         }
         else{
             echo "error no track destination";
         }
-        if(isset($_SESSION["idU"])){
-            $idU=$_SESSION["idU"];
+        if(isset($_SESSION["peserta"]["idU"])){
+            $idU=$_SESSION["peserta"]["idU"];
         }
         else{
             echo "error no user logged in";
@@ -68,10 +68,10 @@ session_start();
                 
                $persentase= (float) ($jarak_total/$jarak)*100;
                 
-               $idU=$_SESSION["idU"];
+               $idU=$_SESSION["peserta"]["idU"];
                $idT=$result[0]->getIdT();
                
-               $tema=$_SESSION["trackDestination"];
+               $tema=$_SESSION["peserta"]["trackDestination"];
 
                $query = "UPDATE progress p
                SET p.persentase = '$persentase', p.jarak_total = '$jarak_total', p.sisa_jarak='$jarakSisa'
@@ -83,15 +83,15 @@ session_start();
            else{
                echo "error, progress not found";
            }
-           $_SESSION["progress"]=$tema;
+           $_SESSION["peserta"]["progress"]=$tema;
        }
 
        private function addMedal(){
-           if(isset($_SESSION["trackDestination"])){
-               $tema=$_SESSION["trackDestination"];
+           if(isset($_SESSION["peserta"]["trackDestination"])){
+               $tema=$_SESSION["peserta"]["trackDestination"];
            }
-           if(isset($_SESSION["idU"])){
-            $idU=$_SESSION["idU"];
+           if(isset($_SESSION["peserta"]["idU"])){
+            $idU=$_SESSION["peserta"]["idU"];
         }
            $query="SELECT idT FROM track where tema='$tema'";
            $query_result = $this->db->executeSelectQuery($query);

@@ -3,6 +3,8 @@ require_once "controller/services/mysqlDB.php";
 require_once "view/view2.php";
 require_once "model/track.php";
 require_once "model/progress.php";
+require_once "model/user.php";
+require_once "model/peserta.php";
 session_start();
 class profileController
 {
@@ -14,14 +16,15 @@ class profileController
     }
 
         public function viewAll(){
-            $result=$this->getBadges();
+            $result=$this->getUserData();
+            //var_dump($result);
             return View2::createView("profile.php",["result"=>$result]);
 
         }
-       public function getBadges(){
+       public function getUserData(){
             $result=[];
             $temp=[];
-            $idU=$_SESSION["idU"];
+            $idU=$_SESSION["peserta"]["idU"];
             $query="SELECT gambarBadge 
                     FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON p.idU=ps.idU 
                     WHERE ps.idU='$idU' AND persentase=100";
@@ -29,7 +32,7 @@ class profileController
             foreach($query_result as $key => $value){
                 $temp[] = new track(NULL,NULL,NULL,NULL,NULL,NULL,NULL,$value["gambarBadge"]);
                 }
-            $result[]=$temp;//0
+            $result[]=$temp;//0  isinya badge peserta
             $temp=[];
 
             $query="SELECT tema , persentase FROM track t INNER JOIN progress p ON t.idT=p.idT INNER JOIN peserta ps ON p.idU=ps.idU WHERE ps.idU='$idU'";
@@ -37,25 +40,37 @@ class profileController
             foreach($query_result as $key => $value){
                 $temp[] = new Progress($value["persentase"],$value["tema"],NULL,NULL,NULL,NULL);
                 }
-            $result[]=$temp;//1
+            $result[]=$temp;//1 isinya progress
             
-            $dir="view/assets/defaultbg.jpg";//besok cari default nya
-           
-            if(isset($_SESSION['progress'])){
-                $gambarBackGround=$_SESSION['progress'];
+            $dir="view/assets/defaultbg.jpg";//default dp peserta
+
+            if(isset($_SESSION["peserta"]['progress'])){//session[peserta][progress] buat nyimpen peserta TERAKHIR progress dimana
+                $gambarBackGround=$_SESSION["peserta"]['progress'];
                 $query="SELECT gambar FROM track t WHERE tema='$gambarBackGround'";
                 $query_result = $this->db->executeSelectQuery($query);
                 $dir=$query_result[0]['gambar'];
             }
-            $result[]=$dir;//2
-                return $result;
+            $result[]=$dir;//2 berisi gambar GO
+
+            $query="SELECT * FROM user u INNER JOIN peserta ps ON u.idU=ps.idU WHERE u.idU='$idU'";
+            $query_result = $this->db->executeSelectQuery($query);
+            //iterasi cuma bakal sekali
+            $ooser=[];
+            $pesertaa=[];
+            foreach($query_result as $key => $value){
+                $ooser[] = new User ($value["idU"],$value["username"],$value["pass"],$value["profile_picture"]);
+                $pesertaa[] = new Peserta ($value["idU"],$value["no_telepon"],$value["email"],$value["nama"],$value["Gender"],$value["kota"],$value["Alamat"],$value["usia"],$value["saldo"]);
             }
+            $result[]=$ooser;//3 berisi user data
+            $result[]=$pesertaa;// 4 berisi data peserta
+                return $result;
+        }
 
 
     public function updateData()
     {
         //var_dump($_POST);
-        $idU=$_SESSION["idU"];
+        $idU=$_SESSION["peserta"]["idU"];
         //echo$idU;
         
         if(isset($_POST["namabaru"] )&& $_POST["namabaru"]!=""){
@@ -86,10 +101,10 @@ class profileController
                 move_uploaded_file($oldname1,$newName1);
                 $query = "UPDATE user SET profile_picture='$newName1' WHERE idU='$idU'";
                 $this->db->executeNonSelectQuery($query);
-                echo "track is  succesfully inserted <br>";
+                echo "dp is  succesfully inserted <br>";
              }
              else{
-                 echo "track is not succesfully inserted <br>";
+                 echo "dp is not succesfully inserted <br>";
              }
     }
 

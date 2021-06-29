@@ -61,10 +61,10 @@ class SignupController
                         VALUES ('$idU','$phone','$email','$name','$gender','$kota','$address','$age',0,false)";
             $this->db->executeNonSelectQuery($query);
 
-            session_start();
-            $_SESSION["loginStatus"] = true;
-            $_SESSION["username"] = $username;
-            $_SESSION["idU"]=$idU;
+            //session_start();
+            // $_SESSION["loginStatus"] = true;
+            // $_SESSION["username"] = $username;
+            // $_SESSION["idU"]=$idU;
             
         }else{
             //header('location: login');

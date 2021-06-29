@@ -5,8 +5,8 @@
 </head>
             <?php
             
-                if(isset($_SESSION["saldo"])){
-                    $saldo=(int)$_SESSION["saldo"];
+                if(isset($_SESSION["peserta"]["saldo"])){
+                    $saldo=(int)$_SESSION["peserta"]["saldo"];
                 }
                 $harga=(int)$result[0]->getHarga();
                 //echo $harga;

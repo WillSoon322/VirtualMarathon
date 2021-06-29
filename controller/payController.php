@@ -15,7 +15,7 @@
 
 
         public function pay(){
-            $tema=$_SESSION["trackDestination"];
+            $tema=$_SESSION["peserta"]["trackDestination"];
             //$query = "SELECT * FROM track t WHERE t.tema='$tema'";
             $query = "SELECT idT,jarak,harga FROM track t WHERE t.tema='$tema'";
             $query_result = $this->db->executeSelectQuery($query);
@@ -28,13 +28,13 @@
             $jarak=$result[0]->getJarak();
             $harga=$result[0]->getHarga();
 
-            $saldo=$_SESSION["saldo"];
+            $saldo=$_SESSION["peserta"]["saldo"];
             //echo $saldo;
             //echo $harga;
             //echo $tema;            
-            $idU=$_SESSION["idU"];
+            $idU=$_SESSION["peserta"]["idU"];
             $saldoAfter=(int) $saldo-$harga;
-            $_SESSION["saldo"]=$saldoAfter;
+            $_SESSION["peserta"]["saldo"]=$saldoAfter;
             //echo $saldoAfter;
             //echo "idT";
             //echo $result[0]->getIdT();

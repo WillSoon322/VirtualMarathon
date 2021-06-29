@@ -17,56 +17,46 @@
         }
 
         public function loginAdmin(){
-            if(isset($_POST["name"])){
-                $username=$_POST["name"];
-            }
-            if(isset($_POST["password"])){
-                $pass=$_POST["password"];
-            }
-           
-            
+            $username=$_POST["name"];
+            $pass=$_POST["password"];
+            //$remember=$_POST["remember"];
             $query = "SELECT *
-            FROM user u  INNER JOIN `admin` a ON u.idU=a.idU
+            FROM user u  INNER JOIN admin a ON u.idU=a.idU
             WHERE username='$username'";
 
             $query_result = $this->db->executeSelectQuery($query);
-           
-                $result = [];
-           
-            
-                foreach($query_result as $key => $value){
-                    $result[] = new Admin($value["idU"],$value["username"],$value["pass"],$value["profile_picture"]);
-                }
+            $result = [];
+          
+            foreach($query_result as $key => $value){
+                $result[] = new Admin($value["idU"],$value["username"],$value["pass"],$value["profile_picture"]);
+            }
+
+            if(count($result)==0){
+                echo "user no exist la";
                 var_dump($result);
-                if(count($result)==0){
-                    echo "user no exist la";
-                    var_dump($result);
+                // echo '<script> 
+                //         alert ("Username Does Not Exist")
+                //      </script>';
+                //      header("location: login");
+            }
+            else{
+                if($pass!=$result[0]->getPassword()){
+                    echo "password no exist la";
+                    //VALIDATION MASIH GABENER
+                    // header("location: login");
                     // echo '<script> 
-                    //         alert ("Username Does Not Exist")
-                    //      </script>';
-                    //      header("location: login");
+                    //     alert ("Wrong Password")
+                    // </script>';
                 }
                 else{
-                    if($pass!=$result[0]->getPassword()){
-                        echo "password no exist la";
-                        //VALIDATION MASIH GABENER
-                        // header("location: login");
-                        // echo '<script> 
-                        //     alert ("Wrong Password")
-                        // </script>';
-                    }
-                    else{
-                        session_start();
-                        $_SESSION["usernameAdmin"] = $result[0]->getUsername();
-                        $_SESSION["gambarAdmin"] = $result[0]->getGambar();
-                        $_SESSION["loginStatusAdmin"]=true;
-                        $_SESSION["idA"]=$result[0]->getIdA();
-                        header("location: profileAdmin");
-                    }
+                    session_start();
+                    $_SESSION["admin"]["usernameAdmin"] = $result[0]->getUsername();
+                    $_SESSION["admin"]["gambarAdmin"] = $result[0]->getGambar();
+                    $_SESSION["admin"]["loginStatusAdmin"]=true;
+                    $_SESSION["admin"]["idAdmin"]=$result[0]->getIdA();
+                    header("location: profileAdmin");
                 }
-            
-            
-           
+            }
 
             return $result;
 

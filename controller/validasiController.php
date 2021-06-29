@@ -58,8 +58,8 @@
             return $result;
         }
         function validate(){
-            if(isset($_SESSION["idA"])){
-                $idA=$_SESSION["idA"];
+            if(isset($_SESSION["admin"]["idA"])){
+                $idA=$_SESSION["admin"]["idA"];
                 if(isset($_POST["validation"])){
                     if($_POST["validation"]=="true"){
                         $val="Tervalidasi";}
@@ -84,7 +84,7 @@
                     $temp=$this->db->executeSelectQuery($query);
                     $nominal=0+$temp[0]["nominal"];
                     $saldoAkhir=$saldo+$nominal;
-                    $_SESSION["saldo"]=$saldoAkhir;
+                    $_SESSION["peserta"]["saldo"]=$saldoAkhir;
                     $query = "UPDATE peserta ps
                                 SET ps.saldo = '$saldoAkhir'
                                 WHERE ps.idU='$idP' " ;

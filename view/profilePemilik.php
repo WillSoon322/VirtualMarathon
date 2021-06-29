@@ -14,8 +14,8 @@
         <div class="user_info">
             <div class="user_info_picture">
             <?php
-                    if(isset($_SESSION["gambarPemilik"])&&($_SESSION["gambarPemilik"]!=NULL)&&($_SESSION["gambarPemilik"]!='NULL')){
-                        $dp=$_SESSION["gambarPemilik"];
+                    if(isset($_SESSION["pemilik"]["gambarPemilik"])&&($_SESSION["pemilik"]["gambarPemilik"]!=NULL)&&($_SESSION["pemilik"]["gambarPemilik"]!='NULL')){
+                        $dp=$_SESSION["pemilik"]["gambarPemilik"];
                         
                     }
                     else{
@@ -27,8 +27,8 @@
             </div>
             <div class="info_1">
                 <?php
-                    if(isset($_SESSION["usernamePemilik"])){
-                        $user=$_SESSION["usernamePemilik"];
+                    if(isset($_SESSION["pemilik"]["usernamePemilik"])){
+                        $user=$_SESSION["pemilik"]["usernamePemilik"];
                         echo "<h2> $user </h2>";
                     }
                 ?>

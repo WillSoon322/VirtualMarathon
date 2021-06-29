@@ -31,11 +31,20 @@
         }
         public function logOut (){
            session_start();
-           session_destroy();
+            session_destroy();
+            unset($_SESSION["peserta"]["username"]);
+            unset($_SESSION["peserta"]["saldo"]);
+            unset($_SESSION["peserta"]["tracks"]);
+            unset($_SESSION["peserta"]["loginStatus"] );
+            unset($_SESSION["peserta"]["idU"] );
+            unset($_SESSION["peserta"]);//biar aman 
            $result = $this->getAllTracks();
             return View::createView("landing.php",["result"=>$result]);
+            //unset($_SESSION["peserta"]);
+            
         }
-       
+
+        
         }
     
        

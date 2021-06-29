@@ -40,16 +40,16 @@
                 </div>
                 <div class="get_track">
                     <?php
-                    if (isset($_SESSION["loginStatus"])) {
-                        if ($_SESSION["loginStatus"] == true) {
+                    if (isset($_SESSION["peserta"]["loginStatus"])) {
+                        if ($_SESSION["peserta"]["loginStatus"] == true) {
                             //var_dump($_SESSION["pemilikTrack"]);
                             //var_dump($_POST["tema"]);
-                            if (isset($_SESSION["pemilikTrack"])) {
-                                if ($_SESSION["pemilikTrack"] == true) {
+                            if (isset($_SESSION["peserta"]["pemilikTrack"])) {
+                                if ($_SESSION["peserta"]["pemilikTrack"] == true) {
                                     echo "<a href=" . 'progress' . ">ADD PROGRESS</a>";
-                                    $_SESSION["trackDestination"] = $_POST["tema"];
+                                    $_SESSION["peserta"]["trackDestination"] = $_POST["tema"];
                                 } else {
-                                    $_SESSION["trackDestination"] = $_POST["tema"];
+                                    $_SESSION["peserta"]["trackDestination"] = $_POST["tema"];
                                     echo '<a href="buyTrack">GET THIS TRACK</a>';
                                     //echo "GET THIS TRACK";
                                 }

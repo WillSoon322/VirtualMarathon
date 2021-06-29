@@ -18,8 +18,8 @@
 
         function delete(){
             
-            if(isset($_SESSION["idU"])){
-                $idU= $_SESSION["idU"];
+            if(isset($_SESSION["peserta"]["idU"])){
+                $idU= $_SESSION["peserta"]["idU"];
             }
            else{
                echo "no idu";
@@ -28,7 +28,10 @@
            
             $query="UPDATE peserta SET deleted=1 WHERE idU='$idU' ";
             $query_result = $this->db->executeNonSelectQuery($query);
-            session_destroy();
+            //session_destroy();
+            foreach($_SESSION["peserta"] as $key=>$value){
+                $key=NULL;
+            }
 
         }
         }

@@ -50,10 +50,10 @@
                 }
                 else{
                     session_start();
-                    $_SESSION["usernamePemilik"] = $result[0]->getUsername();
-                    $_SESSION["gambarPemilik"] = $result[0]->getGambar();
-                    $_SESSION["loginStatusPemilik"]=true;
-                    $_SESSION["idPemilik"]=$result[0]->getIdA();
+                    $_SESSION["pemilik"]["usernamePemilik"] = $result[0]->getUsername();
+                    $_SESSION["pemilik"]["gambarPemilik"] = $result[0]->getGambar();
+                    $_SESSION["pemilik"]["loginStatusPemilik"]=true;
+                    $_SESSION["pemilik"]["idPemilik"]=$result[0]->getIdA();
                     header("location: profilePemilik");
                 }
             }

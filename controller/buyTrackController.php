@@ -18,8 +18,8 @@ session_start();
         }
 
         public function getAllTracks(){
-            if(isset($_SESSION["trackDestination"])){
-                $tema=$_SESSION["trackDestination"];
+            if(isset($_SESSION["peserta"]["trackDestination"])){
+                $tema=$_SESSION["peserta"]["trackDestination"];
             }
             $query = "SELECT *
                         FROM track t 

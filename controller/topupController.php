@@ -29,8 +29,8 @@
                 
                 $sukses=true;
             
-            $saldo=$_SESSION["saldo"];      
-            $idU=$_SESSION["idU"];
+            $saldo=$_SESSION["peserta"]["saldo"];      
+            $idU=$_SESSION["peserta"]["idU"];
             $saldoAfter=(int) $saldo+$nominal;
             
             $date=date("y/m/d");

@@ -22,8 +22,20 @@ class LoginController
 
     public function logIn()
     {
-        $username = $_POST["name"];
-        $pass = $_POST["password"];
+        if(isset($_POST["name"])){
+            $username = $_POST["name"];
+        }
+        else{
+            echo ("error username not entered");
+        }
+
+        if(isset($_POST["password"])){
+            $pass = $_POST["password"];
+        }
+        else{
+            echo ("error password not entered");
+        }
+        
 
         $query = "SELECT *
             FROM user u  INNER JOIN peserta p ON u.idU=p.idU 
@@ -35,7 +47,7 @@ class LoginController
         $peserta = [];
         $user = [];
 
-        foreach ($query_result as $key => $value) {
+        foreach ($query_result as $key => $value) {//cuma sekali iterate aja 
             $user[] = new User($value["idU"], $value["username"], $value["pass"], $value["profile_picture"]);
             $peserta[] = new Peserta($value["idU"], $value["no_telepon"], $value["email"], $value["nama"], 
             $value["Gender"], $value["kota"], $value["Alamat"], $value["usia"], $value["saldo"]);
@@ -54,23 +66,23 @@ class LoginController
         }
         $result[2] = $tracks;
         if (count($user) == 0) {
-            echo "user no exist la<br>";
+            echo "error wrong username <br>";
             var_dump($result);
         } else {
             if ($pass != $user[0]->getPassword()) {
-                echo "password no exist la";
+                echo "error wrong password <br>";
             } else {
                 session_start();
-                $_SESSION["username"] = $user[0]->getUsername();
-                $_SESSION["saldo"] = $peserta[0]->getSaldo();
-                $_SESSION["nama"] = $peserta[0]->getNama();
-                $_SESSION["gambar"] = $user[0]->getGambar();
-                $_SESSION["usia"] = $peserta[0]->getUsia();
-                $_SESSION["Gender"] = $peserta[0]->getGender();
-                $_SESSION["Alamat"] = $peserta[0]->getAlamat();
-                $_SESSION["tracks"] = $tracks;
-                $_SESSION["loginStatus"] = true;
-                $_SESSION["idU"] = $peserta[0]->getIdU();
+                $_SESSION["peserta"]["username"] = $user[0]->getUsername();
+                $_SESSION["peserta"]["saldo"] = $peserta[0]->getSaldo();
+                //$_SESSION["peserta"]["nama"] = $peserta[0]->getNama();
+                //$_SESSION["peserta"]["gambar"] = $user[0]->getGambar();
+                //$_SESSION["peserta"]["usia"] = $peserta[0]->getUsia();
+                //$_SESSION["peserta"]["Gender"] = $peserta[0]->getGender();
+                //$_SESSION["peserta"]["Alamat"] = $peserta[0]->getAlamat();
+                $_SESSION["peserta"]["tracks"] = $tracks;
+                $_SESSION["peserta"]["loginStatus"] = true;
+                $_SESSION["peserta"]["idU"] = $peserta[0]->getIdU();
                 header("location: profile");
             }
         }
