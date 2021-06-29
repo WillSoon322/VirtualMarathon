@@ -11,11 +11,11 @@
             <div class="part_modal medali_modal">
 
                 <div class="exit1">X</div>
-                <form action="statusPeserta" method="POST">
-                    <label for="id">idM</label>
+                <form action="statusPeserta" method="POST" class="resi_form">
                     <input type="text" class="requestMedali" name="id" readonly>
-                    <label for="resi">no resi</label>
+                    <label for="id">idM : </label><br>
                     <input type="text" class="inputResi" name="resi" >
+                    <label for="resi">no resi : </label><br>
                     <button type="submit">Send</button>
                 </form>
             </div>

@@ -6,6 +6,7 @@
     <script src="view/JS/Chart.bundle.js"></script>
     <script src="view/JS/utils.js"></script>
     <script src="view/JS/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.15/jspdf.plugin.autotable.min.js" integrity="sha512-y7bAIyWa5Ncv0AFN0tcz4QLyPFVIHqN66hvNyIY0uryA8RIcKNyR9MjHpuUY95Baj2KwQ7EdRWoer7vLimZAHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="view/style/laporan.css">
 </head>
 
@@ -16,7 +17,7 @@
     <div class="content">
         <?php
         $temp = $result[0][3];
-        //var_dump(json_encode($temp));
+        // var_dump(json_encode($temp));
 
         ?>
 
@@ -146,10 +147,10 @@
                 </div>
                 <div class="user_item user_count" id="canvas3"></div>
                 <div class="user_item male_user">
-                    JUMLAH PRIA:<?php echo $result[0][6][0]->getCount() ?>
+                    <div>JUMLAH PRIA: <br><?php echo $result[0][6][0]->getCount() ?></div> 
                 </div>
                 <div class="user_item female_user">
-                    JUMLAH WANITA :<?php echo $result[0][6][1]->getCount() ?>
+                    JUMLAH WANITA : <br><?php echo $result[0][6][1]->getCount() ?>
                 </div>
                 <div class="user_item">
                     <!-- jumlah anak muda -->
@@ -179,10 +180,16 @@
         </div>
     </div>
     <script>
+        var pdftopup = <?php echo(json_encode($result[0][7])); ?>;
+        // console.log(pdftopup.length);
+
         var dummyData = [
-            2,
+            4,
+            3,
+            3,
             1,
-            2
+            1,
+            1
         ]
         var colors = [
             window.chartColors.red,
@@ -195,7 +202,7 @@
         var myChart2 = {
             type: 'pie',
             data: {
-                labels: ["Mount Fuji", "Candi Borobudur", "Lintas Jawa"],
+                labels: ["Mount Fuji", "Candi Borobudur", "Great Pyramid", "New York", "Shanghai","London"],
                 datasets: [{
                     backgroundColor: colors,
                     data: dummyData,
@@ -213,24 +220,29 @@
         };
 
         var dummyData2 = [
-            2,
+            4,
+            3,
+            3,
             1,
-            2
+            1,
+            1
         ]
-        var colors = [
+        var colors2 = [
             window.chartColors.red,
             window.chartColors.grey,
             window.chartColors.yellow,
             window.chartColors.green,
-            window.chartColors.blue
+            window.chartColors.blue,
+            window.chartColors.purple,
+            window.chartColors.green
         ]
 
         var myChart3 = {
             type: 'pie',
             data: {
-                labels: ["Mount Fuji", "Candi Borobudur", "Lintas Jawa"],
+                labels: ["Mount Fuji", "Candi Borobudur", "Great Pyramid", "New York", "Shanghai","London"],
                 datasets: [{
-                    backgroundColor: colors,
+                    backgroundColor: colors2,
                     data: dummyData2,
                 }],
 

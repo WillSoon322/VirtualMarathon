@@ -5,13 +5,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="dim_overlay"></div>
-    <div class="modal">
-        <button class="exit_button"> X </button>
-        <h1>DISTANCE</h1>
-        <input type="text">
-        <button class="submit_button" type="submit">SUBMIT</button>
-    </div>
 
     <div class="back_button">
         <i class="fas fa-chevron-left">  Back</i>

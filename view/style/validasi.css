@@ -16,12 +16,18 @@
     position: absolute;
     background-color: white;
     width: 30%;
-    height: 45%;
+    height: 7em;
     left: 35%;
     top: 27.5%;
     text-align: center;
     display: none;
     z-index: 6;
+}
+
+.exit_button{
+    position: absolute;
+    left: 100%;
+    font-size: 2em;
 }
 
 header{

@@ -1,6 +1,6 @@
 
 <body>
-  <div class="new_track" style="background-color: burlywood; position:absolute;">
+  <div class="new_track" style="background-color: burlywood; position:absolute; top:50px;left:50px;padding:20px;">
     <form action="addTrack" method="POST" enctype="multipart/form-data">
       <label for="namatrack">Nama Track:</label>
       <input type="text" id="namatrack" name="name"><br><br>

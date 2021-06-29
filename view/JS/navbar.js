@@ -23,7 +23,7 @@ else if (page === "Profile") {
     wallet.classList.add("show")
 } else if (page === "laporan") {
     console.log("Laporan");
-    wallet.classList.add("show")
+    // wallet.classList.add("show")
 }
 else if (page === "Profile_Admin") {
     console.log("profile admin");
