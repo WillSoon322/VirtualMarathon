@@ -40,6 +40,24 @@
                 </div>
             </div>
         </div>
+
+        <?php 
+        if(isset($result[2])){
+            //require "pagination.php";
+            for ($i = 1; $i <= $result[2]; $i++) : ?>
+                <div class="page">
+                <?php
+                    if ($i == $result[1]) : ?>
+                        <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+                    <?php else : ?>
+                        <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+                        <?php endif; ?>
+            </div>
+            
+        
+            <?php endfor; }?>
+            
+
         <div class="grid_container">
 
             <div class="grid_track_card">
@@ -68,9 +86,10 @@
                 </fieldset>
             </div>
             
-            <?php 
-            //require "pagination.php";
-            foreach ($result as $key => $row) {
+            
+
+            <?php
+            foreach ($result[0] as $key => $row) {
             ?>
                 <div class="grid_track_card">
                     <form action="trackpage" method="post" class="trackForm">
@@ -106,3 +125,4 @@
     <script defer src="view/JS/tracks.js"></script>
 
 </body>
+

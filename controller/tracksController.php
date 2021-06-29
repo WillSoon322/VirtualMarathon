@@ -12,7 +12,12 @@
         }
 
         public function viewAll(){
-            $result = $this->getAllTracks();
+            if ( isset($_GET['halaman'])){
+                $halamanaktif = $_GET['halaman'];
+              }else{
+                $halamanaktif = 1;
+              }
+            $result = $this->getAllTracks($halamanaktif);
             $region = $this->getRegion();
             return View2::createView("tracks.php",["result"=>$result,"regionList"=>$region]);
     
@@ -27,22 +32,34 @@
             return $query_result;
         }
 
-        public function getAllTracks(){
+        public function getAllTracks($halamanaktif){
+            $dataperpage=4;
+            $query="SELECT count(idT) FROM track";
+            $query_result = $this->db->executeSelectQuery($query);
+            $datatotal=$query_result[0]['count(idT)'];
+            $totalhalaman=ceil($datatotal/$dataperpage);
+            $awaldata=($dataperpage*$halamanaktif)-$dataperpage;
+
+
             $query = "SELECT *
-                        FROM track t
+                        FROM track t LIMIT $awaldata,$dataperpage
                      ";
             
             $query_result = $this->db->executeSelectQuery($query);
             $result = [];
+            $temp=[];
             foreach($query_result as $key => $value){
-                $result[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
+                $temp[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
                 ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
             }
-           
+           $result[]=$temp;
+           $result[]=$halamanaktif;
+           $result[]=$totalhalaman;
             return $result;
         }
 
         public function viewFilter(){
+           
             $result = $this->getFilterTracks();
             $region = $this->getRegion();
             return View2::createView("tracks.php",["result"=>$result,"regionList"=>$region]);
@@ -50,6 +67,7 @@
         }
 
         public function getFilterTracks(){
+           
             if(isset($_POST)){
                 if(isset($_POST['namaTrack']) && $_POST['namaTrack'] != ''){
                     $FilterRegion = $_POST['namaTrack'];
@@ -58,14 +76,14 @@
                     $Region_Change = true;
                     $queryfilter = "SELECT *
                         FROM track t
-                        WHERE region = '$FilterRegion' AND jarak > '$min' AND jarak < '$max'
+                        WHERE region = '$FilterRegion' AND jarak > '$min' AND jarak <= '$max' 
                      ";
 
                     if(isset($_POST['searchTrack']) && $_POST['searchTrack'] != ''){
                         $search = $_POST['searchTrack'];
                         $queryfilter = "SELECT *
                             FROM track t
-                            WHERE region = '$FilterRegion' AND jarak > '$min' AND jarak < '$max' AND tema LIKE '%$search%'
+                            WHERE region = '$FilterRegion' AND jarak > '$min' AND jarak <= '$max' AND tema LIKE '%$search%'
                         ";
                     }
                 }else if(isset($_POST['searchTrack']) && $_POST['searchTrack'] != ''){
@@ -79,9 +97,10 @@
                     $max = $_POST['max'];
                     $queryfilter = "SELECT *
                             FROM track t
-                            WHERE jarak > '$min' AND jarak < '$max'
+                            WHERE jarak > '$min' AND jarak <= '$max'
                          ";
                 }
+               
             }
             
             $query_resultFilter = $this->db->executeSelectQuery($queryfilter);
@@ -90,8 +109,8 @@
                 $resultfilter[] = new track($value["idT"],$value["harga"],$value["gambar"],$value["jarak"]
                 ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
             }
-           
-            return $resultfilter;
+            $result[]=$resultfilter;
+            return $result;
         }
 
        
