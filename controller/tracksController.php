@@ -12,12 +12,12 @@
         }
 
         public function viewAll(){
-            if ( isset($_GET['halaman'])){
-                $halamanaktif = $_GET['halaman'];
+            if ( isset($_GET['page'])){
+                $currPage = $_GET['page'];
               }else{
-                $halamanaktif = 1;
+                $currPage = 1;
               }
-            $result = $this->getAllTracks($halamanaktif);
+            $result = $this->getAllTracks($currPage);
             $region = $this->getRegion();
             return View2::createView("tracks.php",["result"=>$result,"regionList"=>$region]);
     
@@ -32,17 +32,17 @@
             return $query_result;
         }
 
-        public function getAllTracks($halamanaktif){
-            $dataperpage=4;
+        public function getAllTracks($currPage){
+            $trackPerPage=4;
             $query="SELECT count(idT) FROM track";
             $query_result = $this->db->executeSelectQuery($query);
-            $datatotal=$query_result[0]['count(idT)'];
-            $totalhalaman=ceil($datatotal/$dataperpage);
-            $awaldata=($dataperpage*$halamanaktif)-$dataperpage;
+            $trackTotal=$query_result[0]['count(idT)'];
+            $totalPage=ceil($trackTotal/$trackPerPage);
+            $start=($trackPerPage*$currPage)-$trackPerPage;
 
 
             $query = "SELECT *
-                        FROM track t LIMIT $awaldata,$dataperpage
+                        FROM track t LIMIT $start,$trackPerPage
                      ";
             
             $query_result = $this->db->executeSelectQuery($query);
@@ -53,8 +53,8 @@
                 ,$value["tema"],$value["region"],$value["gambarMedali"],$value["gambarBadge"]);
             }
            $result[]=$temp;
-           $result[]=$halamanaktif;
-           $result[]=$totalhalaman;
+           $result[]=$currPage;
+           $result[]=$totalPage;
             return $result;
         }
 

@@ -44,18 +44,16 @@
         <?php 
         if(isset($result[2])){
             //require "pagination.php";
-            for ($i = 1; $i <= $result[2]; $i++) : ?>
+            for ($i = 1; $i <= $result[2]; $i++) { ?>
                 <div class="page">
-                <?php
-                    if ($i == $result[1]) : ?>
-                        <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                    <?php else : ?>
-                        <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                        <?php endif; ?>
-            </div>
+                    <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                </div>
+            <?php  } ?>
+                
             
         
-            <?php endfor; }?>
+            <?php } 
+        ?>
             
 
         <div class="grid_container">
