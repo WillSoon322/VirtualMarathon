@@ -57,6 +57,25 @@ nav{
     color: rgb(77, 77, 77);
 }
 
+.media_list{
+    position: absolute;
+    top: 12.5em;
+    right: 2em;
+    /* background-color: aqua; */
+    color: aliceblue;
+    z-index: 200;
+    font-size: 2.2em;
+    animation: slide-perm-r 15s alternate;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li i{
+    margin-top: 10px;
+}
+
 .home_left{
     position: relative;
     left: -60%;
@@ -255,5 +274,20 @@ nav{
     }
     100%{
         left:0;
+    }
+}
+
+@keyframes slide-perm-r{
+    0%{
+        right: -50%;
+    }
+    25%{
+        right: -50%;
+    }
+    75%{
+        right: 2em;
+    }
+    100%{
+        right: 2em;
     }
 }

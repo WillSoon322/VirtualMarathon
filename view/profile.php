@@ -12,7 +12,6 @@
         <?php
         function pindah()
         {
-            
         }
         ?>
         <div class="user_info">
@@ -76,21 +75,22 @@
         </div>
         <div class="current_track">
             <!-- //img tadinya di sini! -->
+
+
+            <img class="currImg" src="<?php echo $result[2] ?>" alt="">
             <div class="go_button">
                 <form action="trackpage" method="POST" class="buttonForm">
-                    <?php 
-                        if (isset($_SESSION["progress"])==false){
-                        $progres="";
-                        }
-                        else{
-                            $progres=$_SESSION["progress"];
-                        }
+                    <?php
+                    if (isset($_SESSION["progress"]) == false) {
+                        $progres = "";
+                    } else {
+                        $progres = $_SESSION["progress"];
+                    }
                     ?>
-                    <input type="text" name="tema" class="inputTrack" value="<?php echo $progres?>" readonly>
-                    <button onclick="submit()" class="myButton">GO!!</button> 
+                    <input type="text" name="tema" class="inputTrack" value="<?php echo $progres ?>" readonly>
+                    <button onclick="submit()" class="myButton">GO!!</button>
                 </form>
             </div>
-            <img class="currImg" src="<?php echo $result[2]?>" alt="">
         </div>
         <div class="owned_medal">
             <!-- <div class="medal"><img class="badge_img" src="view/assets/mountain1.png" alt=""></div> -->
@@ -105,8 +105,15 @@
                 <h2>Track yang dimiliki:</h2><br><br>
                 <?php foreach ($result[1] as $key => $row) {
                 ?>
-                    <h3><?php echo $row->getTema(); ?> / <?php echo $row->getPersentase(); ?>%<br><br></h3>
-                    
+                    <div class="progress_per">
+                        <div class="bar_slot">
+                            <div class="bar_fill"></div>
+                        </div>
+
+                        <h3><?php echo $row->getTema(); ?></h3>
+                        <div class="pers" style="display: none;"><?php echo $row->getPersentase(); ?></div>
+                        <h3 class="pesentase"><?php echo $row->getPersentase(); ?>%<br><br></h3>
+                    </div>
                 <?php } ?>
 
             </div>
@@ -171,8 +178,8 @@
             <br> <br> <br><br> <br> <br><br> <br> <br>
             <button onclick="deletes()">Delete Account</button>
             <script>
-                function deletes(){
-                    location.href="delete";
+                function deletes() {
+                    location.href = "delete";
                 }
             </script>
         </div>

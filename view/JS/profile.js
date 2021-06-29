@@ -19,3 +19,12 @@ function submit() {
     submit.submit;
 
 }
+
+let trackss = document.querySelector('.trackList').children;
+for(let p = 3;p<trackss.length;p++){
+    console.log(trackss[p]);
+    let fill = trackss[p].firstElementChild.firstElementChild;
+    let pers = trackss[p].lastElementChild.previousElementSibling.innerHTML;
+    fill.style.width = pers + '%'
+    console.log(pers);
+}

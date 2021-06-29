@@ -7,7 +7,7 @@
 <body>
 
     <div class="back_button">
-        <i class="fas fa-chevron-left">  Back</i>
+        <a href="profile"><i class="fas fa-chevron-left">  Back</i></a>
     </div>
     <?php
         //var_dump($result);
@@ -17,8 +17,9 @@
         <?php $tema= $result[0]->getTema() ;?>
         <div class="your">YOUR PROGRESS IN <?php echo "$tema"; ?></div>
         <?php $temp= $result[0]->getPersentase() ?>
+        <script>var  persen = <?php echo($temp)?></script>
         <div class="progress"><?php echo number_format((float)$temp,2,',','');?>%</div>
-        <div class="progress_bar">BAR</div>
+        <div class="progress_bar"><div class="progress_fill"></div></div>
         <form action="progress" name="progressInput" method="POST">
             <label for="progressInputText">Progress: </label>
             <input type="number" name="progressInputText" step="0.01">

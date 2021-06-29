@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="view/style/landing_style.css">
+    <script src="https://kit.fontawesome.com/c3d54056dd.js" crossorigin="anonymous"></script>
     <title>Virtual Marathon Landing Page</title>
 </head>
 
@@ -9,7 +10,9 @@
 
     <div class="media_list">
         <ul>
-            <li><i class="fa fas-instagram">Instagram</i></li>
+            <li><i class="fab fa-instagram">   Instagram</i></li>
+            <li><i class="fab fa-facebook">  Facebook</i></li>
+            <li><i class="fab fa-google-plus-g"> Google+</i></li>
         </ul>
     </div>
 

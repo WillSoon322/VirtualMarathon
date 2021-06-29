@@ -27,7 +27,6 @@ body{
 }
 
 .content > div{
-    padding: 6px;
     /* background-color: rgb(255, 255, 255); */
     width: 100%;
     height: 100%;
@@ -36,7 +35,10 @@ body{
 
 .user_info{
     grid-column: 1/3;
-    grid-row: 1/9;
+    grid-row: 1/6;
+    padding: 10px;
+    background-color: aliceblue;
+    border: 2px black solid;
 }
 
 .user_info_picture{
@@ -54,17 +56,26 @@ body{
 }
 
 .info_1{
-    background-color: chartreuse;
+    background-color: rgb(255, 255, 255);
     position: relative;
     margin: auto;
+    padding: 9px;
     top: -2em;
     left: -2.5em;
-    width: 10em;
+    width: fit-content;
+    min-width: 10em;
     height: 3em;
+
+    border: 2px black solid;
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .detil_info{
-    background-color: rgb(255, 51, 0);
+    background-color: rgb(255, 255, 255);
     height: 2em;
     margin-bottom: 2%;
 }
@@ -96,11 +107,11 @@ body{
 }
 
 .go_button{
-    position: relative;
-    top: 79%;
-    left: 44%;
-    right: auto;
-    
+    /* background-color: aqua; */
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    z-index: 20;
 }
 
 .myButton {
@@ -118,7 +129,7 @@ body{
     text-align: center;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #3d768a;
-    width: 12%;
+    width: 100%;
 }
 .myButton:hover {
 	background:linear-gradient(to bottom, #408c99 5%, #fae5e9 100%);
@@ -130,15 +141,16 @@ body{
 }
 
 .owned_medal{
-    grid-column: 3/6;
-    grid-row: 5/6;
+    grid-column: 1/3;
+    grid-row: 6/9;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .medal{
-    height: 100%;
+    height: fit-content;
 }
 .medal img{
     width:100px;
@@ -149,12 +161,26 @@ body{
 
 .API_weather{
     grid-column: 6/8;
-    grid-row: 5/9;
+    grid-row: 5/8;
+    overflow-y: scroll;
+}
+
+.bar_slot{
+background-color: black;
+height: 1.3rem;
+width: 200px;
+}
+
+.bar_fill{
+background-color: greenyellow;
+width: 0%;
+height: 100%;
+
 }
 
 .statistic{
     grid-column: 3/6;
-    grid-row: 6/9 ;
+    grid-row: 5/8 ;
 }
 
 .openweathermap-widget-21{
