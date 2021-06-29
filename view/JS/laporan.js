@@ -36,10 +36,30 @@ pdf.addEventListener('click', function () {
     getPDF();
 })
 
+function getTopupData(){
+    let data = [...Array(pdftopup.length)].map(e => Array(4));
+    for(let i = 0 ; i<pdftopup.length;i++){
+        let part = pdftopup[i]
+        data[i][0] = part['id_top_up']
+        data[i][1] = part['idP']
+        data[i][2] = part['nominal']
+        data[i][3] = part['tanggal']
+    }
+    console.log(data);
+    return data
+}
+
 function getPDF() {
     var doc = new jsPDF();
-
-    doc.text('LAPORAN GENERAL', 40, 20)
+    
+    doc.text('LAPORAN', 40, 20)
+    doc.line(20, 25, 300, 25);
+    doc.autoTable({
+        startY : 50,
+        head: [['idTopUp', 'User', 'Nominal', 'Tanggal']],
+        body: this.getTopupData(),
+      })
+      
 
     doc.save('Generated.pdf');
 }

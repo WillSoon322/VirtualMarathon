@@ -7,6 +7,12 @@
 
 <div class="scroll_container">
 
+    <div class="media_list">
+        <ul>
+            <li><i class="fa fas-instagram">Instagram</i></li>
+        </ul>
+    </div>
+
     <section class="home_left section">
 
 
@@ -28,7 +34,7 @@
             <img src="view/assets/1.jpg" alt="">
         </div>
         <div class="Start">
-            Start Now
+           <b> Start Now </b>
         </div>
     </section>
     <section class="section">

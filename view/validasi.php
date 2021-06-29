@@ -14,11 +14,12 @@ require_once "model/topUp.php";
     <div class="modal">
         <button class="exit_button"> X </button>
         <form action="validasi" method="post">
-            <input class="id_top_up" type="text" name="idT">
-            <label for="validation">validate</label>
-            <input type="radio" class="" value="true" name="validation">
-            <label for="validation">reject</label>
-            <input type="radio" class="" value="false" name="validation">
+            <br>
+            <input class="modal_el id_top_up" type="text" name="idT"><br>
+            <input class="modal_el" type="radio" class="" value="true" name="validation">
+            <label class="modal_el" for="validation">validate</label><br>
+            <input class="modal_el" type="radio" class="" value="false" name="validation">
+            <label class="modal_el" for="validation">reject</label><br>
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -105,7 +106,6 @@ require_once "model/topUp.php";
                 <th>Metode Pembayaran</th>
                 <th>Jumlah Top-Up</th>
                 <th>Waktu Pembayaran</th>
-                <th>Status</th>
                 <th>Action</th>
                 <th>gambar</th>
             </tr>
@@ -118,7 +118,6 @@ require_once "model/topUp.php";
                     <td><?php echo $row->getNominal() ?></td>
                     <td><?php echo $row->getTanggal() ?></td>
                     <td><?php echo $row->getStatus() ?></td>
-                    <td><button class="validate_button">Validate</button></td>
                     <td><button class="bukti_button show">Bukti</button><button class="keluar">X</button>
                     <div class="overlay_image"><img class="inside_image" src="<?php echo $row->getGambar()?>"/></div>
                     </td>
@@ -132,7 +131,6 @@ require_once "model/topUp.php";
                 <th>Metode Pembayaran</th>
                 <th>Jumlah Top-Up</th>
                 <th>Waktu Pembayaran</th>
-                <th>Status</th>
                 <th>Action</th>
                 <th>gambar</th>
             </tr>
@@ -145,7 +143,6 @@ require_once "model/topUp.php";
                     <td><?php echo $row->getNominal() ?></td>
                     <td><?php echo $row->getTanggal() ?></td>
                     <td><?php echo $row->getStatus() ?></td>
-                    <td><button class="validate_button">Validate</button></td>
                     <td><button class="bukti_button show">Bukti</button><button class="keluar">X</button>
                     <div class="overlay_image"><img class="inside_image" src="<?php echo $row->getGambar()?>"/></div>
                     </td>

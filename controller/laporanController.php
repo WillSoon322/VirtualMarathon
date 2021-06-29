@@ -131,7 +131,14 @@
             $query_result=$this->db->executeSelectQuery($query);
             $temp[1]=new Count($query_result[0]["count(Gender)"]);
             $result[6]=$temp;
-            //var_dump($result[6]);
+
+            $temp=[];
+            $bulan = 6;
+            $query="SELECT id_top_up, idP, nominal, tanggal FROM transaksi_top_up WHERE MONTH(tanggal)='$bulan' AND `status`='Tervalidasi'";
+            $query_result=$this->db->executeSelectQuery($query);
+            // var_dump($query_result);
+
+            $result[7] = $query_result;
             return $result;
             }
              

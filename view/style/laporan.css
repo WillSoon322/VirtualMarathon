@@ -242,8 +242,14 @@ table th{
     grid-column: 5/7;
 }
 
+.male_user div{
+    /* background-color: aqua; */
+    font-size: 2.25em;
+}
+
 .female_user{
     grid-column: 5/7;
+    font-size: 2.25em;
 }
 
 .usercount{
@@ -260,6 +266,12 @@ table th{
 
 .trackcountp{
     color: forestgreen;
+}
+
+#canvas3{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100% ;
 }
 
 .show{
