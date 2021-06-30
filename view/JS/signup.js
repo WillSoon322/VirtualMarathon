@@ -83,7 +83,6 @@ Re_password.addEventListener("focusout", function () {
 })
 
 form_submit.addEventListener('click', function () {
-    console.log("hai");
     validate();
 })
 
@@ -91,7 +90,6 @@ function validate() {
     if (email && uname && namee && gender && age && address && phone && password && re_password) {
         form.submit();
     } else {
-        alert("te tot")
         console.log(email);
         console.log(uname);
         console.log(namee);
