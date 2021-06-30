@@ -29,11 +29,16 @@ user.addEventListener('click', function () {
     document.querySelector('.general_button').classList.remove('active')
 })
 
+console.log(chartTrack);
+
 let pdf = document.querySelector('.pdfbutton')
-console.log(pdf);
 pdf.addEventListener('click', function () {
-    console.log("hai");
     getPDF();
+})
+
+let pdf2 = document.querySelector('.pdfbutton2')
+pdf.addEventListener('click', function () {
+    getPDF2();
 })
 
 function getTopupData(){
@@ -51,15 +56,30 @@ function getTopupData(){
 
 function getPDF() {
     var doc = new jsPDF();
-    
-    doc.text('LAPORAN', 40, 20)
+    let total = pdftotal
+    doc.text('LAPORAN KEUANGAN VIRTUAL MARATHON', 40, 20)
     doc.line(20, 25, 300, 25);
     doc.autoTable({
-        startY : 50,
+        startY : 30,
         head: [['idTopUp', 'User', 'Nominal', 'Tanggal']],
         body: this.getTopupData(),
       })
-      
+    doc.line(20, 265, 300, 265);
+    doc.text("Total : " + total, 20, 275)
+    doc.save('Generated.pdf');
+}
 
+function getPDF() {
+    var doc = new jsPDF();
+    let total = pdftotal
+    doc.text('LAPORAN USER VIRTUAL MARATHON', 40, 20)
+    doc.line(20, 25, 300, 25);
+    doc.autoTable({
+        startY : 30,
+        head: [['idTopUp', 'User', 'Nominal', 'Tanggal']],
+        body: this.getTopupData(),
+      })
+    doc.line(20, 265, 300, 265);
+    doc.text("Total : " + total, 20, 275)
     doc.save('Generated.pdf');
 }

@@ -15,16 +15,16 @@
         <div class="user_info">
             <div class="user_info_picture">
             <?php
-                    if(isset($_SESSION["gambarAdmin"])){
-                        $user=$_SESSION["gambarAdmin"];
+                    if(isset($_SESSION["admin"]["gambarAdmin"])){
+                        $user=$_SESSION["admin"]["gambarAdmin"];
                         echo  '<img class="user_info_picture" src="data:image/jpg;base64,'.base64_encode($user).'"/>';
                     }
                 ?>
             </div>
             <div class="info_1">
                 <?php
-                    if(isset($_SESSION["usernameAdmin"])){
-                        $user=$_SESSION["usernameAdmin"];
+                    if(isset($_SESSION["admin"]["usernameAdmin"])){
+                        $user=$_SESSION["admin"]["usernameAdmin"];
                         echo "<h2> $user </h2>";
                     }
                 ?>

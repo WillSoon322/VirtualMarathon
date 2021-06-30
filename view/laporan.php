@@ -36,7 +36,9 @@
             <div class="type_button user_button">
                 User
             </div>
-            <button class="pdfbutton">Generate PDF</button>
+            <button class="pdfbutton">Generate Income PDF</button>
+            <br><br>
+            <button class="pdfbutton2">Generate User PDF</button>
         </div>
         <div class="page general">
             <div class="grid_container">
@@ -85,7 +87,6 @@
                     <i class="fas fa-road"></i>
                     <p><?php echo $result[0][2] ?></p>
                 </div>
-                <div class="tracks_item"></div>
                 <div class="tracks_item stat2">
                     <div>Track paling diminati: </div>
                     <div class="populars">
@@ -96,7 +97,7 @@
 
                 </div>
                 <div class="tracks_item table_user_track">
-                    <table>
+                    <table class="track_table">
                         <tr>
                             <th>idTrack</th>
                             <th>Tema Track</th>
@@ -145,67 +146,93 @@
                         <?php } ?>
                     </table>
                 </div>
-                <div class="user_item user_count" id="canvas3"></div>
+                <div class="user_item user_count">
+                    <canvas id="canvas3"> </canvas>
+                </div>
                 <div class="user_item male_user">
-                    <div>JUMLAH PRIA: <br><?php echo $result[0][6][0]->getCount() ?></div> 
+                    <div>JUMLAH PRIA: <br>
+                        <div class="male_ss"><?php echo $result[0][6][0]->getCount() ?></div>
+                        <script>
+                            var countgender = [<?php echo $result[0][6][0]->getCount() ?>, <?php echo $result[0][6][1]->getCount() ?>]
+                            // console.log(countgender);
+                        </script>
+                    </div>
                 </div>
                 <div class="user_item female_user">
-                    JUMLAH WANITA : <br><?php echo $result[0][6][1]->getCount() ?>
+                    <div>JUMLAH WANITA : <br>
+                        <div class="female_ss"><?php echo $result[0][6][1]->getCount() ?></div>
+                    </div>
                 </div>
                 <div class="user_item">
                     <!-- jumlah anak muda -->
                     jumlah anak muda: <br>
-                    <?php
-                    $anakMuda = 0 + $result[0][5][0]->getCount() + $result[0][5][1]->getCount();
-                    echo $anakMuda;
-                    ?>
+                    <div class="age_number">
+                        <?php
+                        $anakMuda = 0 + $result[0][5][0]->getCount() + $result[0][5][1]->getCount();
+                        echo $anakMuda;
+                        ?>
+                    </div>
                 </div>
                 <div class="user_item">
                     <!-- jumlah orang dewasa -->
                     jumlah orang dewasa: <br>
-                    <?php
-                    $dewasa = 0 + $result[0][5][2]->getCount() + $result[0][5][3]->getCount() + $result[0][5][4]->getCount() + $result[0][5][5]->getCount();
-                    echo $dewasa;
-                    ?>
+                    <div class="age_number">
+                        <?php
+                        $dewasa = 0 + $result[0][5][2]->getCount() + $result[0][5][3]->getCount() + $result[0][5][4]->getCount() + $result[0][5][5]->getCount();
+                        echo $dewasa;
+                        ?>
+                    </div>
                 </div>
                 <div class="user_item">
                     <!-- jumlah lansia -->
                     jumlah lansia: <br>
-                    <?php
-                    $lansia = 0 + $result[0][5][5]->getCount() + $result[0][5][3]->getCount() + $result[0][5][3]->getCount() + $result[0][5][4]->getCount();
-                    echo $lansia;
-                    ?>
+                    <div class="age_number">
+                        <?php
+                        $lansia = 0 + $result[0][5][5]->getCount() + $result[0][5][3]->getCount() + $result[0][5][3]->getCount() + $result[0][5][4]->getCount();
+                        echo $lansia;
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        var pdftopup = <?php echo(json_encode($result[0][7])); ?>;
+        var pdftopup = <?php echo (json_encode($result[0][7])); ?>;
         // console.log(pdftopup.length);
-
-        var dummyData = [
-            4,
-            3,
-            3,
-            1,
-            1,
-            1
-        ]
+        var pdftotal = <?php echo (json_encode($result[0][1])); ?>;
+        
+        var chartTracknum = []
+        let trackNum = document.querySelector('.track_table').firstElementChild.children;
+        for (let q = 1; q < trackNum.length; q++) {
+            let temp = trackNum[q].lastElementChild.innerHTML
+            chartTracknum[q - 1] = temp
+        }
+        console.log(chartTracknum);
         var colors = [
             window.chartColors.red,
             window.chartColors.grey,
             window.chartColors.yellow,
             window.chartColors.green,
-            window.chartColors.blue
+            window.chartColors.blue,
+            window.chartColors.grey,
+            window.chartColors.yellow,
         ]
+
+        var chartTrack = []
+        let trackList = document.querySelector('.track_table').firstElementChild.children
+        console.log(trackList.length);
+        for (let q = 1; q < trackList.length; q++) {
+            let temp = trackList[q].firstElementChild.nextElementSibling.innerHTML
+            chartTrack[q - 1] = temp
+        }
 
         var myChart2 = {
             type: 'pie',
             data: {
-                labels: ["Mount Fuji", "Candi Borobudur", "Great Pyramid", "New York", "Shanghai","London"],
+                labels: chartTrack,
                 datasets: [{
                     backgroundColor: colors,
-                    data: dummyData,
+                    data: chartTracknum,
                 }],
 
             },
@@ -218,32 +245,18 @@
 
             },
         };
-
-        var dummyData2 = [
-            4,
-            3,
-            3,
-            1,
-            1,
-            1
-        ]
         var colors2 = [
-            window.chartColors.red,
-            window.chartColors.grey,
-            window.chartColors.yellow,
-            window.chartColors.green,
             window.chartColors.blue,
-            window.chartColors.purple,
-            window.chartColors.green
+            window.chartColors.red,
         ]
 
         var myChart3 = {
             type: 'pie',
             data: {
-                labels: ["Mount Fuji", "Candi Borobudur", "Great Pyramid", "New York", "Shanghai","London"],
+                labels: ["Laki-Laki", "Perempuan"],
                 datasets: [{
                     backgroundColor: colors2,
-                    data: dummyData2,
+                    data: countgender,
                 }],
 
             },

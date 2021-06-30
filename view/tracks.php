@@ -40,51 +40,53 @@
                 </div>
             </div>
         </div>
+        <div class="page_div">
+            <?php
+            if (isset($result[2])) {
+                //require "pagination.php";
+                for ($i = 1; $i <= $result[2]; $i++) { ?>
+                    <div class="page">
+                        <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    </div>
+                <?php  } ?>
 
-        <?php 
-        if(isset($result[2])){
-            //require "pagination.php";
-            for ($i = 1; $i <= $result[2]; $i++) { ?>
-                <div class="page">
-                    <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                </div>
-            <?php  } ?>
-                
-            
-        
-            <?php } 
-        ?>
-            
+
+
+            <?php }
+            ?>
+        </div>
+
+
 
         <div class="grid_container">
 
             <div class="grid_track_card">
                 <fieldset>
-                <form action="tracks" method="POST">
-                <a href="tracks">Reset</a>
-                    <button class="region_accordion">Select Region</button>
-                    <div class="region_panel">
+                    <form action="tracks" method="POST">
+                        <a href="tracks">Reset</a>
+                        <button class="region_accordion">Select Region</button>
+                        <div class="region_panel">
 
-                        <?php foreach ($regionList as $reg) {
-                        ?>
-                            <a href="#"><?php echo $reg['region']; ?></a>
-                        <?php } ?>
-                    </div>
-                    <input type="text" name="namaTrack" style="display: none;">
-                    <label for="">MIN : </label>
-                    <input type="text" name="min" value="0">
-                    <br>
-                    <label for="">MAX : </label>
-                    <input type="text" name="max" value="100">
-                    <br>
-                    <label for="searchTrack">Search : </label>
-                    <input type="text" name="searchTrack" id="keyword">
-                    <button id="trackUtil_btn">Search</button>
-                </form>
+                            <?php foreach ($regionList as $reg) {
+                            ?>
+                                <a href="#"><?php echo $reg['region']; ?></a>
+                            <?php } ?>
+                        </div>
+                        <input type="text" name="namaTrack" style="display: none;">
+                        <label for="">MIN : </label>
+                        <input type="text" name="min" value="0">
+                        <br>
+                        <label for="">MAX : </label>
+                        <input type="text" name="max" value="100">
+                        <br>
+                        <label for="searchTrack">Search : </label>
+                        <input type="text" name="searchTrack" id="keyword">
+                        <button id="trackUtil_btn">Search</button>
+                    </form>
                 </fieldset>
             </div>
-            
-            
+
+
 
             <?php
             foreach ($result[0] as $key => $row) {
@@ -99,7 +101,8 @@
                     </form>
                 </div>
 
-                <!-- div class="card_image"><?php //echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' ?></div> -->
+                <!-- div class="card_image"><?php //echo '<img class="inside_image" src="data:image/jpg;base64,' . base64_encode($row->getGambar()) . '"/>' 
+                                            ?></div> -->
 
 
             <?php } ?>
@@ -123,4 +126,3 @@
     <script defer src="view/JS/tracks.js"></script>
 
 </body>
-

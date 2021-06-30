@@ -257,6 +257,15 @@ input[type=range]{
   width: 100%;
 }
 
+.page_div{
+  /* background-color: aquamarine; */
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2em;
+}
+
 .hide{
   display: flex;
 }
