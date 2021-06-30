@@ -2,7 +2,7 @@
  require_once "controller/services/mysqlDB.php";
  require_once "model/pemilik.php";
  require_once "view/view2.php";
-
+//session_start();
     class LoginPemilikController{
         
         protected $db;
@@ -19,7 +19,7 @@
         public function loginPemilik(){
             $username=$_POST["name"];
             $pass=$_POST["password"];
-            $remember=$_POST["remember"];
+            
             $query = "SELECT *
             FROM user u  INNER JOIN pemilik a ON u.idU=a.idU
             WHERE username='$username'";
@@ -33,7 +33,7 @@
 
             if(count($result)==0){
                 echo "user no exist la";
-                var_dump($result);
+                //var_dump($result);
                 // echo '<script> 
                 //         alert ("Username Does Not Exist")
                 //      </script>';
@@ -51,9 +51,9 @@
                 else{
                     session_start();
                     $_SESSION["pemilik"]["usernamePemilik"] = $result[0]->getUsername();
-                    $_SESSION["pemilik"]["gambarPemilik"] = $result[0]->getGambar();
+                    //$_SESSION["pemilik"]["gambarPemilik"] = $result[0]->getGambar();
                     $_SESSION["pemilik"]["loginStatusPemilik"]=true;
-                    $_SESSION["pemilik"]["idPemilik"]=$result[0]->getIdA();
+                    $_SESSION["pemilik"]["idPemilik"]=$result[0]->getIdU();
                     header("location: profilePemilik");
                 }
             }

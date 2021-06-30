@@ -1,6 +1,6 @@
 <?php
     class Count{
-        //COUNT DIPAKE UNTUK NGITUNG BANYAK PESERTA DALAM KATEGORI TERTENTU (USIA< GENDER DLL)
+        //COUNT DIPAKE UNTUK NYIMPEN BANYAK PESERTA DALAM KATEGORI TERTENTU (USIA< GENDER DLL)
         protected $count;
 
         public function __construct($count)

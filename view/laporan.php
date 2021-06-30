@@ -16,7 +16,21 @@
 <body>
     <div class="content">
         <?php
-        $temp = $result[0][3];
+        $temp = [];
+        //foreach($result[0][3] as $row=>$value){
+            $temp[]=$result[0][3][0]->getSum();
+            $temp[]=$result[0][3][1]->getSum();
+            $temp[]=$result[0][3][2]->getSum();
+            $temp[]=$result[0][3][3]->getSum();
+            $temp[]=$result[0][3][4]->getSum();
+            $temp[]=$result[0][3][5]->getSum();
+            $temp[]=$result[0][3][6]->getSum();
+            $temp[]=$result[0][3][7]->getSum();
+            $temp[]=$result[0][3][8]->getSum(); 
+            $temp[]=$result[0][3][9]->getSum();
+            $temp[]=$result[0][3][10]->getSum();
+            $temp[]=$result[0][3][11]->getSum();
+        //}
         // var_dump(json_encode($temp));
 
         ?>
@@ -47,7 +61,7 @@
                     <p class="usercountp">
                         <?php
                         //TOTAL PESERTA
-                        $totalUser = $result[0][0];
+                        $totalUser = $result[0][0]->getCount();
                         echo "$totalUser";
                         ?>
                     </p>
@@ -56,14 +70,14 @@
                     <i class="fas fa-wallet"> TOTAL INCOME</i>
                     <p>Rp <?php
                             //TOTAL INCOME
-                            $totalIncome = $result[0][1];
+                            $totalIncome = $result[0][1]->getSum();
                             echo "$totalIncome";
                             ?></p>
                 </div>
                 <div class="grid_item track">
                     <i class="fas fa-road trackcount"></i>
                     <!-- BANYAK TRACK -->
-                    <p class="trackcountp"><?php echo $result[0][2] ?></p>
+                    <p class="trackcountp"><?php echo $result[0][2]->getCount() ?></p>
                 </div>
                 <div class="grid_item income_graph">
                     <div style="width:100%;">
@@ -85,7 +99,7 @@
                 </div>
                 <div class="tracks_item track2">
                     <i class="fas fa-road"></i>
-                    <p><?php echo $result[0][2] ?></p>
+                    <p><?php echo $result[0][2]->getCount() ?></p>
                 </div>
                 <div class="tracks_item stat2">
                     <div>Track paling diminati: </div>
