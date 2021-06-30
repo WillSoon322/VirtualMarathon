@@ -1,7 +1,7 @@
 <?php
  require_once "controller/services/mysqlDB.php";
  require_once "model/track.php";
- require_once "view/view.php";
+ require_once "controller/view/view.php";
 
     class landingController{
         
@@ -31,7 +31,7 @@
         }
         public function logOut (){
            session_start();
-            session_destroy();
+            //session_destroy();
             unset($_SESSION["peserta"]["username"]);
             unset($_SESSION["peserta"]["saldo"]);
             unset($_SESSION["peserta"]["tracks"]);

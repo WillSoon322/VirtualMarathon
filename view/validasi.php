@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="view/style/validasi.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Validasi</title>
 </head>
 
 <?php

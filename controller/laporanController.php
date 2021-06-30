@@ -1,6 +1,6 @@
 <?php
  require_once "controller/services/mysqlDB.php";
- require_once "view/view2.php";
+ require_once "controller/view/view2.php";
  require_once "model/trackCount.php";
  require_once "model/count.php";
  require_once "model/sum.php";

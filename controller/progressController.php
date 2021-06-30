@@ -1,7 +1,7 @@
 <?php
 session_start();
  require_once "controller/services/mysqlDB.php";
- require_once "view/view2.php";
+ require_once "controller/view/view2.php";
  require_once "model/progress.php";
  require_once "model/track.php";
     class ProgressController{

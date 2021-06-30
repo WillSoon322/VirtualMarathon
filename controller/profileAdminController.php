@@ -1,6 +1,6 @@
 <?php
  require_once "controller/services/mysqlDB.php";
- require_once "view/view2.php";
+ require_once "controller/view/view2.php";
  require_once "model/admin.php";
  session_start();
     class ProfileAdminController{
@@ -29,6 +29,31 @@
                 return $result;
         }
 
+        public function changeDP(){
+            $idU=$_SESSION["admin"]["idA"];
+            if($_FILES['dpAdmin']['name']!==""){
+                $trackFileType = strtolower(pathinfo($_FILES['dpAdmin']['name'], PATHINFO_EXTENSION));
+                if($trackFileType!="jpg"&&$trackFileType!="png"&&$trackFileType!="jpeg"){
+                    echo "image file type incorect, insert jpg, jpeg or png <br> current file type: $trackFileType"   ;
+                    $sukses=false;
+                }
+                else{
+                    $_FILES['dpAdmin']['name']=$idU.'.'.$trackFileType;//nama file dijadiin id track
+                }
+    
+                $oldname1=$_FILES['dpAdmin']['tmp_name'];
+                $newName1="view/assets/uploads/users/".$_FILES['dpAdmin']['name'];
+                move_uploaded_file($oldname1,$newName1);
+                $query="UPDATE user SET profile_picture='$newName1' WHERE idU='$idU'";
+                $query_result=$this->db->executeSelectQuery($query);
+
+               //echo "success";
+            }
+             else{
+                 echo "please insert an image for profile picture<br>";
+                 
+             }
+        }
        
         }
     

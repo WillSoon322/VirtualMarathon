@@ -8,7 +8,7 @@
 <body>
     <?php
         //session_start();
-        
+        var_dump($result);
     ?>
     <div class="content">
         <div class="user_info">
@@ -42,6 +42,7 @@
                       
                     }
                     echo "<h2>$nama</h2>";
+                    //var_dump($result[0]);
                 ?>
             </div>
             <br><br><br><br>
@@ -49,7 +50,12 @@
             <button onclick="laporan()" id="goToValidate">Lihat Laporan</button>
             <button onclick="addTrack()" id="goToAddTrack">Masukan Track Baru</button>
             <button onclick="changeTrack()" id="goToUbahTrack">Ubah Track</button>
-            <button onclick="addAdmin()" id="goToAddAdmin">Add Admin</button>
+            <button onclick="addAdmin()" id="goToAddAdmin">Add Admin</button><br><br>
+            <form action="profilePemilik" method="POST" enctype="multipart/form-data">
+                    <label for="dpPemilik">Change Profile Picture</label><br>
+                    <input type="file" name="dpPemilik"><br><br>
+                    <button type="submit">Change</button>
+            </form>
             <script>
                 function laporan(){
                     location.href="laporan";

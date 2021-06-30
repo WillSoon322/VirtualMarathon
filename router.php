@@ -19,6 +19,18 @@ $baseURL = '/VirtualMarathon';
 				$abtCtrl = new AboutUsController();
 				echo $abtCtrl -> viewAll();//echo hasil FINAL
 			   break;
+			case $baseURL.'/logoutAdminController':
+				require_once "controller/logoutAdminController.php";
+				$landCtrl = new LogoutAdminController();
+				echo $landCtrl -> logOut();//echo hasil FINAL
+				header("location: loginAdmin");
+			break;
+			case $baseURL.'/logoutPemilikController':
+				require_once "controller/logoutPemilikController.php";
+				$landCtrl = new LogoutPemilikController();
+				echo $landCtrl -> logOut();//echo hasil FINAL
+				header("location: loginPemilik");
+			break;
 			case $baseURL.'/logout':
 				require_once "controller/landingController.php";
 				$landCtrl = new landingController();
@@ -126,6 +138,16 @@ $baseURL = '/VirtualMarathon';
 				$l = new settingController();
 				echo $l -> viewAll();
 			break;
+			case $baseURL.'/logoutAdmin':
+				require_once "controller/logoutAdminController.php";
+				$landCtrl = new LogoutAdminController();
+				echo $landCtrl -> logout();//echo hasil FINAL
+			 break;
+			case $baseURL.'/logoutPemilik':
+				require_once "controller/logoutPemilikController.php";
+				$landCtrl = new LogoutPemilikController();
+				echo $landCtrl -> logout();//echo hasil FINAL
+			break;
 			default:
 				echo "404 not found";
 				break;
@@ -217,6 +239,18 @@ $baseURL = '/VirtualMarathon';
 				$profile = new profileController();
 				echo $profile -> updateData();//echo hasil FINAL
 				header("location: login");
+			break;
+			case $baseURL.'/profileAdmin':
+				require_once "controller/profileAdminController.php";
+				$laCtrl = new ProfileAdminController();
+				echo $laCtrl -> changeDP();//echo hasil FINAL
+				header("location: profileAdmin");
+			break;
+			case $baseURL.'/profilePemilik':
+				require_once "controller/profilePemilikController.php";
+				$laCtrl = new ProfilePemilikController();
+				echo $laCtrl -> changeDP();//echo hasil FINAL
+				header("location: profilePemilik");
 			break;
 				default:
 				echo "404 not found";

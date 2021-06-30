@@ -21,12 +21,12 @@
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="Asset/founders/founder1.jpg" alt="Lukas" style="width:100%">
+      <img src="Asset/founders/founder1 .jpg" alt="Lukas" style="width:100%">
       <div class="container">
         <h2>Reynaldi Lukas</h2>
         <p>Salah satu pendiri.</p>
         <p>Lukas@example.com</p>
-        <p><button class="button">Contact</button></p>
+        
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
         <h2>Wilson Nathanael</h2>
         <p>Salahs satu dari pendiri kami</p>
         <p>wilson@example.com</p>
-        <p><button class="button">Contact</button></p>
+       
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
         <h2>Dionisius Yoga</h2>
         <p>Salah satu dari pendiri kami</p>
         <p>Yoga@example.com</p>
-        <p><button class="button">Contact</button></p>
+       
       </div>
     </div>
   </div>
@@ -61,9 +61,9 @@
         <a class="head">About the Website</a><br>
             <a class="paragraph">
                 Virtual Marathon adalah website yang telah kami buat dengan tujuan untuk memberi keuntungan bagi para penggemar lari <br>
-                marathon. Dengan adanya website kami menyediakan kesempatan para pelari untuk mendaftar untuk marathon manapun kapan pun. <br>
-                Website ini bisa diakses kapanpun dengan adanya website ini kami ingin memberi kemudahan dan berbagai pilihan track <br>
-                marathon yang orang bisa jalani dan ikut partisipasi. Dengan sistem pembayaran yang mudah. <br>
+                marathon. Dengan adanya website kami ,disediakan kesempatan para pelari untuk mendaftar untuk marathon manapun dan kapan pun. <br>
+                Website ini bisa diakses kapanpun .Dengan adanya website ini kami ingin memberi kemudahan dan berbagai pilihan track <br>
+                marathon yang orang bisa jalani, dengan sistem pembayaran yang mudah. <br>
             </a><br>
     </div>
 
@@ -72,8 +72,8 @@
         <a class="head"> Misi</a><br>
         <a class="paragraph">
             1. Memberi berbagai event yang menyediakan rute marathon unik dalam waktu terbatas untuk meningkatkan <br>
-            2. Mengimplementasikan penggunaan GPS untuk mempermudah dalam perhitungan jarak lari yang telah ditempuh <br>
-            3. Melakukan kerja sama dengan berbagai yayasan untuk melakukan event marathon untuk donasi untuk amal.<br>
+            2. Mengimplementasikan teknologi modern untuk mempermudah kegiatan marathon <br>
+            
         </a><br>  
 </div>
 

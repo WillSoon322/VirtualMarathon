@@ -1,7 +1,7 @@
 <?php
  require_once "controller/services/mysqlDB.php";
  require_once "model/admin.php";
- require_once "view/view2.php";
+ require_once "controller/view/view2.php";
 
     class LoginAdminController{
         

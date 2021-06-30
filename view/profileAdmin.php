@@ -38,6 +38,7 @@
                         $nama=$result[0]->getUsername();
                     }
                     echo "<h2>$nama</h2>";
+                    
                 ?>
                 
             </div>
@@ -45,6 +46,12 @@
             <hr>
             <button onclick="validatePage()" id="goToValidate">Validate</button>
             <button onclick="statusPage()" id="goToStats">Lihat Status Peserta</button>
+            <br><br>
+            <form action="profileAdmin" method="POST" enctype="multipart/form-data">
+                    <label for="dpAdmin">Change Profile Picture</label><br>
+                    <input type="file" name="dpAdmin"><br><br>
+                    <button type="submit">Change</button>
+            </form>
             <script>
                 function validatePage(){
                     location.href="validasi";

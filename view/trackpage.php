@@ -1,7 +1,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="view/style/trackpage.css">
-    <title>Document</title>
+    <title>Track_Page</title>
 </head>
 
 <body>

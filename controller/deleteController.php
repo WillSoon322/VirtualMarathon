@@ -1,6 +1,6 @@
 <?php
  require_once "controller/services/mysqlDB.php";
- require_once "view/view2.php";
+ require_once "controller/view/view2.php";
 
  session_start();
     class DeleteController{

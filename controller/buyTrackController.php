@@ -1,6 +1,6 @@
 <?php
  require_once "controller/services/mysqlDB.php";
- require_once "view/view2.php";
+ require_once "controller/view/view2.php";
  require_once "model/track.php";
 session_start();
     class BuyTrackController{
@@ -12,6 +12,9 @@ session_start();
         }
 
         public function viewAll(){
+            // if(isset($_SESSION["peserta"]["loginStatus"])==false){
+            //     header("location: login");
+            // }
             $result = $this->getAllTracks();
             return View2::createView("buyTrack.php",["result"=>$result]);
     
@@ -20,6 +23,9 @@ session_start();
         public function getAllTracks(){
             if(isset($_SESSION["peserta"]["trackDestination"])){
                 $tema=$_SESSION["peserta"]["trackDestination"];
+            }
+            else{
+                header("location: tracks");
             }
             $query = "SELECT *
                         FROM track t 

@@ -1,7 +1,7 @@
 
     <?php
  require_once "controller/services/mysqlDB.php";
- require_once "view/view.php";
+ require_once "controller/view/view.php";
 
     class addAdminController{
         
@@ -12,6 +12,10 @@
         }
 
         public function viewAll(){
+            //var_dump($_SESSION["pemilik"]["loginStatusPemilik"]);
+            // if(isset($_SESSION["pemilik"]["loginStatusPemilik"])==false){
+            //     header("location: loginPemilik");
+            // }
             return View::createView("addAdmin.php",[]);
     
         }

@@ -1,6 +1,6 @@
 <?php
  require_once "controller/services/mysqlDB.php";
- require_once "view/view2.php";
+ require_once "controller/view/view2.php";
  require_once "model/track.php";
  require_once "model/peserta.php";
  session_start();

@@ -1,6 +1,6 @@
 <?php
 require_once "controller/services/mysqlDB.php";
-require_once "view/view2.php";
+require_once "controller/view/view2.php";
 require_once "model/track.php";
 session_start();
 class ChangeTrackController
@@ -15,6 +15,9 @@ class ChangeTrackController
 
     public function viewAll()
     {
+        // if(isset($_SESSION["pemilik"]["loginStatusPemilik"])==false){
+        //     header("location: loginPemilik");
+        // }
         $result = $this->getData();
         return View2::createView("changeTrack.php", ["result" => $result]);
     }

@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="view/style/tracks.css">
-    <title>Tracks</title>
+    <title>Browse_Tracks</title>
 </head>
 
 <body>
