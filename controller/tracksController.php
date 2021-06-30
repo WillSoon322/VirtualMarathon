@@ -33,7 +33,7 @@
         }
 
         public function getAllTracks($currPage){
-            $trackPerPage=4;
+            $trackPerPage=7;
             $query="SELECT count(idT) FROM track";
             $query_result = $this->db->executeSelectQuery($query);
             $trackTotal=$query_result[0]['count(idT)'];

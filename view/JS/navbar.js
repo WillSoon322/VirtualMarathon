@@ -7,6 +7,7 @@ let logout = document.querySelector('#Logout_btn')
 let wallet = document.querySelector('#Wallet_btn')
 let logoutAdmin = document.querySelector('#Logout_Admin')
 let logoutPemilik = document.querySelector('#Logout_Pemilik')
+let backAdmin = document.querySelector('#backAdmin')
 console.log(tracks);
 
 if (page === "SignUp") {
@@ -32,4 +33,7 @@ else if (page === "Profile_Admin") {
 else if (page === "Profile_Pemilik") {
     console.log("profile pemilik");
     logoutPemilik.classList.add("show");
+}
+else if (page === "validasi" || page === "statusPeserta") {
+    backAdmin.classList.add("show");
 }

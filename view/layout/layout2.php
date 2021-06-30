@@ -26,6 +26,8 @@
         <a class="nav_link" href="topUp" id="Wallet_btn"><b>Wallet</b></a>
         <a class="nav_link" href="logoutAdmin" id="Logout_Admin"><b>Logout</b></a> 
         <a class="nav_link" href="logoutPemilik" id="Logout_Pemilik"><b>Logout</b></a> 
+        <a class="nav_link" href="profileAdmin" id="backAdmin"><b>Logout</b></a> 
+        
     </nav>
 </header>
         

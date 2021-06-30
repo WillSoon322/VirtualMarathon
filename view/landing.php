@@ -43,7 +43,7 @@
     <section class="section">
         <div class="mini_about">
             <img src="view/assets/logo_white_small.png" alt="">
-            <div class="story">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium facilis minima inventore sed optio pariatur aut cupiditate asperiores harum consequatur magnam dolore, nobis temporibus at quidem similique nihil non quae.</div>
+            <div class="story">Virtual Marathon is the best website to help you stay fit by running a marathon virtually.</div>
             <a class="about" href="aboutus">LEARN MORE</a>
         </div>
     </section>
@@ -51,7 +51,7 @@
         <div class="popular_sect">
             <div class="pop_title"><b> POPULAR TRACK </b></div>
             <hr>
-            <div class="pop_tagline">some tagline put here</div>
+            <div class="pop_tagline"></div>
             <div class="pop_top3">
                 <?php foreach ($result as $key => $row) {
                 ?>
