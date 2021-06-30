@@ -51,9 +51,9 @@
                 else{
                     session_start();
                     $_SESSION["admin"]["usernameAdmin"] = $result[0]->getUsername();
-                    $_SESSION["admin"]["gambarAdmin"] = $result[0]->getGambar();
+                   // $_SESSION["admin"]["gambarAdmin"] = $result[0]->getGambar();
                     $_SESSION["admin"]["loginStatusAdmin"]=true;
-                    $_SESSION["admin"]["idAdmin"]=$result[0]->getIdA();
+                    $_SESSION["admin"]["idA"]=$result[0]->getIdA();
                     header("location: profileAdmin");
                 }
             }

@@ -2,16 +2,16 @@
     class Pemilik{
         protected $idA, $username, $password, $gambar;
 
-        public function __construct($idA, $username, $password, $gambar)
+        public function __construct($idU, $username, $password, $gambar)
         {
-            $this->idU=$idA;
+            $this->idU=$idU;
             $this->username=$username;
             $this->password=$password;
             $this->gambar=$gambar;
         }
 
-        public function getIdA(){
-            return $this->idA;
+        public function getIdU(){
+            return $this->idU;
         }
 
         public function getUsername(){
