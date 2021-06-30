@@ -33,7 +33,19 @@ else if (page === "Profile_Admin") {
 else if (page === "Profile_Pemilik") {
     console.log("profile pemilik");
     logoutPemilik.classList.add("show");
+<<<<<<< Updated upstream
 }
 else if (page === "validasi" || page === "statusPeserta") {
     backAdmin.classList.add("show");
+=======
+}else if(page === "Browse_Tracks"){
+    console.log("browse_track");
+    profile.classList.add("show")
+    logout.classList.add("show")
+}else if(page === "Track_Page"){
+    console.log("browse_track");
+    tracks.classList.add("show")
+    profile.classList.add("show")
+    logout.classList.add("show")
+>>>>>>> Stashed changes
 }

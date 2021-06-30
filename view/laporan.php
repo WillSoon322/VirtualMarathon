@@ -51,8 +51,6 @@
                 User
             </div>
             <button class="pdfbutton">Generate Income PDF</button>
-            <br><br>
-            <button class="pdfbutton2">Generate User PDF</button>
         </div>
         <div class="page general">
             <div class="grid_container">

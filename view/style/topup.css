@@ -81,12 +81,16 @@ section{
     display: grid;
     padding-top: 20px;
     grid-gap: 15px;
-    grid-template-columns: repeat(auto-fill, 75px);
-    grid-template-rows: repeat(3, 75px);
+    grid-template-columns: repeat(auto-fill, 90px);
+    grid-template-rows: repeat(3, 90px);
 }
 
 .method_item{
-    background-color: chartreuse;
+    
+}
+
+.method_item img{
+    width: 100%;
 }
 
 .ammount_input{

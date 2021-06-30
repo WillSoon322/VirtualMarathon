@@ -10,9 +10,8 @@
 
     <div class="media_list">
         <ul>
-            <li><i class="fab fa-instagram">   Instagram</i></li>
-            <li><i class="fab fa-facebook">  Facebook</i></li>
-            <li><i class="fab fa-google-plus-g"> Google+</i></li>
+            <li><a href="https://www.instagram.com/"><i class="fab fa-instagram">   Instagram</i></a></li>
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook">  Facebook</i></li></a>
         </ul>
     </div>
 
@@ -37,7 +36,7 @@
             <img src="view/assets/1.jpg" alt="">
         </div>
         <div class="Start">
-           <b> Start Now </b>
+           <a href="signup"><b> Start Now </b></a>
         </div>
     </section>
     <section class="section">

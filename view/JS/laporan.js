@@ -36,11 +36,6 @@ pdf.addEventListener('click', function () {
     getPDF();
 })
 
-let pdf2 = document.querySelector('.pdfbutton2')
-pdf.addEventListener('click', function () {
-    getPDF2();
-})
-
 function getTopupData(){
     let data = [...Array(pdftopup.length)].map(e => Array(4));
     for(let i = 0 ; i<pdftopup.length;i++){
@@ -57,6 +52,7 @@ function getTopupData(){
 function getPDF() {
     var doc = new jsPDF();
     let total = pdftotal
+    console.log(total);
     doc.text('LAPORAN KEUANGAN VIRTUAL MARATHON', 40, 20)
     doc.line(20, 25, 300, 25);
     doc.autoTable({
@@ -65,21 +61,6 @@ function getPDF() {
         body: this.getTopupData(),
       })
     doc.line(20, 265, 300, 265);
-    doc.text("Total : " + total, 20, 275)
-    doc.save('Generated.pdf');
-}
-
-function getPDF() {
-    var doc = new jsPDF();
-    let total = pdftotal
-    doc.text('LAPORAN USER VIRTUAL MARATHON', 40, 20)
-    doc.line(20, 25, 300, 25);
-    doc.autoTable({
-        startY : 30,
-        head: [['idTopUp', 'User', 'Nominal', 'Tanggal']],
-        body: this.getTopupData(),
-      })
-    doc.line(20, 265, 300, 265);
-    doc.text("Total : " + total, 20, 275)
+    doc.text("Total : " + total["sum"], 20, 275)
     doc.save('Generated.pdf');
 }
